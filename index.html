@@ -270,6 +270,8 @@ body.modal-open{overflow:hidden}
 .limits b{color:#fff}
 .plan-alt{display:flex;flex-direction:column;gap:10px;border-radius:24px;padding:26px 22px;background:#fff;border:1px solid #e0e8f4;box-shadow:0 12px 35px rgba(0,31,92,.04)}
 .plan-alt-top{display:flex;align-items:center;justify-content:space-between;gap:9px}
+.plan-alt.rec{border:2px solid #286de9;box-shadow:0 16px 40px rgba(40,109,233,.16)}
+.plan-alt.rec .plan-alt-top span{color:#fff;background:#286de9}
 .plan-alt-top h3{font-size:24px;letter-spacing:-.045em}
 .plan-alt-top span{font-size:10px;font-weight:800;letter-spacing:.05em;color:#286de9;background:#edf4ff;padding:6px 10px;border-radius:20px}
 .plan-alt>p{font-size:14px;line-height:1.55;color:#63718c}
@@ -657,11 +659,11 @@ fbq('init','912571467763616');fbq('track','PageView');})();
     <div class="sec-head">
       <span class="eyebrow blue">Escolha o seu acesso</span>
       <h2 class="h2">Comece pelo essencial.<br/><span class="hl-blue">Cresça quando precisar.</span></h2>
-      <p class="lead">O Vitalício é a oferta principal. Pro e Business são alternativas para empresas que precisam de mais capacidade e recursos.</p>
+      <p class="lead">O Business é o plano recomendado para quem quer crescer com mais capacidade e controle. O Vitalício é a opção sem mensalidade, e o Pro fica no meio do caminho.</p>
     </div>
     <div class="plans">
       <article class="plan-main">
-        <div class="plan-top"><span class="chip"><span class="dot"></span>Oferta principal</span><span class="tag">SEM MENSALIDADE</span></div>
+        <div class="plan-top"><span class="chip"><span class="dot"></span>Pagamento único</span><span class="tag">SEM MENSALIDADE</span></div>
         <h3>Vitalício</h3>
         <p>Propostas e contratos profissionais para organizar a rotina da sua empresa.</p>
         <div class="plan-price">
@@ -684,8 +686,8 @@ fbq('init','912571467763616');fbq('track','PageView');})();
         </div>
       </article>
 
-      <article class="plan-alt">
-        <div class="plan-alt-top"><h3>Business</h3><span>MENSAL</span></div>
+      <article class="plan-alt rec">
+        <div class="plan-alt-top"><h3>Business</h3><span>RECOMENDADO</span></div>
         <p>Mais capacidade, tecnologia e controle para empresas que precisam profissionalizar e ampliar sua operação comercial.</p>
         <div class="adv"><div class="adv-incl">Inclui os benefícios do Vitalício e do Pro, com maior capacidade.</div><b class="adv-label">Capacidade e gestão</b><span>Clientes e propostas ilimitados</span><span>Até 100 contratos por mês</span><span>Ordens de serviço e recibos ilimitados</span><span>Suporte VIP</span><b class="adv-label">Contratos e formalização digital</b><span>Assinatura digital pela Autentique, sem cobrança adicional por assinatura</span><span>Múltiplos signatários no mesmo contrato</span><span>Envio de contratos próprios em PDF para assinatura</span><span>Acompanhamento de acessos e aprovações de propostas</span><span>Exportação de clientes, propostas e contratos</span><div class="adv-soon"><b class="adv-label">Em desenvolvimento · disponibilidade sob consulta</b><span>Até 5 colaboradores</span><span>Importação de contratos antigos</span><span>Importação de propostas antigas</span><span>Integração financeira com Asaas (em breve)</span><small>Recursos em validação: não devem ser considerados disponíveis até a confirmação.</small></div></div>
         <div class="plan-alt-foot">
@@ -760,7 +762,7 @@ fbq('init','912571467763616');fbq('track','PageView');})();
       <details class="faq-extra"><summary>Posso incluir várias pessoas assinando o mesmo contrato?</summary><p>Sim! O Pro Creator permite múltiplos signatários em um mesmo contrato, facilitando documentos que precisam da assinatura de clientes, responsáveis, sócios ou testemunhas.</p></details>
       <details class="faq-extra"><summary>O Pro Creator realiza backups?</summary><p>Sim. O banco de dados possui backups automáticos diários, com opções de restauração pela infraestrutura Supabase Pro. Os arquivos armazenados no Storage possuem tratamento de backup separado.</p></details>
       <details class="faq-extra"><summary>O Pro Creator possui integração com outros softwares?</summary><p>Atualmente, o Pro Creator possui integração com a Autentique e está desenvolvendo uma integração financeira com o Asaas. Ainda não disponibilizamos API pública ou webhooks para integrações externas. Entretanto, integrações personalizadas podem ser avaliadas mediante solicitação e análise de viabilidade técnica.</p></details>
-      <details class="faq-extra"><summary>Posso conhecer a plataforma antes de contratar?</summary><p>Sim! Nossa equipe pode disponibilizar um acesso demonstrativo mediante solicitação, permitindo que sua empresa conheça as funcionalidades antes de escolher um plano.</p></details>
+      <details class="faq-extra"><summary>Posso conhecer a plataforma antes de contratar?</summary><p>Sim! Nossa equipe pode disponibilizar um acesso demonstrativo mediante solicitação, permitindo que sua empresa conheça as funcionalidades antes de escolher um plano. Fale com o suporte pelo <a href="https://wa.me/554796759899" target="_blank" rel="noopener noreferrer">WhatsApp +55 47 9675-9899</a>.</p></details>
       <details class="faq-extra"><summary>Posso usar a identidade visual da minha empresa?</summary><p>Sim. O Pro Creator permite adicionar a identidade visual e a logo da empresa às propostas e documentos, conforme as opções de personalização disponíveis no plano.</p></details>
       <details class="faq-extra"><summary>Posso cadastrar minha tabela de preços?</summary><p>Sim. Cadastre produtos, serviços e valores para facilitar e agilizar a criação de novos orçamentos no seu dia a dia.</p></details>
       <button class="faq-toggle" id="expandFaq" type="button" aria-expanded="false">Ver mais perguntas (12) +</button>
@@ -791,7 +793,7 @@ fbq('init','912571467763616');fbq('track','PageView');})();
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 Pro Creator. Todos os direitos reservados.</p>
       <p class="footer-info">Pro Creator · CNPJ: 34.428.447/0001-88<br/>Responsável: Daniel Barbosa da Silva<br/>Joinville — Santa Catarina, Brasil</p>
-      <div class="footer-legal"><a href="https://termos-de-usoo.netlify.app/" target="_blank" rel="noopener noreferrer">Termos de Uso</a><a href="https://politica-de-privacidadee.netlify.app/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
+      <div class="footer-legal"><a href="https://termos-de-usoo.netlify.app/" target="_blank" rel="noopener noreferrer">Termos de Uso</a><a href="https://politica-de-privacidadee.netlify.app/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a><a href="https://wa.me/554796759899" target="_blank" rel="noopener noreferrer">Suporte no WhatsApp</a></div>
     </div>
   </div>
 </footer>
