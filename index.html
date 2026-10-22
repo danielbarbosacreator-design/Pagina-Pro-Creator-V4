@@ -248,6 +248,13 @@ body.modal-open{overflow:hidden}
 
 /* ===================== Preços ===================== */
 .pricing{background:var(--pale);color:var(--ink)}
+.proof{display:flex;flex-direction:column;align-items:center;gap:8px;margin:-6px 0 30px;text-align:center}
+.proof-avatars{display:flex;justify-content:center;margin-bottom:4px}
+.proof-avatars img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,31,92,.16);margin-left:-10px;background:#edf4ff}
+.proof-avatars img:first-child{margin-left:0}
+.proof p{font-size:14px;font-weight:600;color:#455570}
+.proof a{font-size:13px;font-weight:600;color:#286de9}
+.proof a:hover{text-decoration:underline;text-underline-offset:3px}
 .plans{display:grid;gap:16px;align-items:stretch}
 .plan-main{position:relative;overflow:hidden;display:flex;flex-direction:column;border-radius:26px;padding:28px 22px;color:#fff;background:radial-gradient(circle at 100% 0%,rgba(36,102,242,.45),transparent 45%),linear-gradient(148deg,#08255e,#061430);box-shadow:0 25px 60px rgba(8,38,87,.22);border:2px solid #2d6fff}
 .plan-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
@@ -676,6 +683,13 @@ fbq('init','912571467763616');fbq('track','PageView');})();
       <span class="eyebrow blue">Escolha o seu acesso</span>
       <h2 class="h2">Comece do seu jeito.<br/><span class="hl-blue">Cresça com o Pro Creator.</span></h2>
       <p class="lead">O Vitalício é ideal para começar sem mensalidade. Os planos Pro e Business oferecem mais capacidade e recursos para quem usa a plataforma todos os dias.</p>
+    </div>
+    <div class="proof">
+      <!-- Avatares de clientes reais e autorizados: adicione os arquivos em assets/img/clientes/ e inclua mais <img> dentro de .proof-avatars (ideal: 4 a 6).
+           Exemplo: <img src="assets/img/clientes/cliente-3.webp" alt="Nome do cliente" width="120" height="120" loading="lazy"/> -->
+      <div class="proof-avatars"><img src="assets/img/clientes/daniel-b.webp" alt="Daniel B." width="120" height="120" loading="lazy"/><img src="assets/img/clientes/vency-creative.webp" alt="Vency Creative" width="120" height="120" loading="lazy"/><img src="assets/img/clientes/misael-th.webp" alt="Misael Th." width="120" height="120" loading="lazy"/></div>
+      <p>Empresas reais já utilizam o Pro Creator</p>
+      <a href="#depoimentos">Conheça os depoimentos →</a>
     </div>
     <div class="plans">
       <article class="plan-main">
