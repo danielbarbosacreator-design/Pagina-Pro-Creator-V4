@@ -1,0 +1,836 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Pro Creator Landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ===================== Base ===================== */
+:root{color-scheme:dark;
+  --bg:#050c1b;--navy:#061024;--navy2:#0a1933;--blue:#2670ff;--blue-h:#3980ff;--blue-soft:#e9f0ff;
+  --ink:#0e1b35;--muted:#66728d;--pale:#f6f8fc;--line:#e3eaf4;--green:#5fe0a6;
+  --r-lg:28px;--r-md:18px;--wrap:1160px;--gut:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:#fff;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,p,figure,blockquote{margin:0}
+h1,h2,h3{font-family:Manrope,'DM Sans',sans-serif;text-wrap:balance}
+p{text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+img,video{max-width:100%;display:block}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #79b1ff;outline-offset:4px;border-radius:6px}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* tipografia de seção */
+.eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800;margin-bottom:14px}
+.eyebrow.blue{color:#2369f4}.eyebrow.sky{color:#8bbaff}.eyebrow.white{color:#d8e7ff}
+.h2{font-size:clamp(28px,7.4vw,46px);line-height:1.14;letter-spacing:-.045em;font-weight:800}
+.lead{font-size:16px;line-height:1.65}
+.on-light .lead{color:var(--muted)}
+.on-dark .lead{color:#b2c3e2}
+.hl-blue{color:#236bf1}.hl-sky{color:#84b6ff}
+.text-gradient{background:linear-gradient(96deg,#9cc6ff 0%,#3b80ff 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec{padding:72px 0}
+.sec-head{max-width:720px;margin:0 auto 36px;text-align:center}
+.sec-head .lead{margin:14px auto 0;max-width:600px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:16px 26px;border:0;border-radius:14px;font-family:Manrope,sans-serif;font-size:16px;line-height:1.2;font-weight:800;text-align:center;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 35px rgba(21,92,243,.35)}
+.btn-primary:hover{background:var(--blue-h)}
+.btn-white{background:#fff;color:#0b35a3;box-shadow:0 12px 30px rgba(0,10,40,.25)}
+.btn-white:hover{background:#e6efff}
+.btn-block{width:100%}
+.btn-arrow{font-size:19px;font-weight:500;line-height:1}
+@keyframes ctaPulse{0%{box-shadow:0 12px 35px rgba(21,92,243,.35),0 0 0 0 rgba(38,112,255,.6)}70%{box-shadow:0 12px 35px rgba(21,92,243,.35),0 0 0 14px rgba(38,112,255,0)}100%{box-shadow:0 12px 35px rgba(21,92,243,.35),0 0 0 0 rgba(38,112,255,0)}}
+.btn-primary.pulse{animation:ctaPulse 2s ease-out infinite}
+
+.checks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;font-size:13px;color:#adbee0}
+.checks span{display:inline-flex;align-items:center;gap:6px}
+.checks svg{width:15px;height:15px;color:var(--green);flex:none}
+
+/* ===================== Header ===================== */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:5;padding:16px 0}
+.site-header .wrap{display:flex;align-items:center;justify-content:center}
+.logo img{height:22px;width:auto}
+.nav{display:none}
+.header-cta{font-family:Manrope,sans-serif;font-size:13px;font-weight:800;padding:10px 14px;border-radius:10px;border:1px solid rgba(160,195,255,.35);color:#dbe7ff;background:rgba(255,255,255,.04)}
+.header-cta:hover{background:rgba(255,255,255,.1)}
+
+/* ===================== Hero ===================== */
+.hero-shell{position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 50% at 85% 30%,rgba(29,84,228,.38),transparent 80%),radial-gradient(ellipse 60% 60% at 0% 0%,rgba(22,64,146,.4),transparent 75%),var(--bg)}
+.hero{display:grid;grid-template-areas:'intro' 'media' 'actions';gap:26px;padding-top:76px;padding-bottom:48px;text-align:center}
+.hero-intro{grid-area:intro}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(162,190,247,.26);background:rgba(255,255,255,.04);border-radius:50px;padding:8px 14px;font-size:12px;font-weight:600;color:#d3e2ff;margin-bottom:18px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(95,224,166,.12)}
+.hero h1{font-size:clamp(27px,7.8vw,54px);line-height:1.08;letter-spacing:-.055em;font-weight:800}
+.hero h1 span{display:block}
+@media (max-width:639px){.hero{grid-template-columns:minmax(0,1fr)}.hero-intro{min-width:0}.hero h1{font-size:8.4vw;letter-spacing:-.05em}.hero h1 span{white-space:nowrap}}
+.hero-sub{font-size:16px;line-height:1.6;color:#bac9e3;margin:0 auto;max-width:500px}
+.hero-media{grid-area:media;position:relative;display:flex;flex-direction:column;align-items:center}
+.hero-media::before{content:"";position:absolute;top:50%;left:50%;width:420px;height:420px;transform:translate(-50%,-55%);border-radius:50%;background:radial-gradient(circle,rgba(27,97,252,.3),transparent 66%);pointer-events:none}
+.video-frame{position:relative;width:min(62vw,250px);aspect-ratio:9/16;border-radius:26px;background:#081635;border:6px solid #234477;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(146,198,255,.35);overflow:hidden;isolation:isolate}
+.video-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#06122c}
+.play-button{position:absolute;z-index:3;left:10px;right:10px;bottom:12px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:12px;border:1px solid rgba(190,214,255,.45);border-radius:15px;background:rgba(7,22,56,.88);color:#fff;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 14px 32px rgba(2,6,23,.55)}
+.play-button:hover{background:rgba(12,35,88,.95)}
+.play-button .ic{font-size:18px;color:#6db0ff;line-height:1.1}
+.play-button small{font-size:11px;font-weight:600;color:#cde0ff}
+.play-button strong{font-family:Manrope,sans-serif;font-size:14px;font-weight:800}
+.video-frame.with-sound .play-button,.play-button[hidden]{display:none!important}
+.video-slot{position:relative;width:min(100%,380px,calc(74vh * 9 / 16));aspect-ratio:9/16;margin:0 auto;border-radius:20px;overflow:hidden;background:#081635;border:1px solid rgba(146,198,255,.3);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 90px rgba(32,104,237,.18)}
+.video-slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#081635}
+.vsl-sound{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;border:1px solid rgba(190,214,255,.45);border-radius:16px;background:rgba(7,22,56,.86);color:#fff;text-align:left;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 14px 32px rgba(2,6,23,.55);animation:ctaPulse 2s ease-out infinite}
+.vsl-sound:hover{background:rgba(12,35,88,.95)}
+.vsl-sound .ic{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--blue);flex:none}
+.vsl-sound small{display:block;font-size:11px;font-weight:600;color:#cde0ff}
+.vsl-sound strong{display:block;font-family:Manrope,'DM Sans',sans-serif;font-size:15px;font-weight:800}
+.vsl-sound[hidden]{display:none!important}
+.vsl-modal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:rgba(2,6,18,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}
+.vsl-modal.open{opacity:1;visibility:visible}
+.vsl-modal-box{position:relative;height:min(calc(100vh - 100px),960px);width:auto;max-width:100%;aspect-ratio:9/16;max-height:calc(100vh - 100px);border-radius:18px;overflow:hidden;background:#000;box-shadow:0 40px 120px rgba(0,0,0,.6);transform:scale(.94);transition:transform .45s cubic-bezier(.16,.84,.24,1)}
+.vsl-modal.open .vsl-modal-box{transform:none}
+.vsl-modal video{width:100%;height:100%;display:block;background:#000}
+.vsl-close{position:absolute;top:max(14px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:22px;line-height:1;display:grid;place-items:center}
+.vsl-close:hover{background:rgba(255,255,255,.2)}
+body.modal-open{overflow:hidden}
+.vsl-modal video{cursor:pointer}
+.vsl-bar{position:absolute;left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,.18);pointer-events:none}
+.vsl-bar span{display:block;height:100%;width:0;background:var(--blue);box-shadow:0 0 12px rgba(38,112,255,.8);transition:width .25s linear}
+.vsl-paused{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;padding-left:4px;border-radius:50%;border:0;background:rgba(38,112,255,.92);color:#fff;display:grid;place-items:center;box-shadow:0 12px 34px rgba(0,0,0,.45)}
+.vsl-paused[hidden]{display:none!important}
+.vsl-fs{position:absolute;right:12px;bottom:16px;width:40px;height:40px;border-radius:10px;border:0;background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;opacity:.85}
+.vsl-fs:hover{opacity:1;background:rgba(0,0,0,.65)}
+.vsl-modal-box:fullscreen{max-height:none;border-radius:0;width:100%;height:100%}
+.video-slot{cursor:pointer}
+.vsl-sound span{white-space:nowrap}
+@media (max-width:639px){.vsl-sound{gap:9px;padding:8px 14px 8px 8px;border-radius:14px}.vsl-sound .ic{width:34px;height:34px}.vsl-sound .ic svg{width:18px;height:18px}.vsl-sound small{font-size:10px}.vsl-sound strong{font-size:13px}}
+.video-note{position:relative;margin-top:12px;font-size:11px;color:#98b5e0}
+.float-note{display:none}
+.hero-actions{grid-area:actions;display:flex;flex-direction:column;align-items:center;gap:16px}
+.hero-actions .btn{width:100%;max-width:420px}
+.hero-quote{display:flex;align-items:center;gap:10px;max-width:420px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);text-align:left;font-size:13px;line-height:1.45;color:#d6e2f8}
+.hero-quote .stars{color:#ffc94d;font-size:13px;letter-spacing:1px;white-space:nowrap}
+.hero-quote a{color:#8bbaff;font-weight:700;white-space:nowrap}
+
+/* faixa de tecnologia */
+.tech-strip{border-top:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);padding:22px 0}
+.tech-strip .wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.tech-strip p{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7f95bd}
+.tech-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 34px;padding-top:6px}
+.tech-logos img{height:20px;width:auto;opacity:.7}
+.tech-logos .logo-asaas{height:16px}
+.tech-soon{position:relative;display:inline-flex}
+.tech-soon em{position:absolute;top:-17px;right:-34px;font-style:normal;font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--blue);padding:3px 6px;border-radius:50px;white-space:nowrap;box-shadow:0 4px 12px rgba(21,92,243,.4)}
+.tech-name{font-family:Manrope,'DM Sans',sans-serif;font-size:21px;font-weight:800;letter-spacing:-.03em;line-height:1;color:#fff;opacity:.7}
+
+/* ===================== Problema ===================== */
+.problem{background:var(--bg);padding:0 10px}
+.problem-surface{border-radius:30px 30px 0 0;background:var(--pale);color:var(--ink);padding:64px 0 60px}
+.problem-grid{display:grid;gap:30px}
+.problem-text{text-align:center}
+.problem-text .lead{margin:16px auto 0;max-width:440px}
+.q-list{display:grid;gap:10px}
+.q-item{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 12px 28px rgba(31,65,112,.05)}
+.q-icon{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue-soft);color:#256cf2;font-family:Manrope,'DM Sans',sans-serif;font-size:17px;font-weight:800}
+.q-item b{font-family:Manrope,'DM Sans',sans-serif;font-size:16px;letter-spacing:-.02em}
+.problem-aside{margin-top:14px;text-align:center;font-size:14px;font-weight:700;color:#2967d1}
+
+/* ===================== Acompanhamento ===================== */
+.showcase{position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 50% at 80% 30%,rgba(40,110,255,.32),transparent 77%),linear-gradient(160deg,#082c80,#071630 70%)}
+.showcase-grid{display:grid;gap:34px;align-items:center}
+.showcase-frame{display:flex;justify-content:center}
+.showcase-frame img{width:100%;max-width:460px;height:auto;filter:drop-shadow(0 30px 50px rgba(0,8,30,.45))}
+.insights{display:grid;gap:10px}
+.insight{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:16px;background:rgba(9,22,54,.6);border:1px solid rgba(149,189,255,.18)}
+.insight .n{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:rgba(38,112,255,.22);color:#9cc6ff;font-family:Manrope,'DM Sans',sans-serif;font-size:13px;font-weight:800}
+.insight strong{display:block;font-family:Manrope,'DM Sans',sans-serif;font-size:16px;letter-spacing:-.02em;margin-bottom:4px}
+.insight p{font-size:14px;line-height:1.55;color:#b2c3e2}
+.proof-inline{margin-top:6px;padding:14px;border-radius:18px;background:rgba(255,255,255,.06);border:1px dashed rgba(149,189,255,.35)}
+.proof-inline span{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8bbaff;margin-bottom:10px}
+.proof-inline img{width:100%;height:auto}
+
+/* ===================== Processo ===================== */
+.process{background:var(--pale);color:var(--ink)}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 13px 40px rgba(30,64,128,.05)}
+.step .num{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--blue-soft);color:#1e6cf4;font-family:Manrope,'DM Sans',sans-serif;font-weight:800;font-size:15px}
+.step h3{font-size:19px;letter-spacing:-.03em}
+.step p{font-size:14px;line-height:1.6;color:var(--muted);margin-top:6px}
+
+/* ===================== Marca ===================== */
+.brand-sec{background:var(--pale);padding:0 10px 10px}
+.brand-surface{border-radius:30px;overflow:hidden;background:radial-gradient(ellipse 60% 60% at 75% 50%,rgba(95,158,255,.45),transparent 75%),linear-gradient(116deg,#1040c2,#1b5af4 67%,#0a359e);padding:60px 0}
+.brand-grid{display:grid;gap:30px;align-items:center;text-align:center}
+.brand-text .lead{color:#d6e7ff;margin:16px auto 0;max-width:460px}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.pills span{border:1px solid rgba(168,204,255,.4);border-radius:50px;font-size:13px;padding:9px 14px;background:rgba(255,255,255,.08)}
+.brand-visual img{width:100%;max-width:440px;height:auto;margin:0 auto}
+.brand-visual figcaption{margin-top:10px;font-size:12px;color:#d6e7ff}
+
+/* ===================== Recursos ===================== */
+.features{background:#fff;color:var(--ink)}
+.feat-grid{display:grid;gap:10px}
+.feat{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--pale)}
+.feat .n{flex:none;font-family:Manrope,'DM Sans',sans-serif;font-size:12px;font-weight:800;color:#2169f4;padding-top:3px}
+.feat h3{font-size:16px;letter-spacing:-.02em}
+.feat p{font-size:14px;line-height:1.5;color:var(--muted);margin-top:4px}
+.feature-more{margin-top:12px;border:1px solid #dfebfa;border-radius:16px;background:#f2f6fd}
+.feature-more summary{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 20px;font-weight:700;font-size:15px;cursor:pointer;list-style:none;color:#1157c8}
+.feature-more summary::-webkit-details-marker{display:none}
+.feature-more summary .plus{font-size:22px;line-height:1;transition:transform .2s}
+.feature-more[open] summary .plus{transform:rotate(45deg)}
+.feat-extra{display:grid;gap:0;padding:0 20px 14px}
+.feat-extra div{padding:11px 0;border-top:1px solid #e0e9f6;font-size:14px;color:#3d4c68;display:flex;gap:10px}
+.feat-extra div::before{content:"✓";color:#1f9e6a;font-weight:800}
+
+/* ===================== Depoimentos ===================== */
+.trust{background:var(--navy)}
+.themes{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+.themes span{font-size:12px;font-weight:700;color:#cfe0ff;padding:8px 12px;border-radius:50px;background:rgba(38,112,255,.16);border:1px solid rgba(120,170,255,.25)}
+.t-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px var(--gut) 8px;margin:0 calc(var(--gut) * -1);scrollbar-width:none}
+.t-track::-webkit-scrollbar{display:none}
+.t-card{flex:0 0 92%;scroll-snap-align:center;border-radius:16px;background:linear-gradient(150deg,#122448,#0b1a36);border:1px solid #1d3f74;padding:6px;display:flex;align-items:center}
+.t-card img{width:100%;height:auto}
+.t-hint{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;font-size:12px;color:#8ea6cf}
+.t-dots{display:flex;gap:6px}
+.t-dots i{width:6px;height:6px;border-radius:50%;background:#33507f;transition:background .2s,width .2s}
+.t-dots i.on{background:#7fb0ff;width:16px;border-radius:4px}
+.trust-extra{display:grid;gap:14px;margin-top:28px}
+.audio-card{display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;background:linear-gradient(150deg,#122448,#0b1a36);border:1px solid #1d3f74}
+.audio-card>img{width:52px;height:52px;border-radius:14px;flex:none}
+.audio-body{flex:1;min-width:0}
+.audio-body strong{display:block;font-family:Manrope,'DM Sans',sans-serif;font-size:15px}
+.audio-body span{display:block;font-size:13px;color:#9fb4d9;margin:2px 0 8px}
+.audio-body audio{width:100%;height:40px}
+.channels{display:grid;gap:14px}
+.channel{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #dbe5f4;box-shadow:0 12px 35px rgba(2,18,48,.2);transition:transform .2s,box-shadow .2s}
+.channel:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(2,18,48,.3)}
+.channel-body{padding:14px 16px;background:#fff;display:flex;align-items:center;justify-content:center;flex:1}
+.channel-body img{width:100%;height:auto;max-height:130px;object-fit:contain}
+.channel-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;background:#0e2042;font-size:13px;font-weight:700;color:#fff}
+.channel-bar .ttl{display:flex;align-items:center;gap:9px}
+.channel-bar .ttl img{width:20px;height:20px;object-fit:contain}
+.channel-bar .meta{color:#8ab9ff;font-size:12px;font-weight:600;white-space:nowrap}
+.trust-cta{margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.trust-cta .btn{width:100%;max-width:420px}
+
+/* ===================== Preços ===================== */
+.pricing{background:var(--pale);color:var(--ink)}
+.plans{display:grid;gap:16px;align-items:stretch}
+.plan-main{position:relative;overflow:hidden;display:flex;flex-direction:column;border-radius:26px;padding:28px 22px;color:#fff;background:radial-gradient(circle at 100% 0%,rgba(36,102,242,.45),transparent 45%),linear-gradient(148deg,#08255e,#061430);box-shadow:0 25px 60px rgba(8,38,87,.22);border:2px solid #2d6fff}
+.plan-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(162,190,247,.3);border-radius:50px;padding:7px 12px;font-size:12px;color:#d3e2ff}
+.tag{font-size:11px;font-weight:800;letter-spacing:.04em;color:#b3dbff;background:rgba(255,255,255,.12);padding:8px 11px;border-radius:50px}
+.plan-main h3{font-size:30px;letter-spacing:-.05em;margin:20px 0 6px}
+.plan-main>p{font-size:14px;line-height:1.6;color:#aebfdf}
+.price-old{display:block;font-size:13px;font-weight:700;text-decoration:line-through;color:#94a3b8}
+.plan-main .price-old{color:#94b8ff}
+.price-now{display:flex;align-items:baseline;gap:8px;margin-top:2px}
+.price-now strong{font-family:Manrope,'DM Sans',sans-serif;font-size:50px;letter-spacing:-.06em;line-height:1.05}
+.price-now span{font-size:13px;color:#b6c8e9}
+.plan-price{margin-top:20px}
+.plan-main .btn{margin-top:20px;width:100%}
+.price-assure{text-align:center;font-size:12px;color:#afc1e4;margin-top:12px}
+.includes{display:grid;gap:10px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.16)}
+.includes span{display:flex;gap:9px;font-size:14px;line-height:1.4;color:#e4edff}
+.includes span::before{content:"✓";color:#77dcae;font-weight:800}
+.limits{font-size:12px;line-height:1.6;color:#b9c9e6;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
+.limits b{color:#fff}
+.plan-alt{display:flex;flex-direction:column;gap:10px;border-radius:24px;padding:26px 22px;background:#fff;border:1px solid #e0e8f4;box-shadow:0 12px 35px rgba(0,31,92,.04)}
+.plan-alt-top{display:flex;align-items:center;justify-content:space-between;gap:9px}
+.plan-alt-top h3{font-size:24px;letter-spacing:-.045em}
+.plan-alt-top span{font-size:10px;font-weight:800;letter-spacing:.05em;color:#286de9;background:#edf4ff;padding:6px 10px;border-radius:20px}
+.plan-alt>p{font-size:14px;line-height:1.55;color:#63718c}
+.adv{display:grid;gap:8px;padding-top:14px;border-top:1px solid #eef2f8}
+.adv span{display:flex;gap:8px;font-size:13px;line-height:1.4;color:#455570}
+.adv span::before{content:"•";color:#256ce9;font-weight:800}
+.plan-alt-foot{margin-top:auto;padding-top:16px;border-top:1px solid #eef2f8;display:flex;flex-direction:column;gap:12px}
+.plan-curr{font-family:Manrope,'DM Sans',sans-serif;font-size:32px;font-weight:800;letter-spacing:-.045em;line-height:1.1}
+.plan-curr small{font-size:13px;font-weight:500;letter-spacing:0;color:#67758d}
+.plan-link{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:12px;border:1.5px solid #c9dbf8;color:#155feb;font-family:Manrope,'DM Sans',sans-serif;font-weight:800;font-size:14px}
+.plan-link:hover{background:#eff4fd}
+.pricing-note{text-align:center;font-size:12px;color:#6e7d97;margin-top:22px}
+
+/* ===================== Garantia ===================== */
+.guarantee{background:var(--pale);color:var(--ink);padding:0 0 64px}
+.g-card{display:grid;gap:16px;justify-items:center;text-align:center;padding:30px 22px;border-radius:26px;background:#071b43;color:#fff}
+.g-mark{display:flex;flex-direction:column;align-items:center;justify-content:center;width:104px;height:104px;border:2px solid #4c88fc;border-radius:50%;font:800 46px/1 Manrope,'DM Sans',sans-serif}
+.g-mark span{font:700 12px/1.5 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#a3c1fb}
+.g-card .h2{font-size:clamp(24px,6vw,36px)}
+.g-card p{font-size:15px;line-height:1.65;color:#ccdafa;margin:12px 0}
+.g-link{font-weight:700;font-size:14px;color:#9fc6ff}
+
+/* ===================== FAQ ===================== */
+.faq{background:var(--pale);color:var(--ink);padding:0 0 72px}
+.faq-grid{display:grid;gap:24px}
+.faq-intro{text-align:center}
+.faq-intro .lead{margin-top:12px}
+.faq-items details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:8px}
+.faq-items summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 18px;font-family:Manrope,'DM Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em;cursor:pointer;list-style:none}
+.faq-items summary::-webkit-details-marker{display:none}
+.faq-items summary::after{content:"+";flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:#1e6cf4;font-size:18px;font-weight:700;transition:transform .2s}
+.faq-items details[open] summary::after{transform:rotate(45deg)}
+.faq-items details p{padding:0 18px 18px;font-size:14px;line-height:1.65;color:#55627c}
+.faq-extra{display:none}
+.faq-items.faq-expanded .faq-extra{display:block}
+.faq-toggle{margin-top:6px;width:100%;border:1px solid #c9dbf8;background:#eff4fd;border-radius:13px;color:#1157c8;font-weight:700;font-size:14px;padding:16px}
+
+/* ===================== Fechamento e rodapé ===================== */
+.close{background:var(--pale);padding:0 10px 10px}
+.close-surface{border-radius:30px;padding:56px 20px;text-align:center;background:radial-gradient(ellipse 50% 110% at 70% -20%,rgba(58,141,255,.55),transparent 85%),#0c3db5}
+.close-surface h2{max-width:720px;margin:0 auto;font-size:clamp(27px,6.8vw,46px);line-height:1.16;letter-spacing:-.05em}
+.close-surface p{max-width:540px;margin:14px auto 24px;font-size:15px;line-height:1.6;color:#d7e6ff}
+.close-surface .btn{width:100%;max-width:420px}
+.close-surface small{display:block;margin-top:14px;font-size:12px;color:#dceaff}
+.site-footer{background:var(--bg);border-top:1px solid rgba(255,255,255,.07);padding:44px 0 44px}
+.footer-top{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.footer-brand{display:flex;flex-direction:column;align-items:center;gap:10px}
+.footer-brand .logo{display:inline-flex}
+.footer-brand .logo img{height:24px}
+.footer-brand p{font-size:14px;line-height:1.55;color:#93a6c9;max-width:300px}
+.footer-nav{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:320px}
+.footer-nav a{text-align:center}
+.footer-nav a{font-size:14px;font-weight:600;color:#c9d6ee;padding:9px 14px;border-radius:50px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);transition:background .2s,color .2s}
+.footer-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.footer-bottom{display:flex;flex-direction:column-reverse;align-items:center;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.07);text-align:center}
+.footer-copy{font-size:12px;color:#6f84aa}
+.footer-legal{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:12px}
+.footer-legal a{color:#8ea3c8}
+.footer-legal a:hover{color:#fff}
+
+
+/* ===================== Tablet (≥ 640px) ===================== */
+@media (min-width:640px){
+  :root{--gut:28px}
+  .t-card{flex-basis:58%}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-extra{grid-template-columns:1fr 1fr;column-gap:24px}
+  .channels{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .step{flex-direction:column;padding:28px 24px}
+  .step h3{margin-top:8px}
+}
+
+/* ===================== Desktop (≥ 960px) ===================== */
+@media (min-width:960px){
+  .sec{padding:108px 0}
+  .sec-head{margin-bottom:52px}
+  .lead{font-size:17px}
+  .eyebrow{font-size:12px}
+
+  .site-header{padding:22px 0}
+  .logo img{height:28px}
+  .nav{display:flex;gap:28px;font-size:14px;color:#acbbd9}
+  .nav a:hover{color:#fff}
+  .header-right{display:flex;align-items:center;gap:28px}
+
+  .hero{row-gap:28px;padding-top:92px;padding-bottom:80px;max-width:1000px}
+  .hero-intro{align-self:end}
+  .hero-sub{font-size:18px;max-width:620px}
+  
+  .hero-actions .btn{width:auto;min-width:340px}
+  .hero{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'intro media' 'actions media';column-gap:64px;align-items:center;text-align:left;max-width:1120px}
+  .hero-intro{align-self:end}
+  .hero-actions{align-self:start;align-items:flex-start}
+  .hero h1{font-size:clamp(40px,4.4vw,58px)}
+  .hero-sub{margin:0}
+  .hero-media .video-slot{width:min(380px,calc(80vh * 9 / 16))}
+  
+  .video-frame{width:290px;border-radius:30px}
+  .float-note{display:block;position:absolute;z-index:4;padding:12px 16px;border-radius:14px;background:rgba(12,31,70,.92);border:1px solid rgba(148,178,246,.22);box-shadow:0 15px 50px rgba(0,0,0,.3);backdrop-filter:blur(10px);text-align:left}
+  .float-note strong{display:block;font-family:Manrope,'DM Sans',sans-serif;font-size:15px;letter-spacing:-.02em}
+  .float-note span{font-size:11px;color:#a6bada}
+  .float-note.one{left:2%;top:22%;transform:rotate(-4deg)}
+  .float-note.two{right:0;bottom:24%;transform:rotate(4deg)}
+  .float-note .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px}
+
+  .tech-strip .wrap{flex-direction:row;justify-content:center;gap:40px}
+  .tech-logos img{height:22px}
+
+  .problem{padding:0 18px}
+  .problem-surface{border-radius:40px 40px 0 0;padding:104px 0 100px}
+  .problem-grid{grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+  .problem-text{text-align:left}
+  .problem-text .lead{margin-left:0}
+  .q-item{padding:22px 26px}
+  .q-item b{font-size:17px}
+  .problem-aside{text-align:right}
+
+  .showcase .sec-head{text-align:left;margin-left:0;max-width:none;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end}
+  .showcase .sec-head .lead{margin:0}
+  .showcase-grid{grid-template-columns:1.05fr .95fr;gap:56px}
+
+  .brand-sec{padding:0 18px 18px}
+  .brand-surface{border-radius:40px;padding:90px 0}
+  .brand-grid{grid-template-columns:1fr 1fr;gap:50px;text-align:left}
+  .brand-text .lead{margin-left:0}
+  .pills{justify-content:flex-start}
+
+  .feat-grid{grid-template-columns:repeat(3,1fr);gap:14px}
+  .feat{padding:24px}
+  .feat-extra{grid-template-columns:repeat(3,1fr)}
+
+  .t-track{display:block;columns:3;column-gap:16px;overflow:visible;margin:0;padding:0}
+  .t-card{break-inside:avoid;margin-bottom:16px;padding:14px}
+  .t-hint{display:none}
+  .trust-extra{margin-top:20px}
+  .audio-card{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px}
+
+  .plans{grid-template-columns:1.15fr 1fr 1fr;gap:20px}
+  .plan-main{padding:34px 30px}
+  .plan-alt{padding:32px 26px}
+
+  .g-card{grid-template-columns:150px 1fr;justify-items:start;text-align:left;gap:34px;padding:36px 40px}
+  .g-mark{width:130px;height:130px;font-size:60px}
+
+  .faq{padding-bottom:104px}
+  .faq-grid{grid-template-columns:.75fr 1.25fr;gap:80px}
+  .faq-intro{text-align:left}
+  .faq-items summary{padding:20px 22px;font-size:16px}
+  .faq-items details p{padding:0 22px 20px}
+
+  .close{padding:0 18px 18px}
+  .close-surface{border-radius:40px;padding:84px 40px}
+  .close-surface .btn{width:auto}
+
+  .site-footer{padding:56px 0 40px}
+  .footer-top{flex-direction:row;justify-content:space-between;text-align:left}
+  .footer-brand{align-items:flex-start}
+  .footer-nav{display:flex;width:auto;max-width:none;justify-content:flex-end}
+  .footer-bottom{justify-content:center}
+}
+
+/* Animações de rolagem */
+.rv{opacity:0;transform:translateY(48px) scale(.97);filter:blur(10px);transition:opacity 1s cubic-bezier(.16,.84,.24,1),transform 1s cubic-bezier(.16,.84,.24,1),filter 1s cubic-bezier(.16,.84,.24,1)}
+.rv.in{opacity:1;transform:none;filter:none}
+.scroll-fade{position:fixed;left:0;right:0;bottom:0;height:84px;z-index:15;pointer-events:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);-webkit-mask-image:linear-gradient(to top,#000 15%,transparent);mask-image:linear-gradient(to top,#000 15%,transparent);opacity:0;transition:opacity .45s ease}
+.scroll-fade.on{opacity:1}
+
+@media (prefers-reduced-motion:reduce){
+  .vsl-modal,.vsl-modal-box{transition:none}
+  .vsl-sound{animation:none}
+  html{scroll-behavior:auto}
+  .btn-primary.pulse{animation:none}
+  .btn,.channel,.scroll-fade{transition:none}
+}
+</style>
+<!-- Meta Pixel Code (ID 912571467763616). Não carrega no computador local nem na prévia do Claude. -->
+<script>
+(function(){var h=location.hostname;if(!h||h==='localhost'||h==='127.0.0.1'||/claude/i.test(h))return;
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','912571467763616');fbq('track','PageView');})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=912571467763616&amp;ev=PageView&amp;noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<div id="topo"></div>
+
+
+<header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#topo" aria-label="Pro Creator, voltar ao início"><img src="assets/img/logo-procreator.png" alt="Pro Creator" width="766" height="116"/></a>
+    </div>
+  </header>
+
+<main>
+<div class="hero-shell on-dark">
+  <section class="hero wrap" aria-label="Apresentação do Pro Creator">
+    <div class="hero-intro">
+      <h1><span>Orçamento pedido?</span><span class="text-gradient">Não mande só mais um PDF.</span></h1>
+    </div>
+
+    <div class="hero-media">
+      <div class="video-slot" id="vsl">
+        <video id="vslVideo" src="assets/video/procreator-vsl.mp4" poster="assets/img/vsl-capa.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de apresentação do Pro Creator"></video>
+        <button class="vsl-sound" id="vslSound" type="button" aria-label="Assistir ao vídeo com som"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg></span><span><small>Seu vídeo já começou</small><strong>Clique para ouvir</strong></span></button>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary pulse" href="#precos">Quero meu acesso Vitalício <span class="btn-arrow" aria-hidden="true">↗</span></a>
+      <div class="checks">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>R$ 67,90 uma única vez</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>7 dias de garantia</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Acesso imediato</span>
+      </div>
+      <div class="hero-quote"><span class="stars" aria-hidden="true">★★★★★</span><span>"Bem prático e fácil de usar." <a href="#depoimentos">Ver depoimentos ↓</a></span></div>
+    </div>
+  </section>
+
+  <div class="tech-strip" aria-label="Tecnologias e integrações da plataforma">
+    <div class="wrap">
+      <p>Tecnologia e integrações</p>
+      <div class="tech-logos">
+        <span class="tech-soon"><img class="logo-asaas" src="assets/img/logos/logo-asaas-branco.png" alt="Asaas" width="300" height="51" loading="lazy"/><em>Em breve</em></span>
+        <img src="assets/img/logos/logo-autentique.png" alt="Autentique" width="619" height="104" loading="lazy"/>
+        <img src="assets/img/logos/logo-youtube.png" alt="YouTube" width="891" height="198" loading="lazy"/>
+        <img src="assets/img/logos/logo-supabase.png" alt="Supabase" width="628" height="123" loading="lazy"/>
+        <img src="assets/img/logos/logo-github.png" alt="GitHub" width="899" height="256" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Problema -->
+<section class="problem" id="problema">
+  <div class="problem-surface on-light">
+    <div class="wrap problem-grid">
+      <div class="problem-text">
+        <span class="eyebrow blue">O problema não é enviar</span>
+        <h2 class="h2">Você enviou a proposta.<br/><span class="hl-blue">E depois?</span></h2>
+        <p class="lead">O orçamento chega ao cliente. Mas sem acompanhamento, você fica sem saber o que aconteceu com a negociação.</p>
+      </div>
+      <div>
+        <div class="q-list">
+          <div class="q-item"><span class="q-icon">?</span><b>O cliente chegou a abrir?</b></div>
+          <div class="q-item"><span class="q-icon">?</span><b>Quantas vezes ele voltou?</b></div>
+          <div class="q-item"><span class="q-icon">?</span><b>O que ficou registrado?</b></div>
+        </div>
+        <p class="problem-aside">Enviar não é o mesmo que acompanhar uma negociação →</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Acompanhamento -->
+<section class="showcase sec on-dark" id="acompanhamento">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow sky">Visibilidade real</span>
+        <h2 class="h2">Pare de enviar propostas <span class="hl-sky">no escuro.</span></h2>
+      </div>
+      <p class="lead">Você acompanha quantas vezes o cliente acessou, quando visualizou e o histórico registrado. Informação para decidir o próximo passo.</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-frame">
+        <img src="assets/img/proposta-digital.png" alt="Exemplo real da proposta digital no Pro Creator, com investimento, formas de pagamento e botão para aceitar" width="960" height="1315" loading="lazy"/>
+      </div>
+      <div class="insights">
+        <div class="insight"><span class="n">01</span><div><strong>Saiba quando visualizaram</strong><p>Consulte as visualizações e o histórico no seu painel.</p></div></div>
+        <div class="insight"><span class="n">02</span><div><strong>Acompanhe o andamento</strong><p>Veja o status da proposta e o último acesso registrado.</p></div></div>
+        <div class="insight"><span class="n">03</span><div><strong>Continue a negociação</strong><p>Da proposta aprovada para o contrato, sem perder o histórico.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Processo -->
+<section class="process sec on-light" id="vantagens">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow blue">Menos etapas soltas</span>
+      <h2 class="h2">Do orçamento ao contrato.<br/><span class="hl-blue">Um processo mais organizado.</span></h2>
+      <p class="lead">Você continua atendendo pelo WhatsApp. O Pro Creator organiza o que acontece depois do pedido de orçamento.</p>
+    </div>
+    <div class="steps">
+      <article class="step"><span class="num">01</span><div><h3>Apresente sua marca</h3><p>Monte propostas profissionais com produtos, serviços, valores e sua identidade visual.</p></div></article>
+      <article class="step"><span class="num">02</span><div><h3>Acompanhe o interesse</h3><p>Envie o link, visualize os acessos e mantenha um histórico da negociação.</p></div></article>
+      <article class="step"><span class="num">03</span><div><h3>Formalize o combinado</h3><p>Registre a aprovação e siga para contratos com assinatura digital.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- Marca -->
+<section class="brand-sec">
+  <div class="brand-surface">
+    <div class="wrap brand-grid">
+      <div class="brand-text">
+        <span class="eyebrow white">Identidade profissional</span>
+        <h2 class="h2">Seu cliente vê <span style="color:#b6d7ff">a sua empresa.</span> Não uma ferramenta genérica.</h2>
+        <p class="lead">Sua marca aparece nas propostas e documentos. Uma apresentação profissional do primeiro orçamento à formalização.</p>
+        <div class="pills"><span>Propostas com sua marca</span><span>Link ou PDF</span><span>Contratos digitais</span></div>
+      </div>
+      <figure class="brand-visual">
+        <img src="assets/img/documentos.png" alt="Exemplos reais de proposta, contrato, ordem de serviço e PDF produzidos no Pro Creator" width="774" height="983" loading="lazy"/>
+        <figcaption>Documentos profissionais com a sua marca</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Recursos -->
+<section class="features sec on-light" id="recursos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow blue">Mais recursos para o seu negócio</span>
+      <h2 class="h2">Muito além de um <span class="hl-blue">orçamento bonito.</span></h2>
+      <p class="lead">Uma estrutura comercial para apresentar, acompanhar e formalizar. Cada plano tem seus próprios limites de uso.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><span class="n">01</span><div><h3>Propostas com a sua marca</h3><p>Envie pelo WhatsApp, link ou PDF.</p></div></div>
+      <div class="feat"><span class="n">02</span><div><h3>Acompanhamento de acessos</h3><p>Visualizações, status e histórico da proposta.</p></div></div>
+      <div class="feat"><span class="n">03</span><div><h3>Aprovação e contratos</h3><p>Formalize o combinado com assinatura digital.</p></div></div>
+      <div class="feat"><span class="n">04</span><div><h3>Clientes e histórico comercial</h3><p>Organize suas negociações em um só lugar.</p></div></div>
+      <div class="feat"><span class="n">05</span><div><h3>Ordens de serviço</h3><p>Organize a execução dos serviços contratados.</p></div></div>
+      <div class="feat"><span class="n">06</span><div><h3>Recibos ilimitados</h3><p>Emita comprovantes profissionais.</p></div></div>
+    </div>
+    <details class="feature-more">
+      <summary>Ver mais funcionalidades <span class="plus" aria-hidden="true">+</span></summary>
+      <div class="feat-extra">
+        <div>Cadastro de produtos, serviços e valores</div>
+        <div>IA para auxiliar textos e descrições</div>
+        <div>Chave Pix nos documentos</div>
+        <div>Financeiro conforme o plano</div>
+        <div>Acesso pelo navegador no celular e computador</div>
+        <div>Capas e fotos nas propostas conforme o plano</div>
+        <div>Contratos próprios em PDF conforme o plano</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- Depoimentos -->
+<section class="trust sec on-dark" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow sky">Quem já usa</span>
+      <h2 class="h2">Mais profissional <span class="text-gradient">na prática.</span></h2>
+      <p class="lead">Relatos de quem já criou propostas e organizou negociações com o Pro Creator.</p>
+      <div class="themes" aria-label="O que os clientes mais citam"><span>Fácil de usar</span><span>Vê quando o cliente abriu</span><span>Tudo no mesmo lugar</span><span>Mais profissional</span></div>
+    </div>
+
+    <div class="t-track" id="tTrack">
+      <figure class="t-card"><img src="assets/img/depoimentos/depoimento-1.webp" alt="Cliente: Comecei a usar o Pro Creator essa semana e já fiz minha primeira proposta. Ficou bem mais profissional, com a minha logo e tudo certinho." width="632" height="267" loading="lazy"/></figure>
+      <figure class="t-card"><img src="assets/img/depoimentos/depoimento-2.webp" alt="Cliente: Mano, esse sistema tá muito bom. Consegui mandar a proposta e ver que o cliente já abriu umas 3 vezes. Isso ajuda demais pra saber a hora de chamar ele de novo." width="615" height="314" loading="lazy"/></figure>
+      <figure class="t-card"><img src="assets/img/depoimentos/depoimento-3.webp" alt="Cliente: Eu fazia proposta no Canva e contrato em outro lugar, sempre ficava tudo perdido. Agora tá tudo no mesmo lugar e bem organizado. Facilitou muito meu dia a dia." width="622" height="306" loading="lazy"/></figure>
+      <figure class="t-card"><img src="assets/img/depoimentos/depoimento-5.webp" alt="Cliente: Pra mim o diferencial foi conseguir acompanhar os acessos da proposta. Antes eu mandava e ficava no escuro, agora sei quando ele visualizou e já consigo fazer o follow-up." width="624" height="330" loading="lazy"/></figure>
+      <figure class="t-card"><img src="assets/img/depoimentos/depoimento-4.webp" alt="Cliente: Só passando pra falar que tô gostando bastante do Pro Creator. Já fiz algumas propostas e os contratos também. Bem prático e fácil de usar." width="632" height="325" loading="lazy"/></figure>
+      <figure class="t-card"><img src="assets/img/depoimentos/depoimento-6.webp" alt="Cliente: Fiz minha primeira proposta aqui agora e curti bastante. Sistema bem completo e fácil de mexer." width="622" height="349" loading="lazy"/></figure>
+    </div>
+    <div class="t-hint" aria-hidden="true"><div class="t-dots" id="tDots"></div><span>Arraste para ver mais</span></div>
+
+    <div class="trust-extra">
+      <div class="channels">
+        <a class="channel" href="https://www.youtube.com/@ProCreatoroficial" target="_blank" rel="noopener noreferrer">
+          <div class="channel-body"><img src="assets/img/depoimentos/prova-youtube.png" alt="Canal Oficial Pro Creator no YouTube" width="1024" height="245" loading="lazy"/></div>
+          <div class="channel-bar"><span class="ttl"><img src="assets/img/logos/youtube-icon.png" alt="" width="20" height="20" loading="lazy"/>Canal no YouTube</span><span class="meta">Acessar ↗</span></div>
+        </a>
+        <a class="channel" href="https://www.instagram.com/procreatoroficial/" target="_blank" rel="noopener noreferrer">
+          <div class="channel-body"><img src="assets/img/depoimentos/prova-instagram.png" alt="Instagram Oficial Pro Creator" width="1024" height="312" loading="lazy"/></div>
+          <div class="channel-bar"><span class="ttl"><img src="assets/img/logos/instagram-icon.png" alt="" width="20" height="20" loading="lazy"/>@procreatoroficial</span><span class="meta">5.368 seguidores ↗</span></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="trust-cta">
+      <a class="btn btn-primary" href="#precos">Quero organizar minhas propostas <span class="btn-arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Preços -->
+<section class="pricing sec on-light" id="precos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow blue">Escolha o seu acesso</span>
+      <h2 class="h2">Comece pelo essencial.<br/><span class="hl-blue">Cresça quando precisar.</span></h2>
+      <p class="lead">O Vitalício é a oferta principal. Pro e Business são alternativas para empresas que precisam de mais capacidade e recursos.</p>
+    </div>
+    <div class="plans">
+      <article class="plan-main">
+        <div class="plan-top"><span class="chip"><span class="dot"></span>Oferta principal</span><span class="tag">SEM MENSALIDADE</span></div>
+        <h3>Vitalício</h3>
+        <p>Propostas e contratos profissionais para organizar a rotina da sua empresa.</p>
+        <div class="plan-price">
+          <span class="price-old">De R$ 197,00 por apenas</span>
+          <div class="price-now"><strong>R$ 67,90</strong><span>pagamento único</span></div>
+        </div>
+        <a class="btn btn-white" data-plan="vitalicio" data-value="67.90" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Quero meu acesso Vitalício <span class="btn-arrow" aria-hidden="true">↗</span></a>
+        <div class="price-assure">Acesso imediato · 7 dias de garantia · Sem renovação automática</div>
+        <div class="includes"><span>Propostas com sua marca</span><span>Link, WhatsApp ou PDF</span><span>Acompanhamento de acessos</span><span>Aprovação online</span><span>Contratos e assinatura digital</span><span>Ordens de serviço e recibos</span><span>Cadastro de clientes</span><span>Histórico comercial</span><span>Financeiro básico</span><span>IA para auxiliar nos textos</span><span>Cadastro de produtos e serviços</span></div>
+        <div class="limits"><b>Capacidade:</b> até 50 clientes cadastrados · 20 propostas/mês · 10 contratos/mês · 10 OS/mês · recibos ilimitados.</div>
+      </article>
+
+      <article class="plan-alt">
+        <div class="plan-alt-top"><h3>Pro</h3><span>MENSAL</span></div>
+        <p>Tudo do Vitalício, mais personalização, ferramentas avançadas e maior capacidade para a sua rotina.</p>
+        <div class="adv"><span>Até 500 clientes cadastrados</span><span>150 propostas/mês</span><span>40 contratos/mês</span><span>60 ordens de serviço/mês</span><span>Fotos de produtos e serviços nas propostas</span><span>Capas personalizadas de propostas</span><span>Enviar contrato próprio em PDF para assinatura</span><span>Financeiro completo</span><span>Suporte prioritário</span></div>
+        <div class="plan-alt-foot">
+          <div><span class="price-old">De R$ 197,90/mês por</span><span class="plan-curr">R$ 97,90 <small>/mês</small></span></div>
+          <a class="plan-link" data-plan="pro" data-value="97.90" href="https://payfast.greenn.com.br/c34acg9/offer/W3wrbT?ch_id=17448" target="_blank" rel="noopener noreferrer" aria-label="Acessar checkout do plano Pro por R$ 97,90 por mês">Conhecer o plano Pro ↗</a>
+        </div>
+      </article>
+
+      <article class="plan-alt">
+        <div class="plan-alt-top"><h3>Business</h3><span>MENSAL</span></div>
+        <p>Tudo dos planos anteriores, com mais capacidade para equipes e empresas com alto volume comercial.</p>
+        <div class="adv"><span>Clientes e propostas ilimitados</span><span>100 contratos/mês</span><span>Ordens de serviço e recibos ilimitados</span><span>Até 5 colaboradores (verificar disponibilidade)</span><span>Importação de contratos antigos (verificar disponibilidade)</span><span>Importação de propostas antigas (verificar disponibilidade)</span><span>Suporte VIP</span><span>Integração com Asaas (em breve)</span></div>
+        <div class="plan-alt-foot">
+          <div><span class="price-old">De R$ 247,90/mês por</span><span class="plan-curr">R$ 127,90 <small>/mês</small></span></div>
+          <a class="plan-link" data-plan="business" data-value="127.90" href="https://payfast.greenn.com.br/emvqrze/offer/FbAxZK?ch_id=17448" target="_blank" rel="noopener noreferrer" aria-label="Acessar checkout do plano Business por R$ 127,90 por mês">Conhecer o Business ↗</a>
+        </div>
+      </article>
+    </div>
+    <p class="pricing-note">Os recursos e limites variam conforme o plano. Confirme a disponibilidade de funcionalidades adicionais antes da publicação.</p>
+  </div>
+</section>
+
+<!-- Garantia -->
+<section class="guarantee">
+  <div class="wrap">
+    <div class="g-card">
+      <div class="g-mark">7<span>dias</span></div>
+      <div>
+        <span class="eyebrow" style="color:#77aaff">Compre com tranquilidade</span>
+        <h2 class="h2">Teste na sua próxima negociação.</h2>
+        <p>Crie sua conta, coloque sua marca e monte sua primeira proposta. Você tem sete dias para conhecer o Pro Creator na prática. Se não fizer sentido, solicite o reembolso dentro do período da garantia.</p>
+        <a class="g-link" href="#precos">Ver oferta e começar agora →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq on-light" id="duvidas">
+  <div class="wrap faq-grid">
+    <div class="faq-intro">
+      <h2 class="h2">Dúvidas<br/>frequentes.</h2>
+      <p class="lead">O essencial sobre acesso, utilização e garantia.</p>
+    </div>
+    <div class="faq-items">
+      <details><summary>Existe alguma mensalidade?</summary><p>O plano Vitalício tem pagamento único de R$ 67,90, sem mensalidade e sem renovação automática. Já os planos Pro (R$ 97,90/mês) e Business (R$ 127,90/mês) são assinaturas mensais para quem precisa de recursos adicionais, equipe e maior capacidade de propostas, podendo ser cancelados quando você quiser.</p></details>
+      <details><summary>O que exatamente eu recebo?</summary><p>Acesso à plataforma Pro Creator de acordo com a modalidade contratada. Logo após a confirmação do pagamento, você recebe o link por e-mail, cria sua conta e configura com a sua marca.</p></details>
+      <details><summary>O acesso tem prazo para expirar?</summary><p>No plano Vitalício, não: você paga uma única vez e a conta continua da sua empresa para usar sempre que precisar. Nos planos Pro e Business, o acesso aos recursos avançados permanece ativo enquanto a assinatura mensal estiver vigente.</p></details>
+      <details><summary>Preciso abandonar o WhatsApp?</summary><p>Não. Continue conversando normalmente com seus clientes pelo WhatsApp. O Pro Creator organiza as etapas comerciais que acontecem depois do pedido de orçamento: envio de propostas por link, acompanhamento de acessos e continuidade até a formalização do contrato.</p></details>
+      <details><summary>Meu cliente precisa instalar algo ou criar conta?</summary><p>Não. Ele não precisa instalar nada e nem criar conta: o cliente abre a proposta diretamente pelo link no celular ou computador com total facilidade e rapidez.</p></details>
+      <details><summary>Posso usar a identidade visual da minha empresa?</summary><p>Sim. O Pro Creator permite adicionar a identidade visual e a logo da empresa às propostas e documentos, conforme as opções de personalização disponíveis no plano.</p></details>
+      <details><summary>Posso cadastrar minha tabela de preços?</summary><p>Sim. Cadastre produtos, serviços e valores para facilitar e agilizar a criação de novos orçamentos no seu dia a dia.</p></details>
+      <details><summary>E se minha empresa precisar de mais de 20 propostas?</summary><p>O Vitalício inclui 20 propostas por mês; esse limite é renovado a cada mês. O Pro oferece 150 propostas/mês e o Business, propostas ilimitadas.</p></details>
+      <details class="faq-extra"><summary>Posso utilizar um contrato que já tenho pronto?</summary><p>O Pro e o Business oferecem a opção de enviar contratos próprios em PDF para assinatura digital, conforme a funcionalidade disponível na plataforma.</p></details>
+      <details class="faq-extra"><summary>Posso guardar documentos antigos?</summary><p>A importação de propostas e contratos antigos está prevista para o Business. Confirme se o recurso já está liberado antes de contratar por essa funcionalidade.</p></details>
+      <details class="faq-extra"><summary>Posso salvar documentos na minha nuvem?</summary><p>Os documentos ficam organizados no Pro Creator e os arquivos disponíveis para exportação (PDFs de propostas, contratos e ordens de serviço) podem ser baixados a qualquer momento para armazenamento externo no seu computador ou nuvem.</p></details>
+      <details class="faq-extra"><summary>Como funciona a assinatura do contrato?</summary><p>O contrato é assinado digitalmente, direto pelo link enviado ao seu cliente, com validade jurídica conforme a legislação brasileira. Assim que assinado, ele fica registrado automaticamente no histórico do cliente dentro da sua conta.</p></details>
+      <details class="faq-extra"><summary>Existe algum limite de uso?</summary><p>Cada plano possui limites claros pensados para cada momento: o Vitalício inclui até 50 clientes cadastrados, 20 propostas, 10 contratos e 10 ordens de serviço por mês, além de recibos ilimitados. O Pro amplia para 500 clientes, 150 propostas, 40 contratos e 60 ordens de serviço por mês. E o Business oferece clientes e propostas ilimitados, 100 contratos por mês e ordens de serviço ilimitadas.</p></details>
+      <details class="faq-extra"><summary>Como funciona a garantia?</summary><p>Você tem 7 dias para testar na prática. Se não fizer sentido para a sua rotina, é só solicitar o reembolso dentro do prazo da garantia, sem burocracia.</p></details>
+      <button class="faq-toggle" id="expandFaq" type="button" aria-expanded="false">Ver mais perguntas (6) +</button>
+    </div>
+  </div>
+</section>
+
+<!-- Fechamento -->
+<section class="close" id="fechamento">
+  <div class="close-surface">
+    <h2>Seu próximo orçamento merece <span style="color:#b2d2ff">uma apresentação melhor.</span></h2>
+    <p>Prepare suas propostas com a sua marca, acompanhe as negociações e formalize contratos em um só lugar.</p>
+    <a class="btn btn-white" data-plan="vitalicio" data-value="67.90" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Ativar Vitalício por R$ 67,90 <span class="btn-arrow" aria-hidden="true">↗</span></a>
+    <small>Pagamento único · Acesso imediato · 7 dias de garantia</small>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#topo" aria-label="Pro Creator, voltar ao início"><img src="assets/img/logo-procreator.png" alt="Pro Creator" width="766" height="116"/></a>
+        <p>Propostas, aprovações e contratos com a sua marca.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Rodapé"><a href="#vantagens">Benefícios</a><a href="#depoimentos">Depoimentos</a><a href="#precos">Planos</a><a href="#duvidas">Dúvidas</a></nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Pro Creator. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="vsl-modal" id="vslModal" role="dialog" aria-modal="true" aria-label="Vídeo de apresentação do Pro Creator" aria-hidden="true">
+  <button class="vsl-close" id="vslClose" type="button" aria-label="Fechar vídeo">✕</button>
+  <div class="vsl-modal-box" id="vslBox"><video id="vslModalVideo" src="assets/video/procreator-vsl.mp4" poster="assets/img/vsl-capa.jpg" playsinline preload="none"></video>
+    <button class="vsl-paused" id="vslPaused" type="button" aria-label="Continuar o vídeo" hidden><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+    <button class="vsl-fs" id="vslFs" type="button" aria-label="Tela cheia"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    <div class="vsl-bar" aria-hidden="true"><span id="vslBar"></span></div></div>
+</div>
+
+<script>
+// Meta Pixel: liga sozinho no site publicado (Netlify ou domínio próprio).
+// Fica desligado ao abrir o arquivo no computador, em localhost e na prévia do Claude.
+const HOST = location.hostname;
+const PREVIEW_MODE = !HOST || HOST === 'localhost' || HOST === '127.0.0.1' || /claude/i.test(HOST);
+(function(){
+
+  // Vídeo da home: prévia muda em loop; ao clicar abre o vídeo em destaque (pop-up) com som, do início
+  const vsl=document.getElementById('vslVideo'), vslBtn=document.getElementById('vslSound'), slot=document.getElementById('vsl');
+  const modal=document.getElementById('vslModal'), mv=document.getElementById('vslModalVideo'), closeBtn=document.getElementById('vslClose');
+  if(vsl&&modal){
+    vsl.muted=true; vsl.play().catch(()=>{});
+    let lastFocus=null;
+    const openModal=()=>{ lastFocus=document.activeElement; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open'); vsl.pause(); mv.currentTime=0; bar.style.width='0'; mv.muted=false; mv.play().catch(()=>{}); closeBtn.focus(); };
+    const closeModal=()=>{ if(document.fullscreenElement) document.exitFullscreen(); mv.pause(); modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open'); vsl.play().catch(()=>{}); if(lastFocus) lastFocus.focus(); };
+    // Barra de progresso própria: anda mais rápido no começo e chega a 100% no fim do vídeo
+    const bar=document.getElementById('vslBar'), paused=document.getElementById('vslPaused'), fs=document.getElementById('vslFs'), box=document.getElementById('vslBox');
+    mv.addEventListener('timeupdate',()=>{ if(mv.duration) bar.style.width=(Math.pow(mv.currentTime/mv.duration,0.5)*100)+'%'; });
+    mv.addEventListener('ended',()=>{ bar.style.width='100%'; paused.hidden=false; });
+    mv.addEventListener('play',()=>{ paused.hidden=true; });
+    mv.addEventListener('pause',()=>{ if(modal.classList.contains('open')) paused.hidden=false; });
+    const toggle=()=>{ if(mv.paused||mv.ended){ if(mv.ended) mv.currentTime=0; mv.play().catch(()=>{}); } else mv.pause(); };
+    mv.addEventListener('click',toggle); paused.addEventListener('click',toggle);
+    fs.addEventListener('click',()=>{ if(document.fullscreenElement) document.exitFullscreen(); else if(box.requestFullscreen) box.requestFullscreen().catch(()=>{}); else if(mv.webkitEnterFullscreen) mv.webkitEnterFullscreen(); });
+    slot.addEventListener('click',openModal);
+    closeBtn.addEventListener('click',closeModal);
+    modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&modal.classList.contains('open')) closeModal(); });
+  }
+
+  // Título do topo em duas linhas no celular: ajusta o tamanho para caber na largura
+  const h1=document.querySelector('.hero h1');
+  const fitH1=()=>{ h1.style.fontSize=''; if(window.innerWidth>=640) return; let fs=parseFloat(getComputedStyle(h1).fontSize); const max=h1.clientWidth; while([...h1.children].some(sp=>sp.scrollWidth>max)&&fs>14){fs-=0.5;h1.style.fontSize=fs+'px';} };
+  fitH1(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitH1); window.addEventListener('resize',fitH1);
+
+  // FAQ: mostrar mais perguntas
+  const faqButton=document.getElementById('expandFaq');
+  faqButton.addEventListener('click',()=>{
+    const open=faqButton.getAttribute('aria-expanded')==='true';
+    faqButton.setAttribute('aria-expanded',String(!open));
+    document.querySelector('.faq-items').classList.toggle('faq-expanded',!open);
+    faqButton.textContent=open?'Ver mais perguntas (6) +':'Mostrar menos perguntas −';
+  });
+
+  // Carrossel de depoimentos (celular): bolinhas de posição
+  const track=document.getElementById('tTrack');
+  const dots=document.getElementById('tDots');
+  const cards=[...track.children];
+  cards.forEach((_,i)=>{const d=document.createElement('i');if(i===0)d.className='on';dots.appendChild(d);});
+  track.addEventListener('scroll',()=>{
+    const mid=track.scrollLeft+track.clientWidth/2;
+    let idx=0,best=Infinity;
+    cards.forEach((c,i)=>{const dist=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);if(dist<best){best=dist;idx=i;}});
+    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===idx));
+  },{passive:true});
+
+  // Animações de rolagem (estilo Apple): elementos surgem com deslize e desfoque
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    const prep=(el,i)=>{ el.classList.add('rv'); el.style.transitionDelay=(Math.min(i,5)*90)+'ms'; return true; };
+    const show=els=>els.forEach(el=>{ el.classList.add('in'); const d=parseFloat(el.style.transitionDelay)||0; setTimeout(()=>{el.classList.remove('rv','in');el.style.transitionDelay='';},1100+d); });
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; io.unobserve(e.target); show(e.target._rv||[e.target]); }),{rootMargin:'0px 0px -10% 0px',threshold:0.12});
+    const groups=[['.q-list','.q-item'],['.insights','.insight'],['.steps','.step'],['.feat-grid','.feat'],['#tTrack','.t-card'],['.channels','.channel'],['.plans','.plan-main,.plan-alt'],['.faq-items',':scope > details:not(.faq-extra)']];
+    groups.forEach(([g,c])=>document.querySelectorAll(g).forEach(box=>{ const items=[...box.querySelectorAll(c)].filter((el,i)=>prep(el,i)); if(items.length){box._rv=items;io.observe(box);} }));
+    document.querySelectorAll('.tech-strip .wrap,.sec-head,.problem-text,.problem-aside,.showcase-frame,.brand-text,.brand-visual,.feature-more,.trust-cta,.g-card,.faq-intro,.close-surface').forEach(el=>{ if(prep(el,0)) io.observe(el); });
+  }
+
+  // Desfoque suave na parte de baixo da tela durante a rolagem
+  const fade=document.createElement('div'); fade.className='scroll-fade'; fade.setAttribute('aria-hidden','true'); document.body.appendChild(fade);
+  let ticking=false;
+  const onScroll=()=>{ const y=window.scrollY; const end=document.documentElement.scrollHeight-window.innerHeight-60; fade.classList.toggle('on',y>60&&y<end); ticking=false; };
+  window.addEventListener('scroll',()=>{ if(!ticking){ticking=true;requestAnimationFrame(onScroll);} },{passive:true});
+  onScroll();
+
+  if(!PREVIEW_MODE && window.fbq){
+    // A Greenn continua responsável por InitiateCheckout e Purchase.
+    // Clique na landing = evento personalizado, sem duplicar o InitiateCheckout disparado pela Greenn.
+    // ViewContent: uma vez, quando a seção de planos aparece na tela.
+    const precos=document.getElementById('precos');
+    if(precos && 'IntersectionObserver' in window){
+      const vo=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)){ fbq('track','ViewContent',{content_name:'Planos Pro Creator',content_category:'Planos',value:67.90,currency:'BRL'}); vo.disconnect(); } },{threshold:0.25});
+      vo.observe(precos);
+    }
+    document.querySelectorAll('[data-plan][data-value]').forEach(a=>a.addEventListener('click',()=>{fbq('trackCustom','LandingCheckoutClick',{content_name:a.dataset.plan,value:Number(a.dataset.value),currency:'BRL'})}));
+  }
+})();
+</script>
+
+</body></html>
