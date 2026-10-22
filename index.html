@@ -410,7 +410,10 @@ body.modal-open{overflow:hidden}
   .trust-extra{margin-top:20px}
   .audio-card{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px}
 
-  .plans{grid-template-columns:1.15fr 1fr 1fr;gap:20px}
+  .plans{grid-template-columns:1fr 1.15fr 1fr;gap:20px}
+  .plans>.plan-main{order:2}
+  .plans>.plan-alt:not(.rec){order:1}
+  .plans>.plan-alt.rec{order:3}
   .plan-main{padding:34px 30px}
   .plan-alt{padding:32px 26px}
 
