@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://procreator.com.br/sitemap.xml
