@@ -412,3 +412,19 @@ main{overflow-x:clip}
 .int-float.if-1{right:28%;top:-16%;animation-delay:-1.5s}
 .int-float.if-2{left:4%;bottom:4%;animation-delay:-4.5s}
 @media (max-width:640px){.int-float{width:46px;height:46px;padding:7px;border-radius:10px}.int-float.if-1{right:4px;top:-4%}.int-float.if-2{left:4px;bottom:-6%}}
+
+/* Mobile hero: selo, mockup, título, texto e botões */
+@media (max-width:720px){
+  .hero-grid{display:flex;flex-direction:column;align-items:center;gap:0}
+  .hero-copy{display:contents}
+  .hero-copy .badge{order:0;margin:0 auto 64px;font-size:12px}
+  .hero-visual{order:1;margin:0 -8px 72px;width:calc(100% + 16px);max-width:none}
+  .hero-visual .float-card{transform:scale(.82)}
+  .hero-visual .fc-1{transform-origin:left top}
+  .hero-visual .fc-2{transform-origin:right bottom}
+  .hero-copy .h1{order:2;text-align:center;margin:0 0 16px}
+  .hero-copy .lead{order:3;text-align:center;margin:0 0 24px}
+  .hero-actions{order:4;margin:0 0 14px}
+  .hero-copy .microcopy{order:5;text-align:center;margin:0}
+  .menu-toggle{width:40px;height:40px;padding:0}
+}
