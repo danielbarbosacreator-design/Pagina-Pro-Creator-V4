@@ -10,7 +10,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:url" content="https://procreator.com.br/">
 <meta property="og:site_name" content="Pro Creator">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Pro Creator", "url": "https://procreator.com.br/", "logo": "https://procreator.com.br/assets/img/logo-icone.png", "sameAs": ["https://www.instagram.com/procreatoroficial/", "https://www.youtube.com/@ProCreatoroficial"]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pro Creator", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://procreator.com.br/", "description": "Organize clientes, crie propostas profissionais, acompanhe aprovações e formalize contratos com assinatura digital. Teste grátis por 7 dias.", "offers": [{"@type": "Offer", "name": "Pro (mensal)", "price": "97.90", "priceCurrency": "BRL"}, {"@type": "Offer", "name": "Business (mensal)", "price": "127.90", "priceCurrency": "BRL"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Pro Creator", "url": "https://procreator.com.br/", "logo": "https://procreator.com.br/assets/img/logo-icone.png", "sameAs": ["https://www.instagram.com/procreatoroficial/", "https://www.youtube.com/@ProCreatoroficial"]}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pro Creator", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://procreator.com.br/", "description": "Organize clientes, crie propostas profissionais, acompanhe aprovações e formalize contratos com assinatura digital. Teste grátis por 7 dias.", "offers": [{"@type": "Offer", "name": "Pro (mensal)", "price": "97.90", "priceCurrency": "BRL"}, {"@type": "Offer", "name": "Business (mensal)", "price": "127.90", "priceCurrency": "BRL"}, {"@type": "Offer", "name": "Enterprise (mensal)", "price": "247.90", "priceCurrency": "BRL"}]}]</script>
 <meta name="theme-color" content="#0090FF">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -112,6 +112,8 @@ fbq('init','912571467763616');fbq('track','PageView');
           <div class="fc-top"><span>Proposta assinada</span><span class="fc-tag"><svg class="icon"><use href="#i-check"/></svg>Aprovada</span></div>
           <div class="fc-value">R$ 4.850,00</div>
         </div>
+        <div class="int-float if-1" title="Integração Autentique"><img src="assets/img/int-autentique.png" alt="Autentique" width="160" height="160"></div>
+        <div class="int-float if-2" title="Integração Asaas"><img src="assets/img/int-asaas.png" alt="Asaas" width="160" height="160"></div>
         <div class="float-card fc-2" aria-hidden="true">
           <div class="fc-top"><span>Visualizações</span><span class="fc-eye"><svg class="icon"><use href="#i-eye"/></svg></span></div>
           <div class="fc-value">3 acessos</div>
@@ -223,7 +225,7 @@ fbq('init','912571467763616');fbq('track','PageView');
               <path d="M58 64c0 40 102 30 102 50M160 64v50M262 64c0 40-102 30-102 50"/>
               <path d="M160 186c0 20-102 10-102 50M160 186v50M160 186c0 20 102 10 102 50"/>
             </g>
-            <rect x="122" y="112" width="76" height="76" rx="22" fill="url(#g-tile)"/>
+            <rect x="122" y="112" width="76" height="76" rx="10" fill="url(#g-tile)"/>
             <image href="assets/img/simbolo-branco.svg" x="141" y="130" width="38" height="40"/>
           </svg>
         </article>
@@ -324,10 +326,9 @@ fbq('init','912571467763616');fbq('track','PageView');
         <p class="lead">O Pro Creator evolui com soluções e integrações para tornar sua operação mais conectada.</p>
       </div>
       <div class="int-grid" data-reveal>
-        <div class="int-card"><span class="tile"><svg class="icon"><use href="#i-pen"/></svg></span><div><h3>Autentique</h3><p>Assinatura digital integrada à plataforma</p></div></div>
-        <div class="int-card"><span class="tile"><svg class="icon"><use href="#i-wallet"/></svg></span><div><h3>Asaas</h3><p>Cobranças e pagamentos, em desenvolvimento</p></div></div>
+        <div class="int-card"><span class="tile tile-logo"><img src="assets/img/int-autentique.png" alt="Autentique"></span><div><h3>Autentique</h3><p>Assinatura digital integrada à plataforma</p></div></div>
+        <div class="int-card"><span class="tile tile-logo"><img src="assets/img/int-asaas.png" alt="Asaas"></span><div><h3>Asaas</h3><p>Cobranças e pagamentos, nos planos Business e Enterprise</p></div></div>
       </div>
-      <p class="int-note">Integração Asaas em desenvolvimento. Disponibilidade e condições serão comunicadas após o lançamento.</p>
     </div>
   </section>
 
@@ -338,7 +339,13 @@ fbq('init','912571467763616');fbq('track','PageView');
         <span class="eyebrow">Conheça a plataforma</span>
         <h2 class="h2">Tecnologia que <strong>simplifica sua gestão comercial</strong></h2>
         <p class="lead">Uma plataforma desenvolvida para reunir informações, documentos e processos comerciais em um ambiente intuitivo e acessível de onde você estiver. Conheça como o Pro Creator funciona na prática e descubra como ele pode fazer parte da rotina da sua empresa.</p>
-        <a class="btn btn-primary" href="https://www.youtube.com/@ProCreatoroficial" target="_blank" rel="noopener noreferrer">Assistir demonstração <span class="btn-arrow"><svg class="icon"><use href="#i-play"/></svg></span></a>
+        <a class="btn btn-primary" href="#demonstracao" data-play-demo>Assistir demonstração <span class="btn-arrow"><svg class="icon"><use href="#i-play"/></svg></span></a>
+      </div>
+
+      <div class="demo-video" id="demonstracao">
+        <video controls playsinline preload="none" poster="assets/video/procreator-demonstracao.jpg" width="1280" height="720">
+          <source src="assets/video/procreator-demonstracao.mp4" type="video/mp4">
+        </video>
       </div>
 
       <div class="feature-stack">
@@ -400,11 +407,15 @@ fbq('init','912571467763616');fbq('track','PageView');
           <div><div class="plan-label">Plano</div><div class="plan-name"><h3>Pro</h3></div></div>
           <p class="plan-desc">Para profissionais e empresas que desejam organizar e profissionalizar sua gestão comercial.</p>
           <ul>
-            <li><svg class="icon"><use href="#i-check"/></svg>Gestão de clientes e oportunidades</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Propostas com a identidade da sua empresa</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Acompanhamento e aprovação online</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Contratos com assinatura digital</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Recursos de colaboração</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Até 500 clientes cadastrados</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>150 propostas e 40 contratos por mês</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>60 ordens de serviço por mês</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Propostas com sua marca, fotos e capas</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Aprovação online e acompanhamento de acessos</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Assinatura digital pela Autentique</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Contratos próprios em PDF para assinatura</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Financeiro completo</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Suporte prioritário</li>
           </ul>
           <div class="price" aria-label="R$ 97,90 por mês"><span class="cur">R$</span><span class="int">97</span><span class="dec">,90/mês</span></div>
           <a class="btn btn-white btn-block" href="https://procreator.app.br">Experimentar grátis <span class="btn-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
@@ -415,9 +426,12 @@ fbq('init','912571467763616');fbq('track','PageView');
           <p class="plan-desc">Para empresas que precisam ampliar o controle comercial com funcionalidades adicionais e recursos de colaboração.</p>
           <ul>
             <li><svg class="icon"><use href="#i-check"/></svg>Tudo o que o Pro oferece</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Funcionalidades adicionais</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Recursos de colaboração</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Mais controle comercial</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Clientes e propostas ilimitados</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Até 100 contratos por mês</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Ordens de serviço e recibos ilimitados</li>
+            <li><svg class="icon"><use href="#i-check"/></svg><strong>Até 5 usuários na mesma conta</strong></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><strong>Integração com Asaas para cobranças</strong></li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Suporte VIP</li>
             <li><svg class="icon"><use href="#i-check"/></svg>Teste grátis por 7 dias</li>
           </ul>
           <div class="price" aria-label="R$ 127,90 por mês"><span class="cur">R$</span><span class="int">127</span><span class="dec">,90/mês</span></div>
@@ -428,13 +442,13 @@ fbq('init','912571467763616');fbq('track','PageView');
           <div><div class="plan-label">Plano</div><div class="plan-name"><h3>Enterprise</h3><span class="plan-tag">Sob medida</span></div></div>
           <p class="plan-desc">Para operações que demandam configurações, necessidades ou atendimento diferenciados.</p>
           <ul>
+            <li><svg class="icon"><use href="#i-check"/></svg>Tudo o que o Business oferece</li>
+            <li><svg class="icon"><use href="#i-check"/></svg><strong>Até 15 usuários na mesma conta</strong></li>
+            <li><svg class="icon"><use href="#i-check"/></svg><strong>Contratos ilimitados</strong></li>
             <li><svg class="icon"><use href="#i-check"/></svg>Configurações sob medida</li>
             <li><svg class="icon"><use href="#i-check"/></svg>Atendimento diferenciado</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Para necessidades específicas</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Condições sob consulta</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Contato direto com a equipe</li>
           </ul>
-          <div class="price-alt">Sob consulta</div>
+          <div class="price" aria-label="R$ 247,90 por mês"><span class="cur">R$</span><span class="int">247</span><span class="dec">,90/mês</span></div>
           <a class="btn btn-white btn-block" href="https://wa.me/554796759899" target="_blank" rel="noopener noreferrer">Falar com a equipe <span class="btn-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
         </article>
       </div>
@@ -457,6 +471,17 @@ fbq('init','912571467763616');fbq('track','PageView');
           <details class="faq-item"><summary>Os contratos possuem assinatura digital?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Sim. O Pro Creator oferece assinatura digital de contratos por meio de sua integração com a Autentique.</p></details>
           <details class="faq-item"><summary>Posso utilizar contratos próprios?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Sim. Você pode importar contratos em PDF e encaminhá-los para assinatura digital.</p></details>
           <details class="faq-item"><summary>O que acontece após o período gratuito?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Ao encerrar o teste, você poderá escolher um plano para continuar utilizando os recursos pagos do Pro Creator.</p></details>
+          <details class="faq-item"><summary>Meu cliente precisa instalar algo ou criar conta?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Não. Ele não precisa instalar nada e nem criar conta: o cliente abre a proposta diretamente pelo link no celular ou computador com total facilidade e rapidez.</p></details>
+          <details class="faq-item"><summary>A assinatura digital tem custo adicional?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Não! O Pro Creator oferece assinatura digital pela Autentique sem cobrança adicional por assinatura, respeitando os limites de contratos do plano contratado.</p></details>
+          <details class="faq-item"><summary>Meus dados e documentos ficam protegidos?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>O Pro Creator utiliza infraestrutura Supabase Pro, autenticação e mecanismos de controle de acesso. Também possui <a href="https://politica-de-privacidadee.netlify.app/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a> e <a href="https://termos-de-usoo.netlify.app/" target="_blank" rel="noopener noreferrer">Termos de Uso</a> com disposições sobre a LGPD.</p></details>
+          <details class="faq-item"><summary>O Pro Creator realiza backups?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Sim. O banco de dados possui backups automáticos diários, com opções de restauração pela infraestrutura Supabase Pro. Os arquivos armazenados no Storage possuem tratamento de backup separado.</p></details>
+          <details class="faq-item"><summary>Posso exportar meus dados caso deixe de utilizar a plataforma?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Sim! O Pro Creator permite exportar informações de clientes, propostas e contratos. O conteúdo comercial inserido na plataforma permanece de titularidade do usuário, conforme os <a href="https://termos-de-usoo.netlify.app/" target="_blank" rel="noopener noreferrer">Termos de Uso</a>. Os PDFs de propostas, contratos e ordens de serviço também podem ser baixados a qualquer momento.</p></details>
+          <details class="faq-item"><summary>Posso guardar documentos antigos?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>No Business, você pode importar contratos antigos. A importação de propostas antigas está em desenvolvimento, e a disponibilidade deve ser confirmada antes da contratação.</p></details>
+          <details class="faq-item"><summary>Posso incluir várias pessoas assinando o mesmo contrato?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Sim! O Pro Creator permite múltiplos signatários em um mesmo contrato, facilitando documentos que precisam da assinatura de clientes, responsáveis, sócios ou testemunhas.</p></details>
+          <details class="faq-item"><summary>Preciso abandonar o WhatsApp?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Não. Continue conversando normalmente com seus clientes pelo WhatsApp. O Pro Creator organiza as etapas comerciais que acontecem depois do pedido de orçamento: envio de propostas por link, acompanhamento de acessos e continuidade até a formalização do contrato.</p></details>
+          <details class="faq-item"><summary>Posso cadastrar minha tabela de preços?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Sim. Cadastre produtos, serviços e valores para facilitar e agilizar a criação de novos orçamentos no seu dia a dia.</p></details>
+          <details class="faq-item"><summary>Como funciona a assinatura do contrato?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>O contrato é assinado digitalmente, direto pelo link enviado ao seu cliente, com validade jurídica conforme a legislação brasileira. Assim que assinado, ele fica registrado automaticamente no histórico do cliente dentro da sua conta.</p></details>
+          <details class="faq-item"><summary>O Pro Creator possui integração com outros softwares?<span class="pm"><svg class="icon"><use href="#i-plus"/></svg></span></summary><p>Sim. O Pro Creator é integrado à Autentique para assinatura digital e, nos planos Business e Enterprise, ao Asaas para cobranças. Ainda não disponibilizamos API pública ou webhooks para integrações externas; integrações personalizadas podem ser avaliadas mediante solicitação.</p></details>
         </div>
       </div>
       <div class="faq-visual" data-reveal>
@@ -508,5 +533,8 @@ fbq('init','912571467763616');fbq('track','PageView');
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<script>
+document.querySelectorAll('[data-play-demo]').forEach(function(b){b.addEventListener('click',function(e){var w=document.getElementById('demonstracao');if(!w)return;e.preventDefault();w.scrollIntoView({behavior:'smooth',block:'center'});var v=w.querySelector('video');v&&v.play().catch(function(){});});});
+</script>
 </body>
 </html>
