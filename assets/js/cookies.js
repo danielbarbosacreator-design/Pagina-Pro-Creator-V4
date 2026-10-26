@@ -1,7 +1,7 @@
 /* Aviso de cookies (LGPD) + Google Analytics 4.
    O GA4 só carrega depois do "Aceitar". Preencha GA_ID com o ID de medição (G-XXXXXXXXXX). */
 (function () {
-  var GA_ID = '';
+  var GA_ID = 'G-K3W4TG5CV5';
   var KEY = 'pc_cookie_consent';
   var ls = {
     get: function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } },
