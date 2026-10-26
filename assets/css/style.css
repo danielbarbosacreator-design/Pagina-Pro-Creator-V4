@@ -442,3 +442,13 @@ main{overflow-x:clip}
 .btn-primary:hover::before{background-position:-100% 0;transition:background-position 1s ease}
 .btn-primary>*{position:relative}
 @media (prefers-reduced-motion:reduce){.btn-primary::before{display:none}}
+
+/* Botões com seta: a bolinha desliza para a esquerda no hover */
+.btn-primary:has(.btn-arrow){padding:0 58px 0 24px;transition:padding .5s ease,background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.btn-primary .btn-arrow{position:absolute;right:6px;top:50%;transform:translateY(-50%);transition:right .5s ease,transform .5s ease}
+@media (hover:hover){
+  .btn-primary:has(.btn-arrow):hover{padding:0 24px 0 58px}
+  .btn-primary:hover .btn-arrow{right:calc(100% - 46px);transform:translateY(-50%) rotate(-45deg)}
+  .btn-primary:hover .btn-arrow:has(use[href="#i-play"]){transform:translateY(-50%)}
+}
+@media (prefers-reduced-motion:reduce){.btn-primary,.btn-primary .btn-arrow{transition:none}}
