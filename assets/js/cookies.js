@@ -40,11 +40,15 @@
       if (v === 'all') loadGA();
     });
     document.body.appendChild(b);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { b.classList.add('on'); }); });
   }
 
   var c = ls.get();
   if (c === 'all') loadGA();
-  else if (!c) banner();
+  else if (!c) {
+    var show = function () { setTimeout(banner, 1500); };
+    if (document.readyState === 'complete') show(); else window.addEventListener('load', show);
+  }
 
   document.addEventListener('click', function (e) {
     var t = e.target.closest && e.target.closest('[data-cookie-settings]');
