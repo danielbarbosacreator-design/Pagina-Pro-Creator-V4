@@ -1,0 +1,225 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Pro Creator | Gestão comercial em um só lugar (versão 2)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Organize clientes, crie propostas, acompanhe aprovações e formalize contratos com assinatura digital.">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f4d;--navy2:#12307a;--blue:#1e6cf4;--sky:#8fbaff;--soft:#eef4ff;--ink:#0f1b33;--muted:#5a6a86;--line:#dde6f5;--gold:#ffc83d}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+h1,h2,h3{font-family:Manrope,'DM Sans',sans-serif;letter-spacing:-.03em;line-height:1.12}
+img{max-width:100%;height:auto;display:block}a{color:inherit}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 24px;font-weight:700;text-decoration:none;font-size:15px;border:2px solid transparent;cursor:pointer}
+.btn-y{background:var(--gold);color:#1a1a1a}.btn-y:hover{filter:brightness(.95)}
+.btn-o{border-color:#fff;color:#fff}.btn-b{background:var(--blue);color:#fff}.btn-ob{border-color:var(--blue);color:var(--blue)}
+/* topo */
+.strip{background:#07163a;color:#cfe0ff;font-size:13px;text-align:center;padding:8px 16px}
+.strip a{color:var(--gold);font-weight:700}
+header.top{background:var(--navy);position:sticky;top:0;z-index:50}
+.bar{display:flex;align-items:center;gap:24px;height:68px}
+.bar .logo img{height:26px;width:auto}
+nav.main{display:flex;gap:4px;margin-left:12px}
+nav.main>a,nav.main>.dd>button{background:none;border:0;color:#fff;font:600 15px 'DM Sans',sans-serif;padding:10px 12px;border-radius:8px;cursor:pointer;text-decoration:none}
+nav.main>a:hover,nav.main>.dd>button:hover{background:rgba(255,255,255,.1)}
+.dd{position:relative}
+.mega{display:none;position:absolute;left:0;top:100%;width:min(640px,92vw);background:#fff;color:var(--ink);border-radius:16px;box-shadow:0 24px 60px rgba(5,15,45,.3);padding:18px;grid-template-columns:1fr 1fr;gap:4px}
+.dd:hover .mega,.dd:focus-within .mega{display:grid}
+.mega a{display:block;text-decoration:none;padding:12px 14px;border-radius:10px}.mega a:hover{background:var(--soft)}
+.mega b{display:block;font-family:Manrope,sans-serif;font-size:15px}.mega span{font-size:13px;color:var(--muted)}
+.bar .cta{margin-left:auto;display:flex;gap:10px}
+.burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:28px}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% 0,#1f4fc0 0,transparent 60%),var(--navy);color:#fff;padding:64px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,56px)}.hero h1 em{font-style:normal;color:var(--sky)}
+.hero .sub{font-size:19px;margin-top:18px;color:#dbe7ff}
+.hero p{margin-top:14px;color:#b9cdf5;max-width:560px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero small{display:block;margin-top:14px;color:#9fb8ee}
+.hero .shot{background:#fff;border-radius:20px;padding:10px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.hero .shot img{border-radius:12px;max-height:520px;width:100%;object-fit:cover;object-position:top}
+/* seções */
+section{padding:76px 0}.tag{display:inline-block;font:700 12px Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.head{max-width:760px;margin-bottom:40px}.head.c{text-align:center;margin-inline:auto}
+h2{font-size:clamp(28px,3.6vw,42px)}.head p{color:var(--muted);margin-top:14px;font-size:17px}
+h2 b{color:var(--blue)}
+.alt{background:var(--soft)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px}.row:last-child{margin:0}
+.row.rev .txt{order:2}
+.row h3{font-size:clamp(24px,3vw,34px)}.row p{color:var(--muted);margin:14px 0}
+.row ul{list-style:none;padding:0;margin:0 0 22px}.row li{padding-left:26px;position:relative;margin:8px 0}
+.row li:before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:800}
+.row .pic{background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:0 18px 50px rgba(30,64,128,.1)}
+.row .pic img{max-height:460px;width:100%;object-fit:contain}
+.grid{display:grid;gap:16px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+.card h3{font-size:19px}.card p{color:var(--muted);margin-top:8px;font-size:15px}
+.num{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--soft);color:var(--blue);font:800 15px Manrope,sans-serif;margin-bottom:14px}
+.dark{background:var(--navy);color:#fff}.dark h2 b{color:var(--sky)}.dark .head p{color:#b9cdf5}
+.integ{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.integ .card{display:flex;gap:18px;align-items:center}.integ img{height:30px;width:auto;flex:none}
+.soon{font-size:12px;font-weight:700;background:var(--gold);color:#222;border-radius:99px;padding:3px 10px;margin-left:8px}
+.tst{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.tst img{flex:none;width:min(340px,80vw);scroll-snap-align:start;border-radius:16px;background:#fff}
+/* planos */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;position:relative}
+.plan.rec{border:2px solid var(--blue);box-shadow:0 20px 50px rgba(30,108,244,.18)}
+.badge{position:absolute;top:-13px;left:24px;background:var(--blue);color:#fff;font:700 12px Manrope,sans-serif;border-radius:99px;padding:5px 12px}
+.plan h3{font-size:24px}.plan .for{color:var(--muted);font-size:14px;margin:8px 0 16px;min-height:66px}
+.old{color:#8a97b0;text-decoration:line-through;font-size:14px}.price{font:800 38px Manrope,sans-serif}.price small{font:500 15px 'DM Sans';color:var(--muted)}
+.plan ul{list-style:none;padding:0;margin:18px 0 22px;font-size:14.5px;flex:1}.plan li{padding-left:24px;position:relative;margin:7px 0}.plan li:before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:800}
+.plan .btn{justify-content:center}
+.note{font-size:13px;color:var(--muted);text-align:center;margin-top:20px}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:10px}
+summary{font:700 17px Manrope,sans-serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary:after{content:"+";color:var(--blue);font-size:22px;line-height:1}details[open] summary:after{content:"–"}
+details p{color:var(--muted);margin-top:10px}
+.banner{background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;border-radius:28px;padding:56px;display:grid;gap:14px;justify-items:start}
+.banner h2{max-width:720px}.banner p{color:#c6d6f8;max-width:640px}
+footer{background:#07163a;color:#b9cdf5;padding:48px 0 28px;font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}footer h4{color:#fff;margin-bottom:10px;font-family:Manrope,sans-serif}
+footer a{display:block;text-decoration:none;margin:6px 0}footer a:hover{color:#fff}footer img{height:26px;width:auto;margin-bottom:12px}
+footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px}
+@media(max-width:900px){nav.main,.bar .cta{display:none}.burger{display:block}
+body.open nav.main{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--navy);padding:12px 16px 20px;margin:0}
+body.open .mega{display:grid;position:static;grid-template-columns:1fr;width:100%;box-shadow:none;margin-top:6px}
+.hero .wrap,.row,.integ{grid-template-columns:1fr}.row.rev .txt{order:0}.g3,.g4,.plans{grid-template-columns:1fr}
+footer .cols{grid-template-columns:1fr 1fr}.banner{padding:34px 24px}section{padding:56px 0}}
+</style></head><body>
+<div class="strip">7 dias de garantia em todos os planos · <a href="#planos">Ver planos</a></div>
+<header class="top"><div class="wrap bar">
+  <a class="logo" href="#topo" aria-label="Pro Creator"><img src="../assets/img/logo-procreator.png" alt="Pro Creator" width="766" height="116"></a>
+  <nav class="main" aria-label="Principal">
+    <div class="dd"><button type="button" aria-haspopup="true">Soluções ▾</button>
+      <div class="mega">
+        <a href="#solucoes"><b>Gestão de clientes</b><span>Histórico comercial em um só lugar</span></a>
+        <a href="#solucoes"><b>Propostas comerciais</b><span>Com a identidade da sua empresa</span></a>
+        <a href="#solucoes"><b>Acompanhamento</b><span>Visualizações e aprovação online</span></a>
+        <a href="#solucoes"><b>Contratos e assinatura</b><span>Assinatura digital com Autentique</span></a>
+        <a href="#solucoes"><b>Ordens de serviço</b><span>Execução dos serviços organizada</span></a>
+        <a href="#solucoes"><b>Inteligência artificial</b><span>Apoio na criação de textos</span></a>
+      </div></div>
+    <a href="#para-quem">Para quem é</a><a href="#como-funciona">Como funciona</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a>
+  </nav>
+  <div class="cta"><a class="btn btn-o" href="#solucoes">Conhecer as soluções</a><a class="btn btn-y" href="#planos">Quero meu acesso</a></div>
+  <button class="burger" type="button" aria-label="Abrir menu" onclick="document.body.classList.toggle('open')">☰</button>
+</div></header>
+<main id="topo">
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Sua gestão comercial <em>em um só lugar.</em></h1>
+    <p class="sub"><b>Da proposta ao contrato assinado.</b></p>
+    <p>Organize seus clientes, crie propostas profissionais, acompanhe aprovações e formalize contratos com assinatura digital. Tudo em uma plataforma inteligente, desenvolvida para simplificar a rotina comercial da sua empresa.</p>
+    <div class="acts"><a class="btn btn-y" href="#planos">Quero meu acesso</a><a class="btn btn-o" href="#solucoes">Conhecer as soluções</a></div>
+    <small>7 dias de garantia. Acesso imediato.</small>
+  </div>
+  <div class="shot"><img src="../assets/img/proposta-digital.png" alt="Exemplo real de proposta digital no Pro Creator" width="960" height="1315"></div>
+</div></section>
+
+<section><div class="wrap"><div class="head c"><span class="tag">Apresentação</span>
+  <h2>Mais organização para sua empresa. <b>Menos complicação para sua rotina.</b></h2>
+  <p>Sua gestão comercial não precisa depender de planilhas, documentos espalhados e conversas difíceis de acompanhar. Com o Pro Creator, sua empresa centraliza as principais etapas do processo comercial em um único ambiente, com mais organização e visibilidade sobre cada negociação.</p>
+  <p><b>Menos tarefas manuais. Mais tempo para o seu negócio.</b></p></div></div></section>
+
+<section class="alt" id="solucoes"><div class="wrap">
+  <div class="head"><span class="tag">Soluções</span><h2>Soluções que acompanham <b>cada etapa do seu comercial.</b></h2>
+  <p>Do primeiro contato à formalização do contrato, ferramentas integradas para sua empresa trabalhar com mais organização, agilidade e profissionalismo.</p></div>
+  <div class="row"><div class="txt"><span class="tag">Propostas comerciais</span><h3>Propostas com a identidade da sua empresa</h3>
+    <p>Crie propostas personalizadas, apresente produtos e serviços e compartilhe tudo por um link profissional.</p>
+    <ul><li>Link, WhatsApp ou PDF</li><li>Produtos, serviços e valores</li><li>Aprovação online pelo cliente</li></ul><a class="btn btn-b" href="#planos">Quero meu acesso</a></div>
+    <div class="pic"><img src="../assets/img/documentos.png" alt="Exemplos de proposta, contrato e ordem de serviço do Pro Creator" loading="lazy"></div></div>
+  <div class="row rev"><div class="txt"><span class="tag">Acompanhamento de propostas</span><h3>Saiba quando sua proposta foi visualizada</h3>
+    <p>Acompanhe o andamento e receba aprovações online, sem depender de documentos enviados de um lado para outro.</p>
+    <ul><li>Visualizações e status</li><li>Histórico da negociação</li><li>Da aprovação ao contrato</li></ul><a class="btn btn-ob" href="#como-funciona">Ver como funciona</a></div>
+    <div class="pic"><img src="../assets/img/proposta-digital.png" alt="Proposta digital com botão para aceitar" loading="lazy"></div></div>
+  <div class="grid g4" style="margin-top:20px">
+    <div class="card"><div class="num">01</div><h3>Gestão de clientes e oportunidades</h3><p>Organize informações, acompanhe negociações e mantenha o histórico comercial em um só lugar.</p></div>
+    <div class="card"><div class="num">02</div><h3>Contratos e assinatura digital</h3><p>Envie documentos para assinatura, acompanhe o processo e mantenha seus contratos organizados.</p></div>
+    <div class="card"><div class="num">03</div><h3>Ordens de serviço</h3><p>Organize informações dos serviços e acompanhe sua execução com mais praticidade.</p></div>
+    <div class="card"><div class="num">04</div><h3>Inteligência artificial</h3><p>Recursos de IA para auxiliar na criação de textos comerciais e tornar sua rotina mais ágil.</p></div>
+  </div></div></section>
+
+<section id="como-funciona"><div class="wrap"><div class="head c"><span class="tag">Como funciona</span>
+  <h2>Seu processo comercial mais simples, <b>do início ao fim.</b></h2></div>
+  <div class="grid g4">
+    <div class="card"><div class="num">01</div><h3>Organize seus clientes</h3><p>Cadastre seus clientes, centralize informações e mantenha seu histórico comercial organizado.</p></div>
+    <div class="card"><div class="num">02</div><h3>Crie e envie propostas</h3><p>Prepare propostas com sua identidade visual, apresente seus serviços e envie um link para o cliente.</p></div>
+    <div class="card"><div class="num">03</div><h3>Acompanhe e receba a aprovação</h3><p>Visualize o andamento da proposta e permita que o cliente aprove online.</p></div>
+    <div class="card"><div class="num">04</div><h3>Formalize com assinatura digital</h3><p>Prepare ou importe contratos e envie para assinatura digital sem sair da plataforma.</p></div>
+  </div><p class="note" style="font-size:16px"><b>Uma experiência mais profissional para sua empresa e para seus clientes.</b></p></div></section>
+
+<section class="dark"><div class="wrap"><div class="head c"><span class="tag" style="color:var(--sky)">Apresentação do sistema</span>
+  <h2>Tecnologia que simplifica <b>sua gestão comercial.</b></h2>
+  <p>Uma plataforma desenvolvida para reunir informações, documentos e processos comerciais em um ambiente intuitivo e acessível de onde você estiver. Conheça como o Pro Creator funciona na prática.</p></div>
+  <div style="max-width:380px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.4)">
+    <video src="../assets/video/procreator-vsl.mp4" poster="../assets/img/vsl-capa.jpg" controls playsinline preload="none" style="width:100%;display:block"></video></div></div></section>
+
+<section id="para-quem"><div class="wrap"><div class="head c"><span class="tag">Para quem é</span>
+  <h2>Uma solução para <b>diferentes negócios.</b></h2>
+  <p>O Pro Creator atende empresas e profissionais que precisam organizar clientes, apresentar propostas comerciais e formalizar contratos.</p></div>
+  <div class="grid g4">
+    <div class="card"><h3>Prestadores de serviços</h3><p>Organize seus orçamentos, propostas, clientes e ordens de serviço.</p></div>
+    <div class="card"><h3>Agências e serviços criativos</h3><p>Apresente projetos, acompanhe aprovações e formalize contratos.</p></div>
+    <div class="card"><h3>Manutenção e instalações</h3><p>Centralize clientes, propostas e documentos comerciais.</p></div>
+    <div class="card"><h3>Consultorias e serviços especializados</h3><p>Profissionalize a apresentação dos seus serviços e o acompanhamento das negociações.</p></div>
+  </div></div></section>
+
+<section class="alt"><div class="wrap"><div class="head c"><span class="tag">Integrações</span>
+  <h2>Suas ferramentas conectadas <b>ao processo comercial.</b></h2>
+  <p>O Pro Creator evolui com soluções e integrações para tornar sua operação mais conectada.</p></div>
+  <div class="integ">
+    <div class="card"><img src="../assets/img/logos/logo-autentique.png" alt="Autentique" width="619" height="104"><div><h3>Autentique</h3><p>Formalize contratos com assinatura digital integrada à plataforma.</p></div></div>
+    <div class="card"><div style="background:var(--navy);border-radius:8px;padding:6px 10px;flex:none"><img src="../assets/img/logos/logo-asaas-branco.png" alt="Asaas" width="300" height="51" style="height:24px"></div><div><h3>Asaas <span class="soon">Em desenvolvimento</span></h3><p>Integração planejada para conectar a formalização comercial às cobranças. Disponibilidade e condições serão comunicadas após o lançamento.</p></div></div>
+  </div></div></section>
+
+<section id="depoimentos"><div class="wrap"><div class="head"><span class="tag">Confiança</span>
+  <h2>Sua empresa merece uma <b>gestão comercial profissional.</b></h2>
+  <p>Conheça experiências reais de empresas que utilizam o Pro Creator e descubra como a plataforma pode ajudar na rotina do seu negócio.</p></div>
+  <div class="tst">
+    <img src="../assets/img/depoimentos/depoimento-1.webp" alt="Depoimento de cliente" loading="lazy"><img src="../assets/img/depoimentos/depoimento-2.webp" alt="Depoimento de cliente" loading="lazy">
+    <img src="../assets/img/depoimentos/depoimento-3.webp" alt="Depoimento de cliente" loading="lazy"><img src="../assets/img/depoimentos/depoimento-5.webp" alt="Depoimento de cliente" loading="lazy">
+    <img src="../assets/img/depoimentos/depoimento-4.webp" alt="Depoimento de cliente" loading="lazy"><img src="../assets/img/depoimentos/depoimento-6.webp" alt="Depoimento de cliente" loading="lazy">
+  </div></div></section>
+
+<section class="alt" id="planos"><div class="wrap"><div class="head c"><span class="tag">Planos</span>
+  <h2>Planos que acompanham <b>a realidade da sua empresa.</b></h2>
+  <p>Escolha a solução ideal para sua operação comercial. Todos com 7 dias de garantia.</p></div>
+  <div class="plans">
+    <div class="plan"><h3>Vitalício</h3><p class="for">Pagamento único, sem mensalidade e sem renovação automática.</p>
+      <span class="old">De R$ 197,00 por</span><div class="price">R$ 67,90 <small>pagamento único</small></div>
+      <ul><li>Propostas com sua marca</li><li>Aprovação online e acompanhamento</li><li>Contratos e assinatura digital</li><li>Ordens de serviço e recibos</li><li>Até 50 clientes · 20 propostas/mês · 10 contratos/mês</li></ul>
+      <a class="btn btn-ob" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Quero o Vitalício</a></div>
+    <div class="plan"><h3>Pro</h3><p class="for">Para profissionais e empresas que desejam organizar e profissionalizar sua gestão comercial.</p>
+      <span class="old">De R$ 197,90/mês por</span><div class="price">R$ 97,90 <small>/mês</small></div>
+      <ul><li>Benefícios do Vitalício</li><li>Até 500 clientes · 150 propostas/mês</li><li>40 contratos/mês · 60 OS/mês</li><li>Contratos próprios em PDF</li></ul>
+      <a class="btn btn-ob" href="https://payfast.greenn.com.br/c34acg9/offer/W3wrbT?ch_id=17448" target="_blank" rel="noopener noreferrer">Assinar o Pro</a></div>
+    <div class="plan rec"><span class="badge">RECOMENDADO</span><h3>Business</h3><p class="for">Para empresas que precisam ampliar o controle comercial com mais capacidade e recursos de colaboração.</p>
+      <span class="old">De R$ 247,90/mês por</span><div class="price">R$ 127,90 <small>/mês</small></div>
+      <ul><li>Benefícios do Vitalício e do Pro</li><li>Clientes e propostas ilimitados</li><li>Até 100 contratos/mês</li><li>Até 5 colaboradores</li></ul>
+      <a class="btn btn-b" href="https://payfast.greenn.com.br/emvqrze/offer/FbAxZK?ch_id=17448" target="_blank" rel="noopener noreferrer">Assinar o Business</a></div>
+  </div><p class="note">Recursos e limites variam conforme o plano contratado. Funcionalidades em desenvolvimento serão disponibilizadas conforme evolução da plataforma.</p></div></section>
+
+<section id="duvidas"><div class="wrap" style="max-width:860px"><div class="head c"><span class="tag">Perguntas frequentes</span><h2>Dúvidas <b>frequentes.</b></h2></div>
+  <details open><summary>O que é o Pro Creator?</summary><p>O Pro Creator é uma plataforma de gestão comercial que reúne soluções para organizar clientes, criar propostas, acompanhar aprovações e formalizar contratos digitais.</p></details>
+  <details><summary>Existe alguma mensalidade?</summary><p>O plano Vitalício tem pagamento único de R$ 67,90, sem mensalidade. Os planos Pro (R$ 97,90/mês) e Business (R$ 127,90/mês) são assinaturas mensais.</p></details>
+  <details><summary>Posso usar minha própria marca nas propostas?</summary><p>Sim. Você pode personalizar suas propostas comerciais com a identidade da sua empresa.</p></details>
+  <details><summary>Os contratos possuem assinatura digital?</summary><p>Sim. O Pro Creator oferece assinatura digital de contratos por meio de sua integração com a Autentique, sem cobrança adicional por assinatura, respeitando os limites de contratos de cada plano.</p></details>
+  <details><summary>Posso utilizar contratos próprios?</summary><p>Sim. Nos planos Pro e Business, você pode importar contratos em PDF e encaminhá-los para assinatura digital.</p></details>
+  <details><summary>Como funciona a garantia?</summary><p>Você tem 7 dias para testar na prática. Se não fizer sentido para a sua rotina, é só solicitar o reembolso dentro do prazo da garantia.</p></details>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="banner"><h2>Sua próxima proposta começa com uma gestão comercial melhor.</h2>
+  <p>Organize seus processos, apresente sua empresa com profissionalismo e tenha mais controle sobre cada etapa do seu comercial.</p>
+  <a class="btn btn-y" href="#planos">Quero meu acesso</a><small style="color:#9fb8ee">7 dias de garantia · Acesso imediato</small></div></div></section>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div><img src="../assets/img/logo-procreator.png" alt="Pro Creator" width="766" height="116"><p>Pro Creator — Sua gestão comercial em um só lugar.</p></div>
+  <div><h4>Plataforma</h4><a href="#solucoes">Soluções</a><a href="#como-funciona">Como funciona</a><a href="#para-quem">Para quem é</a></div>
+  <div><h4>Comercial</h4><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a><a href="/conteudos/">Conteúdos</a></div>
+  <div><h4>Suporte</h4><a href="https://wa.me/554796759899" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="https://termos-de-usoo.netlify.app/" target="_blank" rel="noopener noreferrer">Termos de Uso</a><a href="https://politica-de-privacidadee.netlify.app/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
+</div><div class="legal">© 2026 Pro Creator. Todos os direitos reservados. · CNPJ: 34.428.447/0001-88</div></div></footer>
+</body></html>
