@@ -339,7 +339,13 @@ fbq('init','912571467763616');fbq('track','PageView');
         <span class="eyebrow">Conheça a plataforma</span>
         <h2 class="h2">Tecnologia que <strong>simplifica sua gestão comercial</strong></h2>
         <p class="lead">Uma plataforma desenvolvida para reunir informações, documentos e processos comerciais em um ambiente intuitivo e acessível de onde você estiver. Conheça como o Pro Creator funciona na prática e descubra como ele pode fazer parte da rotina da sua empresa.</p>
-        <a class="btn btn-primary" href="https://www.youtube.com/@ProCreatoroficial" target="_blank" rel="noopener noreferrer">Assistir demonstração <span class="btn-arrow"><svg class="icon"><use href="#i-play"/></svg></span></a>
+        <a class="btn btn-primary" href="#demonstracao" data-play-demo>Assistir demonstração <span class="btn-arrow"><svg class="icon"><use href="#i-play"/></svg></span></a>
+      </div>
+
+      <div class="demo-video" id="demonstracao">
+        <video controls playsinline preload="none" poster="assets/video/procreator-demonstracao.jpg" width="1280" height="720">
+          <source src="assets/video/procreator-demonstracao.mp4" type="video/mp4">
+        </video>
       </div>
 
       <div class="feature-stack">
@@ -516,5 +522,8 @@ fbq('init','912571467763616');fbq('track','PageView');
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<script>
+document.querySelectorAll('[data-play-demo]').forEach(function(b){b.addEventListener('click',function(e){var w=document.getElementById('demonstracao');if(!w)return;e.preventDefault();w.scrollIntoView({behavior:'smooth',block:'center'});var v=w.querySelector('video');v&&v.play().catch(function(){});});});
+</script>
 </body>
 </html>
