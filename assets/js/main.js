@@ -32,7 +32,15 @@
 
   // Link ativo no menu
   var links = document.querySelectorAll('.nav a');
-  var sections = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute('href')); });
+  var sections = Array.prototype.map.call(links, function (a) {
+    var h = a.getAttribute('href');
+    if (h.charAt(0) !== '#') {
+      // link para outra página: ativo quando é a página atual
+      if (h === location.pathname) links.forEach(function (l) { l.classList.toggle('is-active', l === a); });
+      return null;
+    }
+    return document.querySelector(h);
+  });
   if ('IntersectionObserver' in window) {
     var navObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
