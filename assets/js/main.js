@@ -43,6 +43,16 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { if (s) navObs.observe(s); });
 
+    // Revelar ao rolar: cards e itens de grade surgem um a um
+    ['.tb-grid', '.int-grid', '.plan-grid', '.aud-grid', '.feature-stack'].forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (grid) {
+        grid.removeAttribute('data-reveal');
+        Array.prototype.forEach.call(grid.children, function (el, i) {
+          el.setAttribute('data-reveal', '');
+          el.style.transitionDelay = Math.min(i, 6) * 90 + 'ms';
+        });
+      });
+    });
     // Revelar ao rolar
     var revObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
