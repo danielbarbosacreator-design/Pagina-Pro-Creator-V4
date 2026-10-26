@@ -458,3 +458,14 @@ main{overflow-x:clip}
 /* FAQ: imagem da cliente */
 .faq-art.faq-photo{background:none;aspect-ratio:1036/1396}
 .faq-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Depoimentos: cards escuros */
+.t-card.t-dark{width:340px;padding:0;gap:0;background:var(--navy);color:#fff;border:0;overflow:hidden;box-shadow:0 24px 50px -24px rgba(11,27,51,.55)}
+.t-dark .t-media{position:relative;height:270px;overflow:hidden;border-radius:10px;background:#e9eef5;display:flex;align-items:center;justify-content:center;padding:18px}
+.t-dark .t-media img{width:100%;height:auto;border-radius:10px;transition:transform .3s ease}
+.t-dark:hover .t-media img{transform:scale(1.05)}
+.t-dark .t-media::after{content:"";position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(to top,var(--navy),transparent);pointer-events:none}
+.t-dark figcaption{padding:18px 20px 22px;display:flex;flex-direction:column;gap:4px}
+.t-dark .t-who{font-weight:500;padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,.18)}
+.t-dark .t-tag{font-size:13px;font-weight:500;background:linear-gradient(90deg,#4fb3ff,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:640px){.t-card.t-dark{width:280px}.t-dark .t-media{height:220px}}
