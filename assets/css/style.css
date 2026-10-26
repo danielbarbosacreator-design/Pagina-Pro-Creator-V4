@@ -471,3 +471,21 @@ main{overflow-x:clip}
 @media (max-width:640px){.t-card.t-dark{width:280px}.t-dark .t-media{height:220px}}
 .t-dark.t-photo .t-media{padding:0;background:#0B1B33}
 .t-dark.t-photo .t-media img{height:100%;object-fit:cover;object-position:top;border-radius:10px}
+
+/* Depoimentos em grid (bento) */
+.tb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.tb-card{margin:0;padding:32px;border-radius:10px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;transition:transform .3s ease}
+.tb-card:hover{transform:scale(1.02)}
+.tb-card blockquote{margin:0;font-size:16px;line-height:1.6;font-weight:500}
+.tb-tall{grid-row:span 2}.tb-tall blockquote,.tb-wide blockquote{font-size:24px;line-height:1.4}
+.tb-wide{grid-column:span 2}
+.tb-blue{background:var(--blue);color:#fff}
+.tb-navy{background:var(--navy);color:#fff}
+.tb-light{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.tb-card figcaption{display:flex;align-items:center;gap:14px}
+.tb-card figcaption img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1.5px solid currentColor}
+.tb-light figcaption img{border-color:var(--blue)}
+.tb-card figcaption strong{display:block;font-size:15px}
+.tb-card figcaption span{font-size:13px;opacity:.8}
+@media (max-width:1024px){.tb-grid{grid-template-columns:repeat(2,1fr)}.tb-wide{grid-column:span 2}}
+@media (max-width:640px){.tb-grid{grid-template-columns:1fr}.tb-tall{grid-row:auto}.tb-wide{grid-column:auto}.tb-tall blockquote,.tb-wide blockquote{font-size:20px}.tb-card{padding:24px}}
