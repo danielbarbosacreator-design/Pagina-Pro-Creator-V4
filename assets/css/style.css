@@ -289,8 +289,9 @@ main{overflow-x:clip}
 .faq-art .ipad{position:absolute;right:0;top:-8%;width:100%;max-width:none;filter:drop-shadow(-20px 30px 40px rgba(11,27,51,.3))}
 
 /* ---------- CTA final ---------- */
-.final{position:relative;padding:clamp(88px,10vw,128px) 0 0;background:linear-gradient(180deg,#fff 0%,var(--blue-50) 100%);overflow:hidden;text-align:center}
-.final .container{display:flex;flex-direction:column;align-items:center;gap:22px}
+.final{position:relative;padding:clamp(40px,6vw,72px) 0 clamp(64px,8vw,104px);background:#fff;overflow:hidden;text-align:center}
+.final .container{display:flex;flex-direction:column;align-items:center;gap:20px;background:linear-gradient(180deg,var(--blue-50) 0%,#fff 100%);border:1px solid var(--line);border-radius:32px;padding:clamp(48px,7vw,88px) clamp(20px,5vw,64px)}
+.final .microcopy{margin:0}
 .final .h2{font-size:clamp(2.125rem,4vw,3.25rem);max-width:920px}
 .final .lead{max-width:760px}
 .final .hero-actions{justify-content:center}
