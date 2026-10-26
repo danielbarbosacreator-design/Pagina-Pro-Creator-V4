@@ -1,11 +1,11 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Pro Creator | Gestão comercial em um só lugar (versão 2)</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0090ff"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Organize clientes, crie propostas, acompanhe aprovações e formalize contratos com assinatura digital.">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0b1f4d;--navy2:#12307a;--blue:#1e6cf4;--sky:#8fbaff;--soft:#eef4ff;--ink:#0f1b33;--muted:#5a6a86;--line:#dde6f5;--gold:#ffc83d}
+:root{--navy:#0090ff;--navy2:#0a6fe0;--blue:#1e6cf4;--sky:#8fbaff;--soft:#eef4ff;--ink:#0f1b33;--muted:#5a6a86;--line:#dde6f5;--gold:#ffc83d}
 *{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
 body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
 h1,h2,h3{font-family:Manrope,'DM Sans',sans-serif;letter-spacing:-.03em;line-height:1.12}
@@ -15,10 +15,11 @@ img{max-width:100%;height:auto;display:block}a{color:inherit}
 .btn-y{background:var(--gold);color:#1a1a1a}.btn-y:hover{filter:brightness(.95)}
 .btn-o{border-color:#fff;color:#fff}.btn-b{background:var(--blue);color:#fff}.btn-ob{border-color:var(--blue);color:var(--blue)}
 /* topo */
-.strip{background:#07163a;color:#cfe0ff;font-size:13px;text-align:center;padding:8px 16px}
+.strip{background:#0077d9;color:#fff;font-size:13px;text-align:center;padding:8px 16px}
 .strip a{color:var(--gold);font-weight:700}
 header.top{background:var(--navy);position:sticky;top:0;z-index:50}
 .bar{display:flex;align-items:center;gap:24px;height:68px}
+.bar .logo img,footer img{filter:brightness(0) invert(1)}
 .bar .logo img{height:26px;width:auto}
 nav.main{display:flex;gap:4px;margin-left:12px}
 nav.main>a,nav.main>.dd>button{background:none;border:0;color:#fff;font:600 15px 'DM Sans',sans-serif;padding:10px 12px;border-radius:8px;cursor:pointer;text-decoration:none}
@@ -31,13 +32,13 @@ nav.main>a:hover,nav.main>.dd>button:hover{background:rgba(255,255,255,.1)}
 .bar .cta{margin-left:auto;display:flex;gap:10px}
 .burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:28px}
 /* hero */
-.hero{background:radial-gradient(1200px 500px at 85% 0,#1f4fc0 0,transparent 60%),var(--navy);color:#fff;padding:64px 0 80px}
+.hero{background:radial-gradient(1000px 520px at 85% 0,#3aa8ff 0,transparent 62%),linear-gradient(160deg,#0090ff,#0a6fe0);color:#fff;padding:64px 0 80px}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.hero h1{font-size:clamp(34px,5vw,56px)}.hero h1 em{font-style:normal;color:var(--sky)}
-.hero .sub{font-size:19px;margin-top:18px;color:#dbe7ff}
-.hero p{margin-top:14px;color:#b9cdf5;max-width:560px}
+.hero h1{font-size:clamp(34px,5vw,56px)}.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .sub{font-size:19px;margin-top:18px;color:#fff}
+.hero p{margin-top:14px;color:rgba(255,255,255,.92);max-width:560px}
 .hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.hero small{display:block;margin-top:14px;color:#9fb8ee}
+.hero small{display:block;margin-top:14px;color:rgba(255,255,255,.9)}
 .hero .shot img{width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.4))}
 /* seções */
 section{padding:76px 0}.tag{display:inline-block;font:700 12px Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
@@ -56,7 +57,7 @@ h2 b{color:var(--blue)}
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
 .card h3{font-size:19px}.card p{color:var(--muted);margin-top:8px;font-size:15px}
 .num{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--soft);color:var(--blue);font:800 15px Manrope,sans-serif;margin-bottom:14px}
-.dark{background:var(--navy);color:#fff}.dark h2 b{color:var(--sky)}.dark .head p{color:#b9cdf5}
+.dark{background:var(--navy);color:#fff}.dark h2 b{color:var(--gold)}.dark .head p{color:rgba(255,255,255,.92)}
 .integ{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .integ .card{display:flex;gap:18px;align-items:center}.integ img{height:30px;width:auto;flex:none}
 .soon{font-size:12px;font-weight:700;background:var(--gold);color:#222;border-radius:99px;padding:3px 10px;margin-left:8px}
@@ -77,9 +78,9 @@ details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:
 summary{font:700 17px Manrope,sans-serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
 summary:after{content:"+";color:var(--blue);font-size:22px;line-height:1}details[open] summary:after{content:"–"}
 details p{color:var(--muted);margin-top:10px}
-.banner{background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;border-radius:28px;padding:56px;display:grid;gap:14px;justify-items:start}
-.banner h2{max-width:720px}.banner p{color:#c6d6f8;max-width:640px}
-footer{background:#07163a;color:#b9cdf5;padding:48px 0 28px;font-size:14px}
+.banner{background:linear-gradient(120deg,#0090ff,#0a6fe0);color:#fff;border-radius:28px;padding:56px;display:grid;gap:14px;justify-items:start}
+.banner h2{max-width:720px}.banner p{color:rgba(255,255,255,.92);max-width:640px}
+footer{background:#0a5fb8;color:rgba(255,255,255,.88);padding:48px 0 28px;font-size:14px}
 footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}footer h4{color:#fff;margin-bottom:10px;font-family:Manrope,sans-serif}
 footer a{display:block;text-decoration:none;margin:6px 0}footer a:hover{color:#fff}footer img{height:26px;width:auto;margin-bottom:12px}
 footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px}
@@ -151,7 +152,7 @@ footer .cols{grid-template-columns:1fr 1fr}.banner{padding:34px 24px}section{pad
     <div class="card"><div class="num">04</div><h3>Formalize com assinatura digital</h3><p>Prepare ou importe contratos e envie para assinatura digital sem sair da plataforma.</p></div>
   </div><p class="note" style="font-size:16px"><b>Uma experiência mais profissional para sua empresa e para seus clientes.</b></p></div></section>
 
-<section class="dark"><div class="wrap"><div class="head c"><span class="tag" style="color:var(--sky)">Apresentação do sistema</span>
+<section class="dark"><div class="wrap"><div class="head c"><span class="tag" style="color:#fff">Apresentação do sistema</span>
   <h2>Tecnologia que simplifica <b>sua gestão comercial.</b></h2>
   <p>Uma plataforma desenvolvida para reunir informações, documentos e processos comerciais em um ambiente intuitivo e acessível de onde você estiver. Conheça como o Pro Creator funciona na prática.</p></div>
   <div style="max-width:380px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.4)">
@@ -213,7 +214,7 @@ footer .cols{grid-template-columns:1fr 1fr}.banner{padding:34px 24px}section{pad
 
 <section style="padding-top:0"><div class="wrap"><div class="banner"><h2>Sua próxima proposta começa com uma gestão comercial melhor.</h2>
   <p>Organize seus processos, apresente sua empresa com profissionalismo e tenha mais controle sobre cada etapa do seu comercial.</p>
-  <a class="btn btn-y" href="#planos">Quero meu acesso</a><small style="color:#9fb8ee">7 dias de garantia · Acesso imediato</small></div></div></section>
+  <a class="btn btn-y" href="#planos">Quero meu acesso</a><small style="color:rgba(255,255,255,.9)">7 dias de garantia · Acesso imediato</small></div></div></section>
 </main>
 <footer><div class="wrap"><div class="cols">
   <div><img src="../assets/img/logo-procreator.png" alt="Pro Creator" width="766" height="116"><p>Pro Creator — Sua gestão comercial em um só lugar.</p></div>
