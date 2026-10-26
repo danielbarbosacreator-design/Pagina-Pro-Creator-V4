@@ -530,5 +530,9 @@ fbq('init','912571467763616');fbq('track','PageView');
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<div class="bottom-fade" aria-hidden="true"></div>
+<script>
+(function(){var f=document.querySelector('.bottom-fade');if(!f)return;function u(){var end=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-40;f.classList.toggle('on',window.scrollY>40&&!end);}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
 </body>
 </html>
