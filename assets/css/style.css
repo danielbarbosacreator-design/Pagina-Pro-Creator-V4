@@ -205,7 +205,9 @@ main{overflow-x:clip}
 .integrations{background:var(--soft);padding-top:96px}
 .int-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:780px;margin:48px auto 0}
 .int-card{display:flex;align-items:center;gap:18px;padding:22px;border-radius:10px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
-.int-card .tile{margin:0;background:var(--blue);color:#fff;width:56px;height:56px}
+.int-card .tile{margin:0;background:var(--blue);color:#fff;width:56px;height:56px;flex-shrink:0}
+.int-card .tile-logo{background:#fff;border:1px solid var(--line);overflow:hidden;padding:0}
+.int-card .tile-logo img{width:100%;height:100%;object-fit:cover;display:block}
 .int-card h3{font-size:18px;font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .int-card p{font-size:14px;color:var(--muted);line-height:1.45;margin-top:2px}
 .pill{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;background:var(--blue-50);color:var(--blue-600);font-size:11px;font-weight:500}
