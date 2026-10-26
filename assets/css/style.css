@@ -437,18 +437,20 @@ main{overflow-x:clip}
 @media (max-width:720px){.demo-video{margin:28px 0 40px}}
 
 /* Brilho no hover dos botões principais */
-.btn-primary{position:relative;overflow:hidden;isolation:isolate}
-.btn-primary::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:linear-gradient(45deg,transparent 25%,rgba(255,255,255,.55) 50%,transparent 75%,transparent 100%) no-repeat;background-size:250% 250%;background-position:200% 0;transition:background-position 0s}
-.btn-primary:hover::before{background-position:-100% 0;transition:background-position 1s ease}
-.btn-primary>*{position:relative}
-@media (prefers-reduced-motion:reduce){.btn-primary::before{display:none}}
+:is(.btn-primary,.btn-white,.btn-ghost){position:relative;overflow:hidden;isolation:isolate}
+:is(.btn-primary,.btn-white,.btn-ghost)::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:linear-gradient(45deg,transparent 25%,rgba(255,255,255,.55) 50%,transparent 75%,transparent 100%) no-repeat;background-size:250% 250%;background-position:200% 0;transition:background-position 0s}
+:is(.btn-primary,.btn-white,.btn-ghost):hover::before{background-position:-100% 0;transition:background-position 1s ease}
+:is(.btn-primary,.btn-white,.btn-ghost)>*{position:relative}
+@media (prefers-reduced-motion:reduce){:is(.btn-primary,.btn-white,.btn-ghost)::before{display:none}}
 
 /* Botões com seta: a bolinha desliza para a esquerda no hover */
-.btn-primary:has(.btn-arrow){padding:0 58px 0 24px;transition:padding .5s ease,background-color .2s ease,box-shadow .2s ease,transform .2s ease}
-.btn-primary .btn-arrow{position:absolute;right:6px;top:50%;transform:translateY(-50%);transition:right .5s ease,transform .5s ease}
+:is(.btn-primary,.btn-white,.btn-ghost):has(.btn-arrow){padding:0 58px 0 24px;transition:padding .5s ease,background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+:is(.btn-primary,.btn-white,.btn-ghost) .btn-arrow{position:absolute;right:6px;top:50%;transform:translateY(-50%);transition:right .5s ease,transform .5s ease}
 @media (hover:hover){
-  .btn-primary:has(.btn-arrow):hover{padding:0 24px 0 58px}
-  .btn-primary:hover .btn-arrow{right:calc(100% - 46px);transform:translateY(-50%) rotate(-45deg)}
-  .btn-primary:hover .btn-arrow:has(use[href="#i-play"]){transform:translateY(-50%)}
+  :is(.btn-primary,.btn-white,.btn-ghost):has(.btn-arrow):hover{padding:0 24px 0 58px}
+  :is(.btn-primary,.btn-white,.btn-ghost):hover .btn-arrow{right:calc(100% - 46px);transform:translateY(-50%) rotate(-45deg)}
+  :is(.btn-primary,.btn-white,.btn-ghost):hover .btn-arrow:has(use[href="#i-play"]){transform:translateY(-50%)}
 }
-@media (prefers-reduced-motion:reduce){.btn-primary,.btn-primary .btn-arrow{transition:none}}
+@media (prefers-reduced-motion:reduce){:is(.btn-primary,.btn-white,.btn-ghost),:is(.btn-primary,.btn-white,.btn-ghost) .btn-arrow{transition:none}}
+
+:is(.btn-white,.btn-ghost)::before{background-image:linear-gradient(45deg,transparent 25%,rgba(0,144,255,.18) 50%,transparent 75%,transparent 100%)}
