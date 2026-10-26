@@ -489,3 +489,10 @@ main{overflow-x:clip}
 .tb-card figcaption span{font-size:13px;opacity:.8}
 @media (max-width:1024px){.tb-grid{grid-template-columns:repeat(2,1fr)}.tb-wide{grid-column:span 2}}
 @media (max-width:640px){.tb-grid{grid-template-columns:1fr}.tb-tall{grid-row:auto}.tb-wide{grid-column:auto}.tb-tall blockquote,.tb-wide blockquote{font-size:20px}.tb-card{padding:24px}}
+
+.tb-card blockquote{display:flex;flex-direction:column;gap:14px}
+.tb-head{font-size:19px;line-height:1.35;font-weight:600}
+.tb-tall .tb-head,.tb-wide .tb-head{font-size:24px}
+.tb-tall blockquote,.tb-wide blockquote{font-size:16px;line-height:1.6}
+.tb-body{font-size:15px;line-height:1.6;font-weight:400;opacity:.88}
+@media (max-width:640px){.tb-tall .tb-head,.tb-wide .tb-head{font-size:20px}}
