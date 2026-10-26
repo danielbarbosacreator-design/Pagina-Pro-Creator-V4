@@ -1,0 +1,7 @@
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:760px;margin:0 auto;background:#0B1B33;color:#e6edf8;border-radius:10px;padding:16px 18px;display:flex;gap:14px 20px;align-items:center;flex-wrap:wrap;box-shadow:0 18px 48px -12px rgba(11,27,51,.5);font:400 14px/1.5 "Albert Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.cookie-banner p{margin:0;flex:1 1 320px}
+.cookie-banner a{color:#7cc4ff}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-btn{font:600 14px/1 inherit;font-family:inherit;border:1px solid #0090FF;background:#0090FF;color:#fff;border-radius:10px;padding:11px 16px;cursor:pointer}
+.cookie-btn.ghost{background:transparent;border-color:#4a6286;color:#e6edf8}
+.cookie-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
