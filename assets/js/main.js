@@ -23,7 +23,7 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
   // Depoimentos em loop contínuo
-  var tTrack = document.querySelector('.t-track');
+  var tTrack = document.querySelector('.t-marquee .t-track');
   if (tTrack && tTrack.children.length === 1) {
     var clone = tTrack.children[0].cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
