@@ -572,6 +572,14 @@ main{overflow-x:clip}
   .hero-visual-video .float-card.fc-2{right:-4px;bottom:10%}
   .hero-visual-video .int-float.if-1{right:2px;top:2%}
   .hero-visual-video .int-float.if-2{left:2px;bottom:4%}
+  /* Mobile: título sem palavra solta e vídeo + botão na primeira tela */
+  .hero{padding-top:calc(var(--header) + 20px)}
+  .hero-copy .badge{margin-bottom:14px}
+  .hero-copy .h1{font-size:clamp(1.75rem,8vw,2.125rem);line-height:1.1;text-wrap:balance}
+  .hero-copy .h1 strong{display:block}
+  .hero-visual.hero-visual-video{margin:0 0 16px;padding:12px 0}
+  .hero-video{width:clamp(190px,calc((100vh - 400px) * 9 / 16),min(300px,78vw))}
+  @supports (height:100svh){.hero-video{width:clamp(190px,calc((100svh - 400px) * 9 / 16),min(300px,78vw))}}
 }
 
 /* ---------- Prova social real (prints, avatares e áudio) ---------- */
