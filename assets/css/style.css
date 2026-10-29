@@ -229,7 +229,9 @@ main{overflow-x:clip}
 /* ---------- Depoimentos ---------- */
 .testimonials .section-head{margin-bottom:56px}
 .t-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.t-track{display:flex;width:max-content;animation:scrollX 60s linear infinite}
+.t-track{display:flex;width:max-content;animation:scrollX 140s linear infinite}
+.t-marquee-2{margin-top:20px}
+.t-marquee-2 .t-track{animation-duration:170s;animation-direction:reverse}
 .t-marquee:hover .t-track{animation-play-state:paused}
 .t-group{display:flex;gap:20px;padding-right:20px}
 .t-card{margin:0;width:400px;display:flex;flex-direction:column;gap:22px;padding:30px;border-radius:10px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
@@ -604,6 +606,8 @@ main{overflow-x:clip}
 @media (max-width:640px){.proof-avatars img{width:36px;height:36px}.t-card.t-shot{width:280px}}
 .testimonials .real-proof{margin-top:0}
 .testimonials .t-marquee{margin:40px 0 64px}
+.testimonials .t-marquee:not(.t-marquee-2){margin-bottom:0}
+.testimonials .t-marquee-2{margin-top:20px}
 @media (max-width:720px){.hero-visual-video .float-card{display:none}}
 
 /* ---------- Âncora do card do Vitalício ---------- */
