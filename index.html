@@ -35,8 +35,8 @@
 <style>
 #pc-loader{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease,visibility .35s}
 #pc-loader.done{opacity:0;visibility:hidden}
-#pc-loader img{width:64px;height:64px;animation:pcpulse 1.1s ease-in-out infinite}
-@keyframes pcpulse{0%,100%{transform:scale(.92);opacity:.7}50%{transform:scale(1);opacity:1}}
+#pc-loader img{width:44px;height:auto;animation:pcspin .9s linear infinite}
+@keyframes pcspin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){#pc-loader img{animation:none}}
 </style>
 <noscript><style>#pc-loader{display:none}</style></noscript>
@@ -50,8 +50,8 @@ fbq('init','912571467763616');fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=912571467763616&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
-<div id="pc-loader" aria-hidden="true"><img src="assets/img/logo-icone.png" alt="" width="64" height="64"></div>
-<script>(function(){var l=document.getElementById("pc-loader");function h(){if(l)l.classList.add("done")}window.addEventListener("load",h);setTimeout(h,3000)})();</script>
+<div id="pc-loader" aria-hidden="true"><img src="assets/img/simbolo.svg" alt="" width="44" height="48"></div>
+<script>(function(){var l=document.getElementById("pc-loader");function h(){if(l)l.classList.add("done")}if(document.readyState!=="loading")h();else document.addEventListener("DOMContentLoaded",h);setTimeout(h,1200)})();</script>
 
 <!-- Ícones -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
