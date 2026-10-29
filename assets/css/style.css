@@ -601,3 +601,18 @@ main{overflow-x:clip}
 .testimonials .real-proof{margin-top:0}
 .testimonials .t-marquee{margin:40px 0 64px}
 @media (max-width:720px){.hero-visual-video .float-card{display:none}}
+
+/* ---------- Botão de compra no rodapé do vídeo (aparece no momento do preço) ---------- */
+.vsl-cta{position:absolute;left:10px;right:10px;bottom:16px;z-index:3;justify-content:center;gap:8px;height:auto;min-height:52px;padding:8px 8px 8px 18px;font-size:14px;line-height:1.2;white-space:normal;text-align:left;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);animation:vslCtaIn .45s ease-out both}
+.vsl-cta[hidden]{display:none}
+@keyframes vslCtaIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.vsl-cta{animation:none}}
+@media (min-width:721px){.hero-visual-video.has-cta :is(.int-float.if-2,.float-card.fc-2){opacity:0;pointer-events:none}}
+#plano-vitalicio{scroll-margin-top:calc(var(--header) + 16px)}
+/* Mobile: ícones Autentique e Asaas nos cantos, ao lado do selo/título, fora do vídeo */
+@media (max-width:720px){
+  .hero-visual.hero-visual-video{position:static}
+  .hero-visual-video .int-float.if-1,.hero-visual-video .int-float.if-2{top:-4px;bottom:auto;width:42px;height:42px;padding:6px}
+  .hero-visual-video .int-float.if-1{right:4px;left:auto}
+  .hero-visual-video .int-float.if-2{left:4px;right:auto}
+}
