@@ -21,6 +21,34 @@
     window.gtag('config', GA_ID, { anonymize_ip: true });
   }
 
+  /* Meta Pixel (912571467763616): só carrega depois do "Aceitar todos", junto com o GA4.
+     Não carrega em localhost nem em prévias. InitiateCheckout e Purchase continuam com a Greenn. */
+  var META_ID = '912571467763616';
+  function loadMeta() {
+    var h = location.hostname;
+    if (window.__metaLoaded || !h || h === 'localhost' || h === '127.0.0.1' || /claude|deploy-preview/i.test(h)) return;
+    window.__metaLoaded = true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_ID);
+    window.fbq('track', 'PageView');
+    var planos = document.getElementById('planos');
+    if (planos && 'IntersectionObserver' in window) {
+      var vo = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) {
+          window.fbq('track', 'ViewContent', { content_name: 'Planos Pro Creator', content_category: 'Planos', value: 67.90, currency: 'BRL' });
+          vo.disconnect();
+        }
+      }, { threshold: 0.25 });
+      vo.observe(planos);
+    }
+    document.querySelectorAll('[data-plan][data-value]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        window.fbq('trackCustom', 'LandingCheckoutClick', { content_name: a.dataset.plan, value: Number(a.dataset.value), currency: 'BRL' });
+      });
+    });
+  }
+  function loadAll() { loadGA(); loadMeta(); }
+
   function banner() {
     var b = document.createElement('div');
     b.className = 'cookie-banner';
@@ -37,14 +65,14 @@
       if (!v) return;
       ls.set(v);
       b.parentNode.removeChild(b);
-      if (v === 'all') loadGA();
+      if (v === 'all') loadAll();
     });
     document.body.appendChild(b);
     requestAnimationFrame(function () { requestAnimationFrame(function () { b.classList.add('on'); }); });
   }
 
   var c = ls.get();
-  if (c === 'all') loadGA();
+  if (c === 'all') loadAll();
   else if (!c) {
     var show = function () { setTimeout(banner, 1500); };
     if (document.readyState === 'complete') show(); else window.addEventListener('load', show);
