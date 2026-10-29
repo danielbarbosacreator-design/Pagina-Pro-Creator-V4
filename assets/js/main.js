@@ -82,21 +82,15 @@
   var playIc = vsl.querySelector('[data-vsl-play]');
   var progress = vsl.querySelector('[data-vsl-progress]');
   var withSound = false;
-  // Botão de compra aparece quando a narração fala do preço (segundo do vídeo em data-cta-at)
-  var cta = vsl.querySelector('[data-vsl-cta]');
-  var ctaAt = parseFloat(vsl.getAttribute('data-cta-at')) || 0;
-  function showCta() { if (cta && cta.hidden) { cta.hidden = false; vsl.parentNode.classList.add('has-cta'); } }
-  if (cta) cta.addEventListener('click', function (e) { e.stopPropagation(); });
   video.muted = true;
   video.play().catch(function () {});
   video.addEventListener('timeupdate', function () {
-    if (ctaAt && video.currentTime >= ctaAt) showCta();
     if (!withSound || !video.duration) return;
     progress.style.width = (Math.pow(video.currentTime / video.duration, 0.6) * 100) + '%';
   });
   video.addEventListener('play', function () { playIc.hidden = true; });
   video.addEventListener('pause', function () { if (withSound) playIc.hidden = false; });
-  video.addEventListener('ended', function () { progress.style.width = '100%'; showCta(); });
+  video.addEventListener('ended', function () { progress.style.width = '100%'; });
   vsl.addEventListener('click', function () {
     if (!withSound) {
       withSound = true;
