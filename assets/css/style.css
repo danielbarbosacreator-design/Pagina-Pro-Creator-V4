@@ -587,6 +587,10 @@ main{overflow-x:clip}
 .real-proof-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px 40px;width:100%}
 .proof-strip{display:flex;flex-direction:column;align-items:center;gap:10px}
 .proof-strip p{font-size:14px;color:var(--muted)}
+.proof-stars{display:flex;gap:3px;margin-top:4px}
+.proof-stars svg{fill:#FFB800}
+.proof-strip .proof-count{font-size:16px;color:var(--ink);text-align:center}
+.proof-strip .proof-count strong{font-weight:700;color:var(--navy)}
 .proof-avatars{display:flex}
 .proof-avatars img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-left:-10px;box-shadow:0 6px 14px -6px rgba(11,27,51,.35)}
 .proof-avatars img:first-child{margin-left:0}
