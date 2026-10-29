@@ -544,3 +544,53 @@ main{overflow-x:clip}
 .compare-table .icon{width:18px;height:18px;stroke-width:2.4;color:var(--blue);vertical-align:middle}
 .compare-table .no{color:#A3AEBD}
 @media (max-width:720px){.limit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.compare-table th[scope=row]{position:sticky;left:0;background:#fff;z-index:1;min-width:150px}.compare-table td:nth-child(2){background:#EEF6FF}}
+
+/* ---------- Topo com vídeo de demonstração (V3) ---------- */
+.hero-visual-video{margin-right:0;display:flex;justify-content:center;padding:24px 0}
+.hero-video{position:relative;z-index:1;width:340px;max-width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:var(--navy);box-shadow:0 40px 60px -28px rgba(11,27,51,.45);cursor:pointer}
+.hero-video video{display:block;width:100%;height:100%;object-fit:cover}
+.vsl-unmute{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:8px;width:72%;padding:18px 14px;border:0;border-radius:14px;background:rgba(0,144,255,.94);color:#fff;font:inherit;font-size:15px;font-weight:600;line-height:1.2;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:vslPulse 1.6s ease-out infinite}
+.vsl-unmute[hidden],.vsl-play[hidden]{display:none}
+.vsl-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:72px;height:72px;padding-left:4px;border-radius:50%;background:rgba(0,144,255,.94);pointer-events:none}
+.vsl-bar{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.2);pointer-events:none}
+.vsl-bar>span{display:block;height:100%;width:0;background:var(--blue);transition:width .25s linear}
+@keyframes vslPulse{0%{box-shadow:0 0 0 0 rgba(0,144,255,.55)}70%{box-shadow:0 0 0 18px rgba(0,144,255,0)}100%{box-shadow:0 0 0 0 rgba(0,144,255,0)}}
+@media (prefers-reduced-motion:reduce){.vsl-unmute{animation:none}}
+.hero-visual-video .float-card.fc-1{left:0;top:14%}
+.hero-visual-video .float-card.fc-2{right:0;bottom:12%}
+.hero-visual-video .int-float.if-1{right:10%;top:2%}
+.hero-visual-video .int-float.if-2{left:10%;bottom:4%}
+@media (max-width:720px){
+  .hero-copy .h1{order:1;margin:0 0 8px}
+  .hero-visual.hero-visual-video{order:2;margin:0 0 28px;width:100%;padding:16px 0}
+  .hero-video{width:min(300px,78vw)}
+  .hero-actions{order:3}
+  .hero-copy .microcopy{order:4;margin:0 0 20px}
+  .hero-copy .lead{order:5;margin:0}
+  .hero-copy .badge{margin-bottom:24px}
+  .hero-visual-video .float-card.fc-1{left:-4px;top:10%}
+  .hero-visual-video .float-card.fc-2{right:-4px;bottom:10%}
+  .hero-visual-video .int-float.if-1{right:2px;top:2%}
+  .hero-visual-video .int-float.if-2{left:2px;bottom:4%}
+}
+
+/* ---------- Prova social real (prints, avatares e áudio) ---------- */
+.real-proof{margin-top:72px;display:flex;flex-direction:column;align-items:center;gap:24px}
+.real-proof-title{font-size:1.5rem;font-weight:600;color:var(--navy);text-align:center}
+.real-proof-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px 40px;width:100%}
+.proof-strip{display:flex;flex-direction:column;align-items:center;gap:10px}
+.proof-strip p{font-size:14px;color:var(--muted)}
+.proof-avatars{display:flex}
+.proof-avatars img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-left:-10px;box-shadow:0 6px 14px -6px rgba(11,27,51,.35)}
+.proof-avatars img:first-child{margin-left:0}
+.audio-card{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:var(--radius);background:var(--navy);color:#fff;width:min(420px,100%)}
+.audio-card>img{width:52px;height:52px;border-radius:10px;flex:none}
+.audio-body{flex:1;min-width:0}
+.audio-body strong{display:block;font-size:15px;font-weight:600}
+.audio-body span{display:block;font-size:13px;color:rgba(255,255,255,.7);margin:2px 0 8px}
+.audio-body audio{width:100%;height:36px}
+.testimonials .t-marquee{margin-top:40px}
+@media (max-width:640px){.proof-avatars img{width:36px;height:36px}.t-card.t-shot{width:280px}}
+.testimonials .real-proof{margin-top:0}
+.testimonials .t-marquee{margin:40px 0 64px}
+@media (max-width:720px){.hero-visual-video .float-card{display:none}}

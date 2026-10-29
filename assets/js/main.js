@@ -72,3 +72,37 @@
     document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
   }
 })();
+
+/* Vídeo de demonstração do topo (mesmo comportamento da V3: começa mudo, clique para ouvir do início) */
+(function () {
+  var vsl = document.querySelector('[data-vsl]');
+  if (!vsl) return;
+  var video = vsl.querySelector('[data-vsl-video]');
+  var unmute = vsl.querySelector('[data-vsl-unmute]');
+  var playIc = vsl.querySelector('[data-vsl-play]');
+  var progress = vsl.querySelector('[data-vsl-progress]');
+  var withSound = false;
+  video.muted = true;
+  video.play().catch(function () {});
+  video.addEventListener('timeupdate', function () {
+    if (!withSound || !video.duration) return;
+    progress.style.width = (Math.pow(video.currentTime / video.duration, 0.6) * 100) + '%';
+  });
+  video.addEventListener('play', function () { playIc.hidden = true; });
+  video.addEventListener('pause', function () { if (withSound) playIc.hidden = false; });
+  video.addEventListener('ended', function () { progress.style.width = '100%'; });
+  vsl.addEventListener('click', function () {
+    if (!withSound) {
+      withSound = true;
+      unmute.hidden = true;
+      video.loop = false;
+      video.muted = false;
+      video.currentTime = 0;
+      video.play().catch(function () {});
+    } else if (video.paused) {
+      video.play().catch(function () {});
+    } else {
+      video.pause();
+    }
+  });
+})();
