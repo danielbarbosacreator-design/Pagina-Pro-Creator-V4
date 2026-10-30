@@ -643,3 +643,4 @@ main{overflow-x:clip}
 @media (max-width:720px){.aud-grid-5{grid-template-columns:1fr}}
 .plan-name{flex-wrap:wrap}.plan-tag{white-space:nowrap}
 .demo-copy{min-width:0}.demo-copy .btn{max-width:100%}@media (max-width:720px){.demo-copy .btn,.section-cta .btn,.final .btn{white-space:normal;text-align:left}.hero-copy .lead + .lead{margin-top:8px}}
+.span-12{grid-column:span 12}
