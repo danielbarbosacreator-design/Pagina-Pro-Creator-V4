@@ -665,3 +665,6 @@ main{overflow-x:clip}
 }
 .nowrap{white-space:nowrap}
 .h1-play{display:inline-block;width:.72em;height:.72em;vertical-align:-.04em;margin-left:.12em;fill:currentColor;stroke:currentColor}
+/* Respiro entre título, vídeo e botão */
+.hero-stack>.h1{margin-bottom:20px}.hero-stack>.hero-actions{margin-top:20px}
+@media (max-width:720px){.hero-stack>.h1{margin-bottom:14px}.hero-stack>.hero-actions{margin-top:14px}}
