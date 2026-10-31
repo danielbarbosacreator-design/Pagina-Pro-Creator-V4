@@ -677,3 +677,4 @@ main{overflow-x:clip}
 .hero .btn-primary{background:#fff;color:var(--blue)}
 .hero .btn-primary .btn-arrow{background:var(--blue);color:#fff}
 .mockup-band{background:linear-gradient(180deg,var(--blue) 0%,var(--blue) 18%,var(--soft) 62%)}
+.mockup-band{background:linear-gradient(180deg,var(--blue) 0%,var(--blue) 55%,var(--soft) 55%)}
