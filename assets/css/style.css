@@ -646,6 +646,12 @@ main{overflow-x:clip}
 .hero-stack .hero-visual{margin:0;width:100%;max-width:720px;order:0}
 .hero-stack .hero-actions{justify-content:center;margin:0}
 .hero-stack .microcopy{margin:0}
-.hero-mockup{display:block;width:min(1000px,100%);height:auto;margin-top:36px}
-@media (max-width:720px){.hero-stack{gap:14px}.hero-stack .hero-actions{width:100%}.hero-mockup{margin-top:24px}}
-.hero-stack>.h1{order:1}.hero-stack>.hero-visual{order:2}.hero-stack>.hero-actions{order:3}.hero-stack>.microcopy{order:4}.hero-stack>.hero-mockup{order:5}
+@media (max-width:720px){.hero-stack{gap:14px}.hero-stack .hero-actions{width:100%}}
+.hero-stack>.h1{order:1}.hero-stack>.hero-visual{order:2}.hero-stack>.hero-actions{order:3}.hero-stack>.microcopy{order:4}
+/* Seção independente do mockup notebook + celular */
+.hero{padding-bottom:40px}
+.mockup-band{background:linear-gradient(180deg,#F7FBFF 0%,var(--soft) 100%);padding:8px 0 72px}
+.mockup-band-img{display:block;width:100%;max-width:1120px;height:auto;margin:0 auto;object-fit:contain}
+@media (min-width:1440px){.mockup-band-img{max-width:1240px}}
+@media (max-width:1024px){.mockup-band{padding:4px 0 56px}}
+@media (max-width:720px){.hero{padding-bottom:24px}.mockup-band{padding:0 0 40px}.mockup-band .container{padding-left:12px;padding-right:12px}}
