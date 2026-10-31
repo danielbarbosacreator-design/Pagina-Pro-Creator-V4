@@ -196,7 +196,7 @@ main{overflow-x:clip}
 .marquee-group img{width:16px;opacity:.9}
 .stage{position:relative;z-index:1;padding-top:72px}
 .stage-mark{position:absolute;left:50%;top:40px;width:min(620px,62vw);transform:translateX(-50%);opacity:.95;pointer-events:none;filter:drop-shadow(0 30px 60px rgba(11,27,51,.25))}
-.macbook{position:relative;width:min(1100px,100%);margin:0 auto;aspect-ratio:2200/1275}
+.macbook{position:relative;width:min(1100px,100%);margin:0 auto;aspect-ratio:1100/639}
 .macbook>img{position:absolute;inset:0;width:100%;height:100%}
 .macbook .screen{position:absolute;left:10.5%;top:7.3%;width:78.79%;height:76.38%;object-fit:cover;object-position:left top;border-radius:4px}
 .macbook::after{content:"";position:absolute;left:6%;right:6%;bottom:-3%;height:9%;background:radial-gradient(closest-side,rgba(11,27,51,.28),transparent);filter:blur(10px);z-index:-1}
