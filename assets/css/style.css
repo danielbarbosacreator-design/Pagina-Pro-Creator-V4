@@ -658,3 +658,9 @@ main{overflow-x:clip}
 /* Desktop: VSL com mais peso que o mockup */
 @media (min-width:1025px){.hero-stack .hero-visual{max-width:1040px}.hero-stack .hero-video{max-width:1040px}.mockup-band-img,.mockup-band-img{max-width:820px}}
 @media (min-width:1440px){.hero-stack .hero-visual,.hero-stack .hero-video{max-width:1120px}.mockup-band-img{max-width:880px}}
+/* Mobile: bloco da VSL centralizado na tela e título equilibrado */
+@media (max-width:720px){
+  .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:calc(var(--header) + 24px);padding-bottom:32px}
+  .hero-stack>.h1{text-wrap:balance;max-width:none}
+}
+.nowrap{white-space:nowrap}
