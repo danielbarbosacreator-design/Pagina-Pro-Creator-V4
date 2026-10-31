@@ -668,3 +668,12 @@ main{overflow-x:clip}
 /* Respiro entre título, vídeo e botão */
 .hero-stack>.h1{margin-bottom:20px}.hero-stack>.hero-actions{margin-top:20px}
 @media (max-width:720px){.hero-stack>.h1{margin-bottom:14px}.hero-stack>.hero-actions{margin-top:14px}}
+/* Teste: hero com o fundo azul da seção Como funciona */
+.hero{background:var(--blue);color:#fff}
+.hero::before{background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px)}
+.hero::after{background:radial-gradient(closest-side,rgba(255,255,255,.14),rgba(255,255,255,0))}
+.hero .h1,.hero .h1 strong{color:#fff}
+.hero .microcopy{color:rgba(255,255,255,.82)}
+.hero .btn-primary{background:#fff;color:var(--blue)}
+.hero .btn-primary .btn-arrow{background:var(--blue);color:#fff}
+.mockup-band{background:linear-gradient(180deg,var(--blue) 0%,var(--blue) 18%,var(--soft) 62%)}
