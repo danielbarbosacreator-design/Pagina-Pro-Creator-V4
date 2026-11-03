@@ -679,3 +679,28 @@ main{overflow-x:clip}
 .mockup-band{background:linear-gradient(180deg,var(--blue) 0%,var(--blue) 18%,var(--soft) 62%)}
 .mockup-band{background:linear-gradient(180deg,var(--blue) 0%,var(--blue) 55%,var(--soft) 55%)}
 .mockup-band{background:linear-gradient(180deg,var(--blue) 0%,var(--blue) 55%,#fff 55%);padding-bottom:40px}@media (max-width:720px){.mockup-band{padding-bottom:24px}}
+/* VSL 2026-11-03: convite de som discreto (pílula) e mobile compacto */
+.hero-video .vsl-unmute,.vsl-unmute{top:auto;left:50%;bottom:16px;transform:translateX(-50%);flex-direction:row;gap:8px;width:auto;min-height:44px;padding:10px 18px 10px 14px;border-radius:999px;background:rgba(11,27,51,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.28);animation:vslPill 2.2s ease-in-out infinite}
+.hero-video .vsl-unmute svg{width:18px;height:18px;flex:none}
+.vsl-unmute:hover{background:rgba(0,144,255,.92)}
+.vsl-unmute:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@keyframes vslPill{0%,100%{box-shadow:0 8px 24px rgba(0,0,0,.28),0 0 0 0 rgba(255,255,255,.35)}50%{box-shadow:0 8px 24px rgba(0,0,0,.28),0 0 0 8px rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){.vsl-unmute{animation:none}}
+@media (max-width:720px){
+  .hero{min-height:0;display:block;padding-top:calc(var(--header) + 20px);padding-bottom:24px}
+  .hero-stack{gap:0}
+  .hero-stack>.h1{margin:0 0 12px}
+  .hero-visual.hero-visual-video{padding:0;margin:0}
+  .hero-stack>.hero-actions{margin-top:16px}
+  .hero-stack .hero-actions .btn{min-height:52px}
+  .hero-stack>.microcopy{margin-top:10px}
+  .hero-video .vsl-unmute{bottom:10px;min-height:40px;padding:8px 14px 8px 12px;font-size:13px}
+}
+@media (min-width:1025px){
+  .hero{padding-top:calc(var(--header) + 40px)}
+  .hero-stack .hero-visual,.hero-stack .hero-video{max-width:min(1120px,calc((100svh - 380px) * 16 / 9));min-width:min(720px,100%)}
+}
+.vsl-unmute-d{display:none}
+@media (hover:hover) and (pointer:fine){.vsl-unmute-t{display:none}.vsl-unmute-d{display:inline}}
+@media (min-width:721px){.hero-stack .hero-visual-video{padding:4px 0}.hero-stack>.h1{margin-bottom:8px}.hero-stack>.hero-actions{margin-top:8px}}
+@media (max-width:400px){.hero-stack .hero-actions .btn{font-size:15px;padding-left:18px;gap:10px;white-space:normal;text-align:left}}
