@@ -705,3 +705,4 @@ main{overflow-x:clip}
 @media (min-width:721px){.hero-stack .hero-visual-video{padding:4px 0}.hero-stack>.h1{margin-bottom:8px}.hero-stack>.hero-actions{margin-top:8px}}
 @media (max-width:380px){.hero-stack .hero-actions .btn{font-size:15px;padding-left:18px;gap:10px;white-space:normal;text-align:left}}
 @media (max-width:720px){.hero-stack>.h1{font-size:clamp(1.5rem,7.2vw,2.25rem);line-height:1.12}}
+.hero-video .vsl-unmute{top:14px;bottom:auto}@media (max-width:720px){.hero-video .vsl-unmute{top:10px;bottom:auto}}
