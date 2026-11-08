@@ -191,7 +191,6 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 .t-card blockquote::before{content:"\201C";display:block;font-size:44px;line-height:.6;color:var(--pc-blue);margin-bottom:10px}
 .t-card figcaption{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid #E3E9F2}
 .t-who{display:flex;flex-direction:column;gap:2px;min-width:0}
-.t-avatar{flex-shrink:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#E8F2FF;color:#1688FF;font-weight:700;font-size:15px;letter-spacing:.02em}
 .t-card figcaption strong{color:#0B1B33;font-weight:600}
 .t-who span{font-size:14px;color:#5B6B86}
 .t-cta{margin:48px auto 0;max-width:640px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
