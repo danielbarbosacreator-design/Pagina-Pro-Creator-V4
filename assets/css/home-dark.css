@@ -271,3 +271,9 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
   /* entradas mais curtas e sem desfoque no celular */
   .js [data-reveal]{transform:translateY(12px);filter:none;transition-duration:.5s}
 }
+
+/* Exemplos de documentos na seção Sua marca */
+.docs-figure{margin:8px auto 0;max-width:600px;text-align:center}
+.docs-figure img{display:block;width:100%;height:auto;filter:drop-shadow(0 28px 48px rgba(0,0,0,.5))}
+.docs-figure figcaption{margin-top:14px;font-size:13px;color:var(--pc-fg2)}
+@media (max-width:767px){.docs-figure{margin-top:0;max-width:420px}}
