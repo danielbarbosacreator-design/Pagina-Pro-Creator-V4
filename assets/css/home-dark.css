@@ -199,3 +199,6 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 .t-cta .btn{margin-top:8px}
 @media (max-width:900px){.t-grid{grid-template-columns:1fr}}
 @media (max-width:720px){.t-card{padding:22px}}
+
+/* Bloco "Do orçamento ao recibo": painel com a logo da empresa (PNG com fundo transparente) */
+.demo-media img.demo-sua-marca{border:0;box-shadow:none;border-radius:0;filter:drop-shadow(-16px -8px 40px rgba(0,0,0,.45))}
