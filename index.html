@@ -31,7 +31,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/mockup-procreator.webp">
 <link rel="stylesheet" href="assets/css/style.css?v=20261108vit1">
-<link rel="stylesheet" href="assets/css/home-dark.css?v=20261108d2">
+<link rel="stylesheet" href="assets/css/home-dark.css?v=20261108d3">
 <style>
 #pc-loader{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease,visibility .35s}
 #pc-loader.done{opacity:0;visibility:hidden}
@@ -356,22 +356,40 @@ fbq('init','912571467763616');fbq('track','PageView');
     </div>
   </section>
 
-  <!-- DEPOIMENTOS: componente preparado e oculto até existirem relatos reais, autorizados e verificáveis.
-       Temas: uso diário, custo-benefício/pagamento único, marca da empresa, suporte, satisfação/upgrade.
-       Para publicar: preencher um relato original por tema (nome e empresa autorizados) e remover o hidden.
+  <!-- DEPOIMENTOS: layout aprovado pelo Daniel (2026-11-08), OCULTO até existirem relatos reais.
+       Os textos que o Daniel mandou como modelo são fictícios e NÃO podem ser publicados.
+       Para publicar: em cada <figure> preencher texto original, nome e empresa/UF autorizados pelo cliente,
+       remover o hidden da <figure> e o hidden da <section>. Figuras sem relato real continuam ocultas.
        Não exibir contagem de empresas sem origem verificada (contas criadas ≠ licenças compradas). -->
   <section class="section testimonials" id="depoimentos" data-testimonials hidden>
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Depoimentos</span>
-        <h2 class="h2">Quem usa, <strong>recomenda.</strong></h2>
+      <div class="section-head t-head">
+        <span class="eyebrow">Quem já adquiriu, recomenda</span>
+        <h2 class="h2">Empresas que escolheram trabalhar <strong>de forma mais profissional.</strong></h2>
       </div>
-      <div class="t-themes">
-        <div data-theme="uso-diario" hidden></div>
-        <div data-theme="custo-beneficio" hidden></div>
-        <div data-theme="marca" hidden></div>
-        <div data-theme="suporte" hidden></div>
-        <div data-theme="satisfacao-upgrade" hidden></div>
+      <div class="t-grid">
+        <figure class="t-card" data-theme="uso-diario" hidden>
+          <span class="t-num">01 — Uso diário</span>
+          <blockquote data-slot="texto"></blockquote>
+          <figcaption><strong data-slot="nome"></strong><span data-slot="empresa"></span></figcaption>
+        </figure>
+        <figure class="t-card" data-theme="pagamento-unico" hidden>
+          <span class="t-num">02 — Pagamento único</span>
+          <blockquote data-slot="texto"></blockquote>
+          <figcaption><strong data-slot="nome"></strong><span data-slot="empresa"></span></figcaption>
+        </figure>
+        <figure class="t-card" data-theme="suporte" hidden>
+          <span class="t-num">03 — Atendimento e suporte</span>
+          <blockquote data-slot="texto"></blockquote>
+          <figcaption><strong data-slot="nome"></strong><span data-slot="empresa"></span></figcaption>
+        </figure>
+      </div>
+      <div class="t-cta">
+        <h3>Sua empresa pode ser a próxima.</h3>
+        <p><strong>O sistema comercial da sua empresa. Com a sua marca.</strong></p>
+        <p class="t-cta-price">Licença Vitalícia — R$ 67,90</p>
+        <p class="microcopy">Pagamento único • Acesso imediato • Garantia de 7 dias</p>
+        <a class="btn btn-primary" data-plan="vitalicio" data-value="67.90" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Garantir minha Licença Vitalícia <span class="btn-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
       </div>
     </div>
   </section>
