@@ -198,8 +198,76 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 .t-cta p{color:var(--pc-fg2)}
 .t-cta-price{font-size:1.25rem;font-weight:700;color:#fff!important}
 .t-cta .btn{margin-top:8px}
-@media (max-width:900px){.t-grid{grid-template-columns:1fr}}
+@media (max-width:900px){.t-grid{grid-template-columns:1fr}.t-card{width:auto}}
 @media (max-width:720px){.t-card{padding:22px}}
 
 /* Bloco "Do orçamento ao recibo": painel com a logo da empresa (PNG com fundo transparente) */
 .demo-media img.demo-sua-marca{border:0;box-shadow:none;border-radius:0;filter:drop-shadow(-16px -8px 40px rgba(0,0,0,.45))}
+
+/* ===== Refinamento mobile (2026-11-08): tipografia, ritmo e componentes ===== */
+@media (max-width:1024px){
+  :root{--header:64px}
+  .section{padding:64px 0}
+  .bottom-fade{display:none}
+}
+@media (max-width:767px){
+  :root{--header:60px}
+  html{scroll-padding-top:calc(var(--header) + 12px)}
+  .brand img{width:136px}
+  .menu-toggle{width:40px;height:40px}
+  /* tipografia */
+  .h1,.hero-stack>.h1{font-size:clamp(1.65rem,7.4vw,2rem);line-height:1.12}
+  .h2,.final .h2{font-size:clamp(1.6rem,7vw,1.85rem);line-height:1.16;letter-spacing:-.02em}
+  .card h3,.step h3,.demo-copy h3,.t-cta h3,.plan h3{font-size:clamp(1.25rem,5.6vw,1.4rem);line-height:1.22}
+  .hero-sub{font-size:17px;line-height:1.45}
+  .lead{font-size:16px;line-height:1.55}
+  .microcopy{font-size:13px}
+  .hero-price b{font-size:clamp(2.25rem,10vw,2.6rem)}
+  .hero-price span{font-size:13px}
+  .price .int{font-size:3.25rem}
+  .eyebrow{font-size:11px}
+  .faq-item summary{font-size:16px;line-height:1.4}
+  /* ritmo vertical: menos vazio entre blocos */
+  .section{padding:48px 0}
+  .section-head{margin-bottom:28px}
+  .section-head .lead,.section-head p{margin-top:12px}
+  .overview .section-head,.audience .section-head{margin-bottom:28px}
+  .mockup-band{padding:0 0 36px}
+  .platform{padding-top:16px}
+  .final{padding:44px 0 52px}
+  /* cards da seção Recursos */
+  .bento{gap:12px}
+  .card{padding:22px 20px;gap:10px}
+  .card-media{margin:10px -21px -23px 20px;height:170px}
+  .notify{margin:0 -21px -23px;height:190px}
+  .flow{max-width:200px}
+  /* bloco azul "Do orçamento ao recibo" */
+  .demo-copy{padding:28px 20px 0;gap:14px}
+  .demo-media{padding:4px 0 0 20px}
+  /* como funciona */
+  .steps{margin-top:28px}
+  .step{padding:20px 0;gap:8px}
+  .step p{margin-top:6px}
+  .step-num{font-size:1.5rem}
+  .how-cta{padding-top:24px;gap:14px}
+  /* sua marca */
+  .marquee{padding:16px 0}
+  /* depoimentos */
+  .testimonials .t-head{margin-bottom:24px}
+  .t-grid{gap:12px}
+  .t-card{width:auto;padding:20px;gap:12px}
+  .t-card blockquote{font-size:15px;line-height:1.55}
+  .t-card blockquote::before{font-size:36px;margin-bottom:4px}
+  .t-card figcaption{padding-top:12px}
+  .t-cta{margin-top:32px;gap:6px}
+  /* oferta */
+  .plan{padding:24px 20px}
+  /* FAQ: foto decorativa sai no celular, perguntas mais compactas */
+  .faq-visual{display:none}
+  .faq-grid{gap:0}
+  .faq-item{padding:0 16px;margin-bottom:10px}
+  .faq-item summary{padding:14px 0}
+  .faq-item p{padding:0 0 16px}
+  /* entradas mais curtas e sem desfoque no celular */
+  .js [data-reveal]{transform:translateY(12px);filter:none;transition-duration:.5s}
+}
