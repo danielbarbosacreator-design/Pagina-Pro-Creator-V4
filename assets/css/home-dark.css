@@ -175,3 +175,8 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
   .faq-item summary{font-size:1.0625rem}
 }
 @media (prefers-reduced-motion:reduce){.btn-primary:active,.btn-white:active{transform:none}}
+
+/* Mockup "sua marca" (notebook + celular, fundo transparente) */
+.mockup-band-img[src*="mockup-sua-marca"]{max-width:1100px}
+@media (min-width:1440px){.mockup-band-img[src*="mockup-sua-marca"]{max-width:1160px}}
+.mockup-band{background:var(--pc-bg)}
