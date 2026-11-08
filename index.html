@@ -29,9 +29,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/hero-video-capa.webp?v=20261108">
+<link rel="preload" as="image" href="assets/img/vsl-home-4x5.webp?v=1" media="(max-width: 767px)">
+<link rel="preload" as="image" href="assets/img/vsl-home-16x9.webp?v=1" media="(min-width: 768px)">
 <link rel="stylesheet" href="assets/css/style.css?v=20261108vit1">
-<link rel="stylesheet" href="assets/css/home-dark.css?v=20261108m3">
+<link rel="stylesheet" href="assets/css/home-dark.css?v=20261108m4">
 <style>
 #pc-loader{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease,visibility .35s}
 #pc-loader.done{opacity:0;visibility:hidden}
@@ -128,7 +129,11 @@ fbq('init','912571467763616');fbq('track','PageView');
         <p class="hero-sub">Pague uma única vez. Use todos os dias.</p>
       <div class="hero-visual hero-visual-video" id="vsl">
         <div class="hero-video" data-vsl>
-          <video data-vsl-video src="assets/video/hero.mp4?v=20261105" poster="assets/img/hero-video-capa.webp?v=20261108" autoplay muted loop playsinline preload="auto" aria-label="Demonstração do Pro Creator"></video>
+          <video data-vsl-video autoplay muted loop playsinline preload="auto" aria-label="Demonstração do Pro Creator">
+            <source src="assets/video/vsl-home-4x5.mp4?v=1" type="video/mp4" media="(max-width: 767px)">
+            <source src="assets/video/vsl-home-16x9.mp4?v=1" type="video/mp4">
+          </video>
+          <script>(function(v){v.poster='assets/img/vsl-home-'+(matchMedia('(max-width: 767px)').matches?'4x5':'16x9')+'.webp?v=1'})(document.currentScript.previousElementSibling)</script>
           <button type="button" data-vsl-unmute class="vsl-unmute" aria-label="Ativar o som do vídeo">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
             <span class="vsl-unmute-t">Toque para ouvir</span><span class="vsl-unmute-d">Clique para ouvir</span>
@@ -149,9 +154,8 @@ fbq('init','912571467763616');fbq('track','PageView');
         <div class="hero-actions">
           <a class="btn btn-primary btn-nowrap" data-plan="vitalicio" data-value="67.90" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Garantir minha Licença Vitalícia <span class="btn-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a>
         </div>
-        <p class="hero-price" aria-label="R$ 67,90, Licença Vitalícia, pagamento único"><b>R$ 67,90</b><span>Licença Vitalícia • Pagamento único</span></p>
-        <p class="microcopy">Acesso imediato • Garantia de 7 dias • Sem mensalidade obrigatória</p>
-        <p class="hero-desc">Imagine ter uma plataforma profissional com a logo da sua empresa, seus clientes organizados, propostas, contratos e ferramentas comerciais em um único lugar. Um sistema para utilizar na rotina do seu negócio, sem pagar mensalidade para manter os recursos da sua licença.</p>
+        <p class="hero-price" aria-label="R$ 67,90, Licença Vitalícia, pagamento único"><b>R$ 67,90</b><span><em>Licença Vitalícia</em><i aria-hidden="true"> • </i><em>Pagamento único</em></span></p>
+        <p class="microcopy hero-trust"><span>Acesso imediato</span> • <span>Garantia de 7 dias</span> • <span>Sem mensalidade obrigatória</span></p>
     </div>
   </section>
 
@@ -160,7 +164,7 @@ fbq('init','912571467763616');fbq('track','PageView');
     <div class="container">
       <div class="section-head mockup-head" data-reveal>
         <h2 class="h2">Imagine sua empresa trabalhando com <strong>um sistema assim.</strong></h2>
-        <p class="lead">Um painel para começar o dia sabendo quais propostas aguardam resposta, quais clientes estão em negociação e o que precisa da sua atenção. No computador e no celular.</p>
+        <p class="lead">A logo da sua empresa, seus clientes organizados, propostas, contratos e ferramentas comerciais em um único lugar. Você começa o dia sabendo quais propostas aguardam resposta e o que precisa da sua atenção, no computador e no celular, sem pagar mensalidade para manter os recursos da sua licença.</p>
       </div>
       <img class="mockup-band-img" loading="lazy" decoding="async" src="assets/img/mockup-sua-marca.webp?v=2" srcset="assets/img/mockup-sua-marca-900.webp?v=1 900w, assets/img/mockup-sua-marca-1200.webp?v=1 1200w, assets/img/mockup-sua-marca.webp?v=2 1808w" sizes="(max-width:767px) 100vw, 1160px" alt="Painel do Pro Creator no notebook e no celular, com espaço para a logo da sua empresa" width="1808" height="920">
     </div>
