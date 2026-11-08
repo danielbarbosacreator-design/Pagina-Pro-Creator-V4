@@ -1,0 +1,177 @@
+/* Pro Creator | Home: identidade azul-marinho premium (2026-11-08).
+   Carregado SÓ pelo index.html, depois do style.css. Não muda copy, oferta nem estrutura.
+   Paleta: fundo #080F1F, fundo 2 #0D192C, cards #14243E, azul #1688FF, destaque #4892FF,
+   títulos #FFF, texto #B4C2D9, bordas #263A56, confirmação #34D399. */
+:root{
+  --pc-bg:#080F1F;--pc-bg2:#0D192C;--pc-card:#14243E;--pc-blue:#1688FF;--pc-blue2:#4892FF;
+  --pc-fg:#FFFFFF;--pc-fg2:#B4C2D9;--pc-line:#263A56;--pc-green:#34D399;
+  /* tokens do style.css reapontados para o tema escuro */
+  --blue:#1688FF;--blue-600:#0F72E6;--blue-700:#0B5DC0;
+  --blue-50:rgba(22,136,255,.14);--blue-100:#2E4A70;
+  --navy:#FFFFFF;--ink:#B4C2D9;--muted:#93A4C0;--line:#263A56;--soft:#0D192C;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.25),0 10px 24px -14px rgba(0,0,0,.55);
+  --shadow:0 2px 6px rgba(0,0,0,.25),0 28px 60px -28px rgba(0,0,0,.7);
+  --shadow-blue:0 16px 36px -16px rgba(22,136,255,.65);
+}
+body{background:var(--pc-bg);color:var(--pc-fg2)}
+#pc-loader{background:var(--pc-bg)!important}
+::selection{background:rgba(22,136,255,.45);color:#fff}
+
+/* Tipografia */
+.h2{color:var(--pc-fg)}
+.h2 strong,.h1 strong{color:var(--pc-blue2)}
+.lead{color:var(--pc-fg2)}
+.eyebrow{color:var(--pc-blue2)}
+.eyebrow::before{background:var(--pc-blue);box-shadow:0 0 0 4px rgba(22,136,255,.22)}
+.microcopy{color:var(--muted)}
+
+/* Botões: azul principal, texto branco, hover/foco/pressionado */
+.btn-primary,.btn-white,.hero .btn-primary{background:var(--pc-blue);color:#fff;border-color:transparent;box-shadow:var(--shadow-blue)}
+.btn-primary:hover,.btn-white:hover,.hero .btn-primary:hover{background:var(--pc-blue2)}
+.btn-primary:active,.btn-white:active{transform:translateY(1px) scale(.99);box-shadow:0 8px 20px -12px rgba(22,136,255,.7)}
+.btn-primary .btn-arrow,.btn-white .btn-arrow,.hero .btn-primary .btn-arrow{background:#fff;color:var(--pc-blue)}
+.btn:focus-visible,.menu-toggle:focus-visible,.faq-item summary:focus-visible,.nav a:focus-visible{outline:2px solid var(--pc-blue2);outline-offset:3px}
+:is(.btn-white,.btn-ghost)::before{background-image:linear-gradient(45deg,transparent 25%,rgba(255,255,255,.35) 50%,transparent 75%,transparent 100%)}
+
+/* Cabeçalho e menu */
+.header{background:rgba(8,15,31,.72)}
+.header.is-scrolled{background:rgba(8,15,31,.94);border-color:var(--pc-line);box-shadow:0 10px 30px -20px rgba(0,0,0,.8)}
+.nav a{color:var(--pc-fg2)}
+.nav a:hover{color:#fff}
+.nav a.is-active{color:var(--pc-blue2)}
+.menu-toggle{background:transparent;color:#fff;border-color:var(--pc-line)}
+.mobile-nav{background:var(--pc-bg2);border-color:var(--pc-line);box-shadow:0 30px 40px -30px rgba(0,0,0,.8)}
+.mobile-nav a:not(.btn){color:#fff;border-color:var(--pc-line)}
+
+/* 1. Primeira dobra */
+.hero{background:radial-gradient(900px 480px at 50% 0%,rgba(22,136,255,.16),transparent 70%),var(--pc-bg);color:#fff}
+.hero::before{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px)}
+.hero::after{background:radial-gradient(closest-side,rgba(22,136,255,.12),rgba(22,136,255,0))}
+.hero .h1{color:#fff}
+.hero .h1 strong{color:var(--pc-blue2)}
+.hero-seal{border-color:rgba(72,146,255,.45);background:rgba(22,136,255,.1);color:#CFE2FF}
+.hero-sub{color:#fff}
+.hero-price{color:#fff}
+.hero-price span{color:var(--pc-fg2);border-left-color:var(--pc-line)}
+.hero .microcopy{color:var(--pc-fg2)}
+.hero-desc{color:var(--pc-fg2)}
+.hero-video{background:#000;border:1px solid var(--pc-line);box-shadow:0 40px 80px -36px rgba(0,0,0,.9),0 0 0 6px rgba(22,136,255,.06)}
+.vsl-unmute:hover{background:rgba(22,136,255,.92)}
+.vsl-bar>span{background:var(--pc-blue)}
+.float-card.fc-1{background:linear-gradient(135deg,var(--pc-blue),#0F72E6)}
+.float-card.fc-2{background:rgba(20,36,62,.94);border-color:var(--pc-line)}
+
+/* 2. Faixa do mockup */
+.mockup-band{background:linear-gradient(180deg,var(--pc-bg) 0%,var(--pc-bg) 55%,var(--pc-bg2) 55%)}
+.mockup-head .h2{color:#fff}
+.mockup-head .h2 strong{color:var(--pc-blue2)}
+.mockup-head .lead{color:var(--pc-fg2)}
+
+/* 3. Transformação (bloco demo) */
+.overview{background:var(--pc-bg2)}
+.demo{background:radial-gradient(600px 320px at 15% 0%,rgba(22,136,255,.22),transparent 70%),var(--pc-card);border:1px solid var(--pc-line)}
+.demo::before{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px)}
+.demo-copy p{color:var(--pc-fg2)}
+.demo-mark{opacity:.05}
+
+/* 5. Recursos (bento) */
+.solutions{background:var(--pc-bg)}
+.card{background:var(--pc-card);border-color:var(--pc-line)}
+.card:hover{border-color:#36507A;box-shadow:var(--shadow)}
+.card h3{color:#fff}
+.card p{color:var(--pc-fg2)}
+.card p strong{color:#fff}
+.card-blue{background:linear-gradient(150deg,rgba(22,136,255,.32),rgba(20,36,62,1) 65%);border-color:rgba(72,146,255,.45)}
+.card-blue p{color:#D5E2F5}
+.card-blue .tile{background:rgba(255,255,255,.12)}
+.card-mark{opacity:.06}
+.tile{background:rgba(22,136,255,.14);color:var(--pc-blue2);border:1px solid rgba(22,136,255,.28)}
+.card-media img,.demo-media img{border-radius:10px}
+.notify-item{background:var(--pc-bg2);border-color:var(--pc-line)}
+.notify-item p{color:var(--pc-fg2)}
+.notify-item p b{color:#fff}
+.flow g[fill="#F6F9FE"]{fill:var(--pc-bg2);stroke:var(--pc-line)}
+.flow g[fill="#DCE6F3"]{fill:#2E4A70}
+.flow g[stroke="#CFDDF0"]{stroke:var(--pc-line)}
+
+/* Como funciona */
+.how{background:var(--pc-bg2);border-top:1px solid var(--pc-line);border-bottom:1px solid var(--pc-line)}
+.how::before{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px)}
+.how .eyebrow{color:var(--pc-blue2)}
+.how .eyebrow::before{background:var(--pc-blue);box-shadow:0 0 0 4px rgba(22,136,255,.22)}
+.how-mark{opacity:.04}
+.step{border-top-color:var(--pc-line)}
+.chip{border-color:rgba(72,146,255,.5);color:#CFE2FF;background:rgba(22,136,255,.08)}
+.step-num span{color:var(--pc-blue2)}
+.step p{color:var(--pc-fg2)}
+.step-tag{color:var(--muted)}
+
+/* 4. Sua marca */
+.audience{background:var(--pc-bg)}
+
+/* Vitrine */
+.showcase{background:var(--pc-bg2)}
+.showcase::before{background:linear-gradient(180deg,var(--pc-bg),var(--pc-bg2))}
+.marquee{border-bottom-color:var(--pc-line)}
+.marquee-group span{color:var(--pc-fg2)}
+.marquee-group img{opacity:.5}
+.macbook::after{background:radial-gradient(closest-side,rgba(0,0,0,.6),transparent)}
+
+/* 6. Uso diário */
+.platform{background:var(--pc-bg2)}
+
+/* Depoimentos (oculto até haver relatos reais) */
+.testimonials{background:var(--pc-bg)}
+
+/* 7 e 8. Oferta: o cartão mais destacado da página */
+.plans{background:radial-gradient(900px 500px at 50% 0%,rgba(22,136,255,.14),transparent 70%),var(--pc-bg);border-top:1px solid var(--pc-line)}
+.plans::before{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px)}
+.plans .eyebrow{color:var(--pc-blue2)}
+.plans .eyebrow::before{background:var(--pc-blue);box-shadow:0 0 0 4px rgba(22,136,255,.22)}
+.plans .lead{color:var(--pc-fg2)}
+.plans-mark{opacity:.04}
+.plan-lifetime{background:linear-gradient(160deg,#17305A 0%,var(--pc-card) 45%);border:1px solid rgba(72,146,255,.6);box-shadow:0 50px 100px -40px rgba(0,0,0,.9),0 0 0 6px rgba(22,136,255,.08)}
+.plan-lifetime .plan-tag{background:var(--pc-blue);color:#fff}
+.plan-label,.plan-assure{color:var(--pc-fg2)}
+.plan-desc{color:var(--pc-fg2)}
+.plan li{color:#E6EDF8}
+.plan li .icon{color:var(--pc-green)}
+.plan-limits{background:rgba(8,15,31,.45);border-color:var(--pc-line)}
+.plan-limits-title{color:var(--pc-blue2)}
+.limit-grid span{color:var(--pc-fg2)}
+.plan-limits p{color:var(--pc-fg2)}
+.plans-note{color:var(--pc-fg2)}
+.plans-note strong{color:var(--pc-green)}
+
+/* 9. Dúvidas */
+.faq{background:var(--pc-bg2);border-top:1px solid var(--pc-line)}
+.faq-item{background:var(--pc-card);border:1px solid var(--pc-line);border-radius:12px;padding:0 22px;margin-bottom:12px;transition:border-color .2s ease}
+.faq-item:hover,.faq-item[open]{border-color:#36507A}
+.faq-item summary{color:#fff;padding:20px 0}
+.faq-item p{color:var(--pc-fg2);padding:0 8px 22px 0}
+.faq-item p a{color:var(--pc-blue2);text-decoration:underline;text-underline-offset:2px}
+.faq-item summary .pm{background:rgba(22,136,255,.14);color:var(--pc-blue2)}
+.faq-item[open] summary .pm{background:var(--pc-blue);color:#fff}
+.faq-art{background:var(--pc-card)}
+.faq-photo img{border-radius:10px}
+
+/* 10. CTA final */
+.final{background:var(--pc-bg)}
+.final .container{background:radial-gradient(700px 360px at 50% 0%,rgba(22,136,255,.22),transparent 70%),var(--pc-card);border-color:var(--pc-line)}
+.final .lead{color:var(--pc-fg2)}
+
+/* Rodapé */
+.footer{background:#060B17;border-top-color:var(--pc-line)}
+.footer-brand p{color:var(--muted)}
+.footer-brand p span{color:var(--pc-blue2)}
+.footer-col h4{color:#fff}
+.footer-col a{color:var(--muted)}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top-color:var(--pc-line);color:var(--muted)}
+.bottom-fade{background:linear-gradient(to top,rgba(8,15,31,.55),rgba(8,15,31,0))}
+
+@media (max-width:720px){
+  .faq-item{padding:0 16px}
+  .faq-item summary{font-size:1.0625rem}
+}
+@media (prefers-reduced-motion:reduce){.btn-primary:active,.btn-white:active{transform:none}}
