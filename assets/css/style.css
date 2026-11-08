@@ -716,3 +716,33 @@ main{overflow-x:clip}
 .btn-nowrap{white-space:nowrap}
 @media (max-width:380px){.hero-stack .btn-nowrap{font-size:15px;padding-left:16px;padding-right:16px}}
 @media (max-width:420px){.hero-stack>.microcopy{font-size:12.5px;white-space:nowrap}}
+/* Home Licença Vitalícia (2026-11-08): selo, subtítulo, preço e descrição no topo azul */
+.hero-stack>.hero-seal,.hero-stack>.hero-sub{order:1}
+.hero-stack>.hero-price{order:3}.hero-stack>.hero-actions{order:4}.hero-stack>.microcopy{order:5}.hero-stack>.hero-desc{order:6}
+.hero-seal{display:inline-block;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.12);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0 0 4px}
+.hero-sub{margin:-8px 0 0;font-size:clamp(1.15rem,1.8vw,1.5rem);font-weight:600;color:#fff}
+.hero-price{margin:4px 0 0;display:flex;align-items:center;justify-content:center;gap:14px;color:#fff;line-height:1.15}
+.hero-price b{font-size:clamp(2rem,3.4vw,2.6rem);font-weight:700;letter-spacing:-.02em}
+.hero-price span{font-size:14px;text-align:left;max-width:150px;color:rgba(255,255,255,.88);padding-left:14px;border-left:1px solid rgba(255,255,255,.35)}
+.hero-desc{margin:0;max-width:640px;font-size:16px;line-height:1.55;color:rgba(255,255,255,.88)}
+.mockup-head{text-align:center;margin:0 auto 32px;padding-top:56px}
+.mockup-head .lead{margin-left:auto;margin-right:auto}
+@media (max-width:720px){
+  .hero-seal{font-size:11px;letter-spacing:.08em;padding:6px 12px;margin:0 0 12px}
+  .hero-sub{margin:0 0 16px;font-size:1.125rem}
+  .hero-price{margin:16px 0 0}
+  .hero-stack>.hero-actions{margin-top:12px}
+  .hero-stack>.microcopy{margin-top:10px}
+  .hero-desc{margin-top:16px;font-size:15px}
+  .mockup-head{padding-top:40px;margin-bottom:20px}
+}
+@media (max-width:420px){.hero-stack>.microcopy{white-space:normal}}
+.mockup-head .h2,.mockup-head .h2 strong{color:#fff}
+.mockup-head .lead{color:rgba(255,255,255,.88)}
+@media (min-width:1025px){
+  .hero{padding-top:calc(var(--header) + 28px)}
+  .hero-stack{gap:14px}
+  .hero-stack>.h1{margin-bottom:6px}
+  .hero-stack>.hero-actions{margin-top:0}
+  .hero-stack .hero-visual,.hero-stack .hero-video{max-width:min(1120px,calc((100svh - 540px) * 16 / 9));min-width:min(480px,100%)}
+}
