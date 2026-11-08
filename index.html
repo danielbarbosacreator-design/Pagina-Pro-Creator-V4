@@ -53,8 +53,9 @@ fbq('init','912571467763616');fbq('track','PageView');
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        function go(){t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);}
+        if(l.readyState==="complete")go();else c.addEventListener("load",function(){setTimeout(go,1500)});
     })(window, document, "clarity", "script", "ymf9uyrxub");
 </script>
 <!-- Pro Creator Analytics -->
@@ -129,9 +130,9 @@ fbq('init','912571467763616');fbq('track','PageView');
         <p class="hero-sub">Pague uma única vez. Use todos os dias.</p>
       <div class="hero-visual hero-visual-video" id="vsl">
         <div class="hero-video" data-vsl>
-          <video data-vsl-video autoplay muted loop playsinline preload="auto" aria-label="Demonstração do Pro Creator">
+          <video data-vsl-video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração do Pro Creator">
             <source src="assets/video/vsl-home-4x5.mp4?v=1" type="video/mp4" media="(max-width: 767px)">
-            <source src="assets/video/vsl-home-16x9.mp4?v=1" type="video/mp4">
+            <source src="assets/video/vsl-home-16x9.mp4?v=2" type="video/mp4">
           </video>
           <script>(function(v){v.poster='assets/img/vsl-home-'+(matchMedia('(max-width: 767px)').matches?'4x5':'16x9')+'.webp?v=1'})(document.currentScript.previousElementSibling)</script>
           <button type="button" data-vsl-unmute class="vsl-unmute" aria-label="Ativar o som do vídeo">
