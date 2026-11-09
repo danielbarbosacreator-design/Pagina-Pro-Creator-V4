@@ -318,7 +318,7 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
   .hero-stack>.h1{font-size:clamp(1.6rem,7.4vw,2rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 8px}
   .hero-stack>.hero-sub{margin:0 0 16px;font-size:clamp(15.5px,4.3vw,17px)}
   .hero-stack>.hero-visual,.hero-stack .hero-visual-video{margin:0 0 18px}
-  .hero-stack .hero-video{aspect-ratio:4/5;max-width:100%;border-radius:18px}
+  .hero-stack .hero-video{aspect-ratio:16/9;max-width:100%;border-radius:18px}
   .hero-stack .hero-video .vsl-unmute{top:auto;bottom:16px;right:auto;left:50%;transform:translateX(-50%)}
   .hero-stack>.hero-price{margin:0 0 14px;gap:12px}
   .hero-stack>.hero-price b{font-size:clamp(2rem,9.6vw,2.5rem)}
