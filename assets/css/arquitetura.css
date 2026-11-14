@@ -134,3 +134,17 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 .mkphoto .mk-doc{max-width:360px;margin-left:auto}
 @media (max-width:767px){.mkphoto .mk-doc{margin:0 auto}}
 .mk-notif.n1{left:-2%;top:2%}.mk-notif.n2{right:-2%;bottom:6%}
+.mkpages{position:relative;aspect-ratio:1/1;background:radial-gradient(80% 70% at 60% 30%,rgba(196,160,98,.16),transparent 60%),linear-gradient(160deg,#14243E,#0B1528);overflow:hidden}
+.mkpages .pg{position:absolute;margin:0;width:46%;border-radius:6px;overflow:hidden;box-shadow:0 30px 50px -20px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.06)}
+.mkpages .pg img{width:100%;height:auto;display:block}
+.mkpages .pg1{left:8%;top:9%;z-index:3;transform:rotate(-3deg)}
+.mkpages .pg2{left:33%;top:13%;z-index:2;transform:rotate(2deg)}
+.mkpages .pg3{left:52%;top:20%;z-index:1;transform:rotate(6deg)}
+.mkpages .pg1{overflow:visible}
+.mkpages .pg1 img{border-radius:6px}
+.logo-hl{position:absolute;left:4%;top:2.2%;width:36%;height:7.5%;border:1.5px dashed #fff;border-radius:8px;box-shadow:0 0 0 4px rgba(22,136,255,.35);animation:logoPulse 2.4s ease-in-out infinite}
+.logo-tip{position:absolute;left:42%;top:3.2%;white-space:nowrap;padding:5px 10px;border-radius:999px;background:#1688FF;color:#fff;font-size:.72rem;font-weight:600;box-shadow:0 8px 18px -6px rgba(22,136,255,.8)}
+.logo-tip::before{content:"←";margin-right:5px}
+@keyframes logoPulse{50%{box-shadow:0 0 0 8px rgba(22,136,255,.12)}}
+@media (prefers-reduced-motion:reduce){.logo-hl{animation:none}}
+@media (max-width:767px){.logo-tip{font-size:.62rem;padding:4px 8px}}
