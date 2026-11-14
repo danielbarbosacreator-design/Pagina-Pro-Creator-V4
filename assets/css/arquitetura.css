@@ -148,3 +148,10 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 @keyframes logoPulse{50%{box-shadow:0 0 0 8px rgba(22,136,255,.12)}}
 @media (prefers-reduced-motion:reduce){.logo-hl{animation:none}}
 @media (max-width:767px){.logo-tip{font-size:.62rem;padding:4px 8px}}
+.arq .solutions{overflow-x:clip}
+.mkpages{overflow:visible;aspect-ratio:5/4;margin-top:70px}
+.mkpages .pg{width:58%}
+.mkpages .pg1{left:-6%;top:-14%}
+.mkpages .pg2{left:24%;top:-8%}
+.mkpages .pg3{left:44%;top:2%}
+@media (max-width:900px){.mkpages{margin:40px 0 70px}.mkpages .pg{width:56%}.mkpages .pg1{left:-2%;top:-12%}.mkpages .pg2{left:24%;top:-6%}.mkpages .pg3{left:46%;top:2%}}
