@@ -31,7 +31,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=20261030b">
 <link rel="stylesheet" href="/assets/css/home-dark.css?v=20261109d">
-<link rel="stylesheet" href="/assets/css/arquitetura.css?v=20261114h1">
+<link rel="stylesheet" href="/assets/css/arquitetura.css?v=20261114h2">
 <script>document.documentElement.classList.add('js')</script>
 
 <!-- Meta Pixel (Pro Creator) -->
@@ -99,11 +99,13 @@ fbq('init','912571467763616');fbq('track','PageView');
     <div class="container hero-stack">
       <span class="hero-seal">Para arquitetos e escritórios de arquitetura</span>
       <h1 class="h1">Seus projetos merecem propostas <strong>à altura do seu trabalho.</strong></h1>
-      <div class="arq-vsl" id="vsl">
-        <!-- VSL de Arquitetura (v3) -->
-        <video controls playsinline preload="none" poster="/assets/img/vsl-arquitetura.webp" aria-label="Demonstração do Pro Creator">
+      <div class="arq-vsl hero-video" id="vsl" data-arq-vsl role="button" tabindex="0" aria-label="Assistir ao vídeo com som">
+        <!-- VSL de Arquitetura (v3): começa muda em loop; clique reinicia com som -->
+        <video data-arq-video autoplay muted loop playsinline preload="metadata" poster="/assets/img/vsl-arquitetura.webp" aria-label="Demonstração do Pro Creator">
           <source src="/assets/video/vsl-arquitetura.mp4" type="video/mp4">
         </video>
+        <span data-arq-play class="vsl-play" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span>
+        <span class="vsl-bar arq-bar" aria-hidden="true"><span data-arq-progress></span></span>
       </div>
       <p class="hero-price" aria-label="R$ 67,90, Licença Vitalícia, pagamento único"><b>R$ 67,90</b><span><em>Licença Vitalícia</em><i aria-hidden="true"> • </i><em>Pagamento único</em></span></p>
       <div class="hero-actions"><a class="btn btn-primary btn-nowrap" data-plan="vitalicio" data-value="67.90" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Garantir minha Licença Vitalícia <span class="btn-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></div>
@@ -239,6 +241,16 @@ var hv=true,pv=false;function u(){var on=!hv&&!pv;b.classList.toggle('on',on);b.
 new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);
 new IntersectionObserver(function(e){pv=e[0].isIntersecting;u()}).observe(plans);
 })();
+</script>
+<script>
+(function(){var w=document.querySelector('[data-arq-vsl]');if(!w)return;var v=w.querySelector('video'),pl=w.querySelector('[data-arq-play]'),pr=w.querySelector('[data-arq-progress]'),snd=false;
+v.muted=true;v.play().catch(function(){});
+v.addEventListener('timeupdate',function(){if(!v.duration)return;pr.style.width=(Math.pow(v.currentTime/v.duration,0.6)*100)+'%';});
+v.addEventListener('ended',function(){pr.style.width='100%';pl.hidden=false;});
+v.addEventListener('play',function(){if(snd)pl.hidden=true;});
+v.addEventListener('pause',function(){pl.hidden=false;});
+function go(){if(!snd){snd=true;v.loop=false;v.muted=false;v.currentTime=0;pl.hidden=true;v.play().catch(function(){});}else if(v.paused){v.play().catch(function(){});}else{v.pause();}}
+w.addEventListener('click',go);w.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});})();
 </script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/cookies.js" defer></script>
