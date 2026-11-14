@@ -155,3 +155,7 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 .mkpages .pg2{left:24%;top:-8%}
 .mkpages .pg3{left:44%;top:2%}
 @media (max-width:900px){.mkpages{margin:40px 0 70px}.mkpages .pg{width:56%}.mkpages .pg1{left:-2%;top:-12%}.mkpages .pg2{left:24%;top:-6%}.mkpages .pg3{left:46%;top:2%}}
+.mk-stage2{justify-content:flex-start;padding:10px 0 10px 4%}
+.arq-media .mk-track{position:absolute;right:-10%;top:50%;transform:translateY(-50%);width:min(58%,320px);height:auto;border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
+.mkwrap:has(.mk-track){overflow:visible}
+@media (max-width:767px){.mk-stage2{padding-left:0}.arq-media .mk-track{right:-2%;width:56%}}
