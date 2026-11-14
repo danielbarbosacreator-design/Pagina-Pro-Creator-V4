@@ -30,6 +30,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=20261030b">
+<link rel="stylesheet" href="/assets/css/home-dark.css?v=20261109d">
+<link rel="stylesheet" href="/assets/css/arquitetura.css?v=20261114a">
 <script>document.documentElement.classList.add('js')</script>
 
 <!-- Meta Pixel (Pro Creator) -->
@@ -49,7 +51,7 @@ fbq('init','912571467763616');fbq('track','PageView');
 <!-- Pro Creator Analytics -->
 <script src="https://procreator.app.br/pc-track.js" data-site="pcs_486d0abb95674caa" data-key="phc_qgMZm2yoKrikoGFcP8EuNFkKKvJFtFn4U3MuxDCo4K94" data-region="us" defer></script>
 </head>
-<body>
+<body class="arq">
 
 <!-- Ícones -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -81,7 +83,7 @@ fbq('init','912571467763616');fbq('track','PageView');
 
 <header class="header" id="topo">
   <div class="container">
-    <a class="brand" href="#inicio" aria-label="Pro Creator, início"><img src="/assets/img/logo-procreator.svg" alt="Pro Creator" width="178" height="27"></a>
+    <a class="brand" href="#inicio" aria-label="Pro Creator, início"><img src="/assets/img/logo-procreator-fundo-escuro.svg" alt="Pro Creator" width="178" height="27"></a>
     <nav class="nav" aria-label="Principal"><a href="#inicio">Início</a><a href="#solucoes">Soluções</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a></nav>
     <div class="header-cta">
       <a class="btn btn-primary btn-sm" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Garantir Licença Vitalícia</a>
@@ -100,14 +102,40 @@ fbq('init','912571467763616');fbq('track','PageView');
       <p class="hero-sub">Apresente seus projetos com a marca do seu escritório, detalhe etapas, prazos e honorários, acompanhe quando o cliente visualiza a proposta e transforme aprovações em contratos assinados digitalmente.</p>
       <div class="hero-actions"><a class="btn btn-primary btn-nowrap" data-plan="vitalicio" data-value="67.90" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer">Garantir minha Licença Vitalícia <span class="btn-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a></div>
       <p class="microcopy hero-trust"><span>R$ 67,90 pagamento único</span> • <span>Acesso imediato</span> • <span>Garantia de 7 dias</span></p>
+      <div class="arq-vsl" id="vsl">
+        <!-- VSL: troque o src/poster quando a VSL de Arquitetura estiver pronta -->
+        <video controls playsinline preload="none" poster="/assets/img/vsl-home-16x9.webp" aria-label="Demonstração do Pro Creator">
+          <source src="/assets/video/vsl-home-16x9.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </section>
-  <section class="mockup-band" aria-label="Pro Creator no notebook">
-    <div class="container stage"><div class="macbook"><img src="/assets/img/macbook.webp" alt="" width="2404" height="1551"><img class="screen" src="/assets/img/tela-dashboard.webp" alt="Painel do Pro Creator" width="1894" height="1184"></div></div>
-  </section>
+
   <section class="section solutions" id="solucoes"><div class="container">
     <div class="section-head" data-reveal><span class="eyebrow">Feito para a rotina de arquitetos</span><h2 class="h2">Do primeiro orçamento <strong>ao contrato assinado.</strong></h2></div>
-    <div class="bento"><article class="card span-7" data-reveal><span class="tile"><svg class="icon"><use href="#i-file"/></svg></span><h3>Propostas de arquitetura com a sua marca</h3><p>Apresente escopo, etapas do projeto, prazos e honorários em propostas profissionais com a identidade visual do seu escritório. Envie por link, WhatsApp ou PDF.</p></article><article class="card card-blue span-5" data-reveal><img class="card-mark" src="/assets/img/simbolo-branco.svg" alt="" aria-hidden="true"><span class="tile"><svg class="icon"><use href="#i-eye"/></svg></span><h3>Saiba quando o cliente visualiza sua proposta</h3><p>Enviou uma proposta de projeto? Acompanhe as visualizações e saiba quando o cliente demonstrou interesse para fazer o acompanhamento comercial.</p></article><article class="card span-4" data-reveal><span class="tile"><svg class="icon"><use href="#i-clipboard"/></svg></span><h3>Aprovação online, sem burocracia</h3><p>Seu cliente pode analisar e aprovar a proposta diretamente pelo celular, sem precisar imprimir, assinar papéis ou responder por e-mail.</p></article><article class="card span-4" data-reveal><span class="tile"><svg class="icon"><use href="#i-file-sign"/></svg></span><h3>Contratos com assinatura digital</h3><p>Depois da aprovação, prepare seu contrato de prestação de serviços de arquitetura e envie para assinatura digital. Mais profissionalismo e organização para o escritório.</p></article><article class="card span-4" data-reveal><span class="tile"><svg class="icon"><use href="#i-wallet"/></svg></span><h3>Honorários e recebimentos organizados</h3><p>Emita recibos dos honorários recebidos e acompanhe as entradas financeiras do escritório em um só lugar.</p></article><article class="card span-12" data-reveal><span class="tile"><svg class="icon"><use href="#i-users"/></svg></span><h3>Seus clientes e negociações em um só lugar</h3><p>Mantenha o cadastro de clientes, histórico de propostas, contratos e documentos comerciais organizados. Acesse pelo computador ou celular, de onde estiver.</p></article></div></div></section>
+    <ol class="arq-flow" data-reveal aria-label="Fluxo comercial"><li><span>Cliente</span></li><li><span>Proposta</span></li><li><span>Visualização</span></li><li><span>Aprovação</span></li><li><span>Contrato</span></li><li><span>Assinatura digital</span></li></ol>
+    <div class="arq-rows">
+      <div class="arq-row" data-reveal><div class="arq-txt"><div><span class="arq-num">01</span><h3>Propostas de arquitetura com a sua marca</h3><p>Apresente escopo, etapas do projeto, prazos e honorários em propostas profissionais com a identidade visual do seu escritório. Envie por link, WhatsApp ou PDF.</p></div></div><div class="arq-pair"><figure class="arq-photo" data-photo><figcaption>Foto a fornecer: arquiteta no escritório com plantas e notebook</figcaption></figure><div class="arq-media pad" style="display:flex;align-items:center"><img src="/assets/img/documentos-modelos.webp" alt="Modelos de proposta, contrato e ordem de serviço do Pro Creator" width="774" height="983" loading="lazy" decoding="async"></div></div></div>
+      <div class="arq-row rev" data-reveal><div class="arq-txt"><div><span class="arq-num">02</span><h3>Saiba quando o cliente visualiza sua proposta</h3><p>Enviou uma proposta de projeto? Acompanhe as visualizações e saiba quando o cliente demonstrou interesse para fazer o acompanhamento comercial.</p></div><div><h3>Aprovação online, sem burocracia</h3><p>Seu cliente pode analisar e aprovar a proposta diretamente pelo celular, sem precisar imprimir, assinar papéis ou responder por e-mail.</p></div></div><div class="arq-media phone"><img src="/assets/img/proposta-digital.png" alt="Proposta do Pro Creator aberta no celular do cliente" width="960" height="1315" loading="lazy" decoding="async"></div></div>
+      <div class="arq-row" data-reveal><div class="arq-txt"><div><span class="arq-num">03</span><h3>Contratos com assinatura digital</h3><p>Depois da aprovação, prepare seu contrato de prestação de serviços de arquitetura e envie para assinatura digital. Mais profissionalismo e organização para o escritório.</p></div></div><div class="arq-media "><img src="/assets/img/feat-contrato.webp" alt="Contrato em processo de assinatura digital no Pro Creator" width="1142" height="638" loading="lazy" decoding="async"></div></div>
+      <div class="arq-row rev" data-reveal><div class="arq-txt"><div><span class="arq-num">04</span><h3>Seus clientes e negociações em um só lugar</h3><p>Mantenha o cadastro de clientes, histórico de propostas, contratos e documentos comerciais organizados. Acesse pelo computador ou celular, de onde estiver.</p></div><div><h3>Honorários e recebimentos organizados</h3><p>Emita recibos dos honorários recebidos e acompanhe as entradas financeiras do escritório em um só lugar.</p></div></div><div class="arq-media "><img src="/assets/img/painel-notebook-celular.webp" alt="Painel do Pro Creator no notebook e no celular" width="2000" height="978" loading="lazy" decoding="async"></div></div>
+    </div>
+  </div></section>
+
+  <section class="section arq-demos" id="demonstracoes"><div class="container">
+    <div class="section-head" data-reveal><span class="eyebrow">Demonstrações</span><h2 class="h2">Veja como o Pro Creator funciona <strong>no seu escritório.</strong></h2></div>
+    <div class="arq-tabs" role="tablist" aria-label="Demonstrações">
+      <button class="arq-tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><small>01</small><b>Sua marca</b></button>
+      <button class="arq-tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><small>02</small><b>Sua proposta</b></button>
+      <button class="arq-tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><small>03</small><b>Da aprovação ao contrato</b></button>
+    </div>
+    <div class="arq-stage">
+      <div class="arq-panel" role="tabpanel" id="p1" aria-labelledby="t1"><div class="arq-slot" data-demo-src=""><img src="/assets/img/mockup-sua-marca-900.webp" alt="Pro Creator com a logo da empresa" loading="lazy"><span class="arq-soon">Vídeo de demonstração em breve</span></div><div><h3>Seu escritório, sua identidade.</h3><p>Sua logomarca no perfil e nos documentos.</p></div></div>
+      <div class="arq-panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden><div class="arq-slot" data-demo-src=""><img src="/assets/img/feat-link.webp" alt="Proposta do Pro Creator enviada por link" loading="lazy"><span class="arq-soon">Vídeo de demonstração em breve</span></div><div><h3>Apresente cada projeto com profissionalismo.</h3><p>Apresente escopo, etapas do projeto, prazos e honorários em propostas profissionais com a identidade visual do seu escritório.</p></div></div>
+      <div class="arq-panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden><div class="arq-slot" data-demo-src=""><img src="/assets/img/feat-assinatura.webp" alt="Relatório de assinatura digital do contrato" loading="lazy"><span class="arq-soon">Vídeo de demonstração em breve</span></div><div><h3>O cliente aprovou? Continue tudo no mesmo sistema.</h3><p>Depois da aprovação, prepare seu contrato de prestação de serviços de arquitetura e envie para assinatura digital.</p></div></div>
+    </div>
+  </div></section>
+
 <section class="section plans" id="planos">
     <img class="plans-mark" src="/assets/img/simbolo-branco.svg" alt="" aria-hidden="true">
     <div class="container">
@@ -144,7 +172,7 @@ fbq('init','912571467763616');fbq('track','PageView');
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/assets/img/logo-procreator.svg" alt="Pro Creator" width="178" height="27" loading="lazy">
+        <img src="/assets/img/logo-procreator-fundo-escuro.svg" alt="Pro Creator" width="178" height="27" loading="lazy">
         <p>Sua gestão comercial <span>em um só lugar.</span><br>Da proposta de arquitetura ao contrato assinado.</p>
       </div>
       <div class="footer-col">
@@ -163,9 +191,22 @@ fbq('init','912571467763616');fbq('track','PageView');
   </div>
 </footer>
 
+<div class="arq-sticky" id="arq-sticky" aria-hidden="true"><span>R$ 67,90<small>Licença Vitalícia · pagamento único</small></span><a class="btn btn-primary" data-plan="vitalicio" data-value="67.90" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer" tabindex="-1">Garantir</a></div>
+<script>
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('.arq-tab'));
+function sel(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;var p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;if(!on)p.querySelectorAll('video').forEach(function(v){v.pause()});});}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(t)});t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;var n=tabs[(i+d+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault();});});
+document.querySelectorAll('[data-demo-src]').forEach(function(s){var src=s.getAttribute('data-demo-src');if(!src)return;s.innerHTML='<video controls playsinline preload="none"'+(s.dataset.poster?' poster="'+s.dataset.poster+'"':'')+'><source src="'+src+'" type="video/mp4"></video>';});
+var b=document.getElementById('arq-sticky'),hero=document.getElementById('inicio'),plans=document.getElementById('planos');if(!b||!('IntersectionObserver' in window))return;
+var hv=true,pv=false;function u(){var on=!hv&&!pv;b.classList.toggle('on',on);b.setAttribute('aria-hidden',!on);b.querySelector('a').tabIndex=on?0:-1;}
+new IntersectionObserver(function(e){hv=e[0].isIntersecting;u()}).observe(hero);
+new IntersectionObserver(function(e){pv=e[0].isIntersecting;u()}).observe(plans);
+})();
+</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/cookies.js" defer></script>
-<div class="bottom-fade" aria-hidden="true"></div>
+
 <script>
 (function(){var f=document.querySelector('.bottom-fade');if(!f)return;function u(){var end=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-40;f.classList.toggle('on',window.scrollY>40&&!end);}window.addEventListener('scroll',u,{passive:true});u();})();
 </script>
