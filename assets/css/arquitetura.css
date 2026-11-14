@@ -81,3 +81,4 @@
 .arq .hero-stack>*{order:0}
 .arq .hero-stack>.arq-vsl{order:10;width:100%}
 .arq-photo.has-img{border-style:solid;border-color:var(--arq-line);background:var(--arq-bg2)}
+.arq-autq{display:flex;align-items:center;gap:14px;margin-top:22px;padding:14px 16px;border:1px solid var(--arq-line);border-radius:14px;background:var(--arq-bg2)}.arq-autq img{flex:0 0 auto;height:22px;width:auto}.arq-autq span{color:#dbe6f7;font-size:.92rem;line-height:1.45}
