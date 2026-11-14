@@ -160,3 +160,12 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 .mkwrap:has(.mk-track){overflow:visible}
 @media (max-width:767px){.mk-stage2{padding-left:0}.arq-media .mk-track{right:-2%;width:56%}}
 .arq-row h3,.arq-panel h3{text-wrap:balance}
+.mkct{position:relative;overflow:visible;aspect-ratio:1/1;margin:60px 0;background:radial-gradient(80% 70% at 40% 30%,rgba(196,160,98,.14),transparent 60%),linear-gradient(160deg,#14243E,#0B1528)}
+.mkct .ct-page{position:absolute;margin:0;left:4%;top:-12%;width:68%;transform:rotate(-2.5deg);border-radius:6px;overflow:hidden;box-shadow:0 34px 60px -22px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.06)}
+.mkct .ct-page img{width:100%;height:auto;display:block}
+.mkct .mk-contract{position:absolute;right:-8%;bottom:-10%;width:min(66%,360px);margin:0;padding:18px;z-index:2}
+.mkct .mk-contract h4{font-size:.98rem}
+@media (max-width:767px){.mkct{margin:50px 0 70px}.mkct .ct-page{width:72%;left:0}.mkct .mk-contract{right:-2%;width:74%;padding:14px}.mkct .mk-sig{padding:7px 0}}
+.mkct .mk-contract{right:-4%;width:min(58%,330px)}
+.mkct .mk-contract .mk-sub{font-size:.74rem;margin-bottom:10px}
+@media (max-width:767px){.mkct .mk-contract{width:64%;bottom:-14%}.mkct .mk-contract h4,.mkct .mk-contract .mk-sub{display:none}.mkct .mk-ct-top{margin-bottom:8px}.mkct .mk-sig p{font-size:.78rem}}
