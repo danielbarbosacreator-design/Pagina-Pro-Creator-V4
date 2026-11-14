@@ -213,3 +213,4 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 @media (max-width:767px){.arq .arq-media.arq-out img{width:112%;margin:-10% 0 -8% -6%}}
 @media (max-width:767px){.arq .arq-media.arq-out img{width:106%;margin:-6% 0 -6% -2%}}
 .arq-vgrid-2{grid-template-columns:repeat(2,1fr);max-width:960px;margin-inline:auto}@media (max-width:900px){.arq-vgrid-2{grid-template-columns:1fr}}
+.arq-tcta{display:flex;justify-content:center;margin-top:36px}
