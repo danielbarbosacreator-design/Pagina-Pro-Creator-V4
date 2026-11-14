@@ -47,7 +47,7 @@
 .arq-panel[hidden]{display:none}
 .arq-panel p{color:var(--arq-fg2);line-height:1.6;margin:0}
 .arq-panel h3{color:#fff;font-weight:500;font-size:1.3rem;margin:0 0 10px}
-.arq-slot{aspect-ratio:16/10;border-radius:16px;overflow:hidden;border:1px solid var(--arq-line);background:#000;position:relative}
+.arq-slot{aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--arq-line);background:#000;position:relative}
 .arq-slot video,.arq-slot img{width:100%;height:100%;object-fit:cover;display:block}
 .arq-slot .arq-soon{position:absolute;left:12px;bottom:12px;padding:6px 10px;border-radius:8px;background:rgba(8,15,31,.85);color:var(--arq-muted);font-size:.78rem}
 /* Seções escuras */
