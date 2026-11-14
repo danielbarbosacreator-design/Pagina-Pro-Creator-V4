@@ -193,3 +193,13 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 @media (max-width:900px){.arq-vgrid{grid-template-columns:1fr;gap:16px}}
 .arq-vcard .arq-slot:has(.arq-vsoon){display:flex;align-items:center;justify-content:center;background:#0A1424;outline:1px dashed #2E4A70;outline-offset:-10px}
 .arq-vsoon{color:#5B6B85;font-size:.85rem;letter-spacing:.04em}
+/* Notificações preenchendo o card (igual ao bento da home) */
+.arq .mkwrap .mk-stage2{padding:0;display:block}
+.arq .mk-stage2 .arq-notify{max-width:none;height:400px;padding:0 28px;box-sizing:border-box}
+.arq .mk-stage2 .notify-item p{white-space:nowrap}
+@media (max-width:767px){.arq .mk-stage2 .arq-notify{height:300px;padding:0 14px}.arq .mk-stage2 .notify-item p{white-space:normal}}
+.arq .mkwrap:has(.arq-notify){padding:0}
+.arq .mk-stage2 .arq-notify{padding:0 32px;height:440px}
+.arq .mk-stage2 .arq-notify .notify{margin:0;padding:0}
+.arq .mk-stage2 .notify-item{padding:16px 18px}
+@media (max-width:767px){.arq .mk-stage2 .arq-notify{padding:0 16px;height:320px}.arq .mk-stage2 .notify-item{padding:12px 14px}}
