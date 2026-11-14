@@ -169,3 +169,4 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 .mkct .mk-contract{right:-4%;width:min(58%,330px)}
 .mkct .mk-contract .mk-sub{font-size:.74rem;margin-bottom:10px}
 @media (max-width:767px){.mkct .mk-contract{width:64%;bottom:-14%}.mkct .mk-contract h4,.mkct .mk-contract .mk-sub{display:none}.mkct .mk-ct-top{margin-bottom:8px}.mkct .mk-sig p{font-size:.78rem}}
+.mk-ct-top span{white-space:nowrap}@media (max-width:767px){.arq-media .mk-ct-top img{height:14px}.mk-ct-top span{font-size:.62rem;padding:2px 7px}}
