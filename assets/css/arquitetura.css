@@ -203,3 +203,7 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 .arq .mk-stage2 .arq-notify .notify{margin:0;padding:0}
 .arq .mk-stage2 .notify-item{padding:16px 18px}
 @media (max-width:767px){.arq .mk-stage2 .arq-notify{padding:0 16px;height:320px}.arq .mk-stage2 .notify-item{padding:12px 14px}}
+/* Selo Autentique em card branco com logo azul original */
+.arq .arq-autq{background:#fff;border-color:#DCE6F3}
+.arq .arq-autq span{color:#4A5A73}
+.arq .arq-autq b{color:#0B1B33;font-weight:600}
