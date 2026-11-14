@@ -207,3 +207,8 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 .arq .arq-autq{background:#fff;border-color:#DCE6F3}
 .arq .arq-autq span{color:#4A5A73}
 .arq .arq-autq b{color:#0B1B33;font-weight:600}
+/* Row 04: painel com SUALOGO vazando para fora do card */
+.arq .arq-media.arq-out{overflow:visible;padding:clamp(24px,4vw,48px) 0}
+.arq .arq-media.arq-out img{position:relative;width:122%;max-width:none;margin:-12% 0 -10% -14%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+@media (max-width:767px){.arq .arq-media.arq-out img{width:112%;margin:-10% 0 -8% -6%}}
+@media (max-width:767px){.arq .arq-media.arq-out img{width:106%;margin:-6% 0 -6% -2%}}
