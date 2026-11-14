@@ -173,3 +173,11 @@ i.pend{flex:0 0 22px;height:22px;border-radius:50%;border:2px dashed #93A4C0}
 /* Row 02: pilha de notificações animada (mesmo componente do bento da home) */
 .arq .mk-stage2 .arq-notify{position:relative;width:100%;max-width:340px;height:300px;margin:0 auto;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent)}
 .arq .mk-stage2 .arq-notify .notify{position:static;width:100%;height:100%}
+/* Card de assinatura no tema claro do Pro Creator */
+.mkct .mk-contract{background:#fff;border-color:#DCE6F3;box-shadow:0 30px 60px -24px rgba(0,0,0,.55)}
+.mkct .mk-contract h4,.mkct .mk-sig p{color:#0B1B33}
+.mkct .mk-contract .mk-sub,.mkct .mk-sig small{color:#5B6B85}
+.mkct .mk-sig{border-top-color:#E6EDF6}
+.mkct .mk-ct-top span{color:#B45309;border-color:rgba(217,119,6,.45);background:#FFF7E6}
+.mkct i.ok.g{background:#16A34A}
+.mkct i.pend{border-color:#94A3B8}
