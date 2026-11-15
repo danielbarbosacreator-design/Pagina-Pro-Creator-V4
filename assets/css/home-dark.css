@@ -334,3 +334,23 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
   .hero-stack .hero-actions .btn{font-size:14px;padding-left:16px}
   .hero-stack>.hero-price b{font-size:1.85rem}
 }
+/* Planos de expansão (recolhível) */
+.expand{margin:20px auto 0;max-width:1080px;border:1px solid var(--pc-line);border-radius:10px;background:rgba(255,255,255,.03)}
+.expand summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:18px 20px}
+.expand summary::-webkit-details-marker{display:none}
+.expand-q{font-weight:600;color:var(--pc-fg,#fff)}
+.expand-btn{display:inline-flex;align-items:center;gap:8px;color:var(--pc-blue2);font-weight:600;font-size:.95rem}
+.expand-btn .icon{width:16px;height:16px;transition:transform .2s}
+.expand[open] .expand-btn .icon{transform:rotate(45deg)}
+.expand-body{padding:0 20px 20px}
+.expand-intro,.expand-foot{color:var(--pc-fg2);font-size:.92rem;margin:0 0 14px}
+.expand-foot{margin:14px 0 0;font-size:.82rem}
+.expand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.xp{border:1px solid var(--pc-line);border-radius:10px;padding:16px;background:var(--pc-card)}
+.xp h4{margin:0 0 4px;font-size:1.05rem;color:var(--pc-fg,#fff)}
+.xp-price{margin:0 0 10px;font-weight:700;font-size:1.2rem;color:var(--pc-fg,#fff)}
+.xp-price small{font-weight:400;font-size:.8rem;color:var(--pc-fg2)}
+.xp ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.xp li{font-size:.88rem;color:var(--pc-fg2);padding-left:14px;position:relative}
+.xp li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--pc-blue)}
+@media (max-width:767px){.expand-grid{grid-template-columns:1fr}.expand summary{padding:16px}.expand-body{padding:0 16px 16px}}
