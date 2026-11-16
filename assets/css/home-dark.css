@@ -431,3 +431,8 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 .t-cta .t-cta-trust{margin-top:14px}
 .t-cta .t-cta-trust{margin-top:14px}
 .t-cta-trust span{white-space:nowrap}
+.final .microcopy span,.hero-trust span{white-space:nowrap}
+.sep-sm{font-style:normal}
+@media (max-width:767px){.trust-l2{display:block}.sep-sm{display:none}}
+@media (max-width:767px){.footer-brand p>span{display:block}}
+@media (max-width:767px){.footer-brand p>span+br{display:none}}
