@@ -354,3 +354,46 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 .xp li{font-size:.88rem;color:var(--pc-fg2);padding-left:14px;position:relative}
 .xp li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--pc-blue)}
 @media (max-width:767px){.expand-grid{grid-template-columns:1fr}.expand summary{padding:16px}.expand-body{padding:0 16px 16px}}
+
+/* ===== 2026-11-16: VSL com Play central, barra verde real, CTA fixo, prova social cedo ===== */
+.hero-video{position:relative;cursor:pointer}
+.vsl-cta{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:0;padding:0;margin:0;background:linear-gradient(to top,rgba(4,10,24,.45),rgba(4,10,24,.05) 60%);color:#fff;font:inherit;cursor:pointer;z-index:2}
+.vsl-cta[hidden]{display:none}
+.vsl-cta-btn{display:flex;align-items:center;justify-content:center;width:72px;height:72px;padding-left:5px;border-radius:50%;background:rgba(255,255,255,.94);color:#0B1B33;box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 0 rgba(255,255,255,.45);animation:vslRing 2.4s ease-out infinite;transition:transform .2s ease}
+.vsl-cta-btn svg{width:32px;height:32px}
+.vsl-cta:hover .vsl-cta-btn{transform:scale(1.05)}
+.vsl-cta:focus-visible .vsl-cta-btn{outline:2px solid #fff;outline-offset:4px}
+.vsl-cta-t{font-size:13px;font-weight:600;letter-spacing:.01em;padding:5px 12px;border-radius:999px;background:rgba(4,10,24,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);text-shadow:0 1px 2px rgba(0,0,0,.4)}
+@keyframes vslRing{0%{box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 0 rgba(255,255,255,.45)}70%{box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 16px rgba(255,255,255,0)}100%{box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 0 rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){.vsl-cta-btn{animation:none}}
+.hero-video .vsl-play{z-index:2;background:rgba(255,255,255,.94)}
+.hero-video .vsl-play svg path{fill:#0B1B33}
+.vsl-sound{position:absolute;right:10px;top:10px;z-index:3;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(4,10,24,.55);color:#fff;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.vsl-sound[hidden]{display:none}
+.hero-video .vsl-bar{height:5px;background:rgba(255,255,255,.12);z-index:3;overflow:hidden}
+.hero-video .vsl-bar>span{position:absolute;left:0;top:0;bottom:0;width:100%;transform-origin:0 50%;transform:scaleX(0);transition:none}
+.hero-video .vsl-bar>.vsl-buf{background:rgba(255,255,255,.22)}
+.hero-video .vsl-bar>.vsl-prog{background:#39F36B;box-shadow:0 0 8px rgba(57,243,107,.55)}
+@media (max-width:767px){.vsl-cta-btn{width:68px;height:68px}.vsl-cta-btn svg{width:30px;height:30px}.vsl-cta-t{font-size:12px}}
+
+/* Prova social logo após a demonstração */
+.proof-early{margin:22px auto 0;justify-content:center}
+
+/* CTA fixo (só celular/tablet) */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(8,15,31,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.08);transform:translateY(110%);transition:transform .28s ease;pointer-events:none}
+.sticky-cta.is-on{transform:none;pointer-events:auto}
+.sticky-cta .btn{width:100%;min-height:48px;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;font-size:15px;white-space:nowrap}
+.sticky-cta .btn b{font-weight:700;padding-right:10px;border-right:1px solid rgba(255,255,255,.35)}
+@media (min-width:1025px){.sticky-cta{display:none}}
+@media (max-width:1024px){body.has-sticky-cta{padding-bottom:calc(68px + env(safe-area-inset-bottom))}}
+@media (max-width:359px){.sticky-cta .btn{font-size:13.5px;gap:8px}}
+
+/* Soluções mais compacta no celular (sem esconder recursos) */
+@media (max-width:767px){
+  .solutions .card{padding:18px 16px;gap:8px}
+  .solutions .card h3{font-size:1.08rem}
+  .solutions .card p{font-size:14.5px;line-height:1.5}
+  .solutions .card-media{height:140px;margin:8px -17px -19px 16px}
+  .solutions .notify{height:150px;margin:0 -17px -19px}
+  .solutions .bento{gap:10px}
+}

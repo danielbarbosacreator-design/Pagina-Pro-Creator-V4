@@ -41,7 +41,7 @@
     }
     document.querySelectorAll('[data-plan][data-value]').forEach(function (a) {
       a.addEventListener('click', function () {
-        window.fbq('trackCustom', 'LandingCheckoutClick', { content_name: a.dataset.plan, value: Number(a.dataset.value), currency: 'BRL' });
+        window.fbq('trackCustom', 'LandingCheckoutClick', { content_name: a.dataset.plan, cta_position: a.dataset.pcCta || '', value: Number(a.dataset.value), currency: 'BRL' });
       });
     });
   }
