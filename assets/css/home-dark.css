@@ -422,6 +422,18 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 /* Botão "Quero o sistema na minha empresa": quebra controlada no celular */
 @media (max-width:767px){
   .btn[data-btn-2l]{text-align:center;line-height:1.2;padding-top:10px;padding-bottom:10px}
-  .btn[data-btn-2l] .btn-lbl{flex:1;text-align:center}
+  .btn[data-btn-2l]{text-align:left}
+  .btn[data-btn-2l] .btn-lbl{flex:1;text-align:left}
   .btn[data-btn-2l] .btn-l2{display:block}
 }
+
+/* Título "Você trabalha para conquistar clientes": parte azul começa em linha própria no celular */
+@media (max-width:767px){.overview .section-head .h2 strong{display:block}}
+.t-cta .t-cta-trust{margin-top:14px}
+.t-cta .t-cta-trust{margin-top:14px}
+.t-cta-trust span{white-space:nowrap}
+.final .microcopy span,.hero-trust span{white-space:nowrap}
+.sep-sm{font-style:normal}
+@media (max-width:767px){.trust-l2{display:block}.sep-sm{display:none}}
+@media (max-width:767px){.footer-brand p>span{display:block}}
+@media (max-width:767px){.footer-brand p>span+br{display:none}}
