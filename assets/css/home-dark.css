@@ -437,3 +437,4 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 @media (max-width:767px){.trust-l2{display:block}.sep-sm{display:none}}
 @media (max-width:767px){.footer-brand p>span{display:block}}
 @media (max-width:767px){.footer-brand p>span+br{display:none}}
+@media (max-width:767px){.mockup-head .h2 strong{display:block}}
