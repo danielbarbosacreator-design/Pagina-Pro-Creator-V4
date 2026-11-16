@@ -137,19 +137,45 @@
     setSoundIcon();
   });
 
+  /* Retomar de onde parou: guarda o segundo assistido COM SOM (localStorage, só neste navegador).
+     Na volta, se parou entre 15s e 95% do vídeo, mostra "Continuar assistindo? / Assistir do início?". */
+  var KEY = 'pc_vsl_pos_v1', resume = vsl.querySelector('[data-vsl-resume]'), startAt = 0, lastSave = 0;
+  function store(v) { try { if (v == null) localStorage.removeItem(KEY); else localStorage.setItem(KEY, String(v)); } catch (e) {} }
+  var saved = 0; try { saved = parseFloat(localStorage.getItem(KEY)) || 0; } catch (e) {}
+  if (resume && saved >= 15) {
+    video.addEventListener('loadedmetadata', function () {
+      if (saved < video.duration * 0.95 && !withSound) { resume.hidden = false; cta.hidden = true; vsl.classList.add('is-resume'); }
+    }, { once: true });
+    if (video.readyState >= 1) video.dispatchEvent(new Event('loadedmetadata'));
+    resume.querySelector('[data-vsl-continue]').addEventListener('click', function (e) { e.stopPropagation(); startAt = saved; px('vsl_resume', { at: Math.round(saved) }); activate(); });
+    resume.querySelector('[data-vsl-restart]').addEventListener('click', function (e) { e.stopPropagation(); startAt = 0; px('vsl_replay', { from: 'resume' }); activate(); });
+  }
+  video.addEventListener('timeupdate', function () {
+    if (!withSound) return;
+    var now = Date.now(); if (now - lastSave < 4000) return; lastSave = now;
+    store(video.currentTime);
+  });
+  video.addEventListener('ended', function () { if (withSound) store(null); });
+
+  function activate() {
+    withSound = true;
+    cta.hidden = true;
+    if (resume) resume.hidden = true;
+    vsl.classList.remove('is-resume');
+    soundBtn.hidden = false;
+    vsl.classList.add('is-sound');
+    video.loop = false;
+    video.muted = false;
+    video.currentTime = startAt;
+    paint();
+    setSoundIcon();
+    var q = video.play(); if (q && q.catch) q.catch(function () {});
+    px('vsl_unmute', { sound: true });
+  }
+
   vsl.addEventListener('click', function () {
     if (!withSound) {
-      withSound = true;
-      cta.hidden = true;
-      soundBtn.hidden = false;
-      vsl.classList.add('is-sound');
-      video.loop = false;
-      video.muted = false;
-      video.currentTime = 0;
-      paint();
-      setSoundIcon();
-      var q = video.play(); if (q && q.catch) q.catch(function () {});
-      px('vsl_unmute', { sound: true });
+      activate();
     } else if (video.ended) {
       video.currentTime = 0; video.play();
       sent.vsl_25 = sent.vsl_50 = sent.vsl_75 = sent.vsl_100 = false;

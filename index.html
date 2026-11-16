@@ -31,7 +31,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/vsl-demo.webp?v=1">
 <link rel="stylesheet" href="assets/css/style.css?v=20261108vit1">
-<link rel="stylesheet" href="assets/css/home-dark.css?v=20261116a">
+<link rel="stylesheet" href="assets/css/home-dark.css?v=20261116c">
 <style>
 #pc-loader{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease,visibility .35s}
 #pc-loader.done{opacity:0;visibility:hidden}
@@ -137,6 +137,13 @@ fbq('init','912571467763616');fbq('track','PageView');
             <span class="vsl-cta-btn"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg></span>
             <span class="vsl-cta-t">Toque para assistir com som</span>
           </button>
+          <div class="vsl-resume" data-vsl-resume hidden>
+            <p class="vsl-resume-t">Você já começou a assistir esse vídeo</p>
+            <div class="vsl-resume-a">
+              <button type="button" data-vsl-continue><span class="vsl-resume-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>Continuar assistindo?</button>
+              <button type="button" data-vsl-restart><span class="vsl-resume-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></span>Assistir do início?</button>
+            </div>
+          </div>
           <span data-vsl-play class="vsl-play" hidden aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span>
           <button type="button" data-vsl-sound class="vsl-sound" hidden aria-label="Desativar o som"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/><path data-on d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><g data-off style="display:none"><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></g></svg></button>
           <span class="vsl-bar" aria-hidden="true"><span class="vsl-buf" data-vsl-buffer></span><span class="vsl-prog" data-vsl-progress></span></span>
@@ -532,7 +539,7 @@ fbq('init','912571467763616');fbq('track','PageView');
 <div class="sticky-cta" data-sticky-cta aria-hidden="true">
   <a class="btn btn-primary" data-plan="vitalicio" data-value="67.90" data-pc-cta="sticky" tabindex="-1" href="https://payfast.greenn.com.br/a5n5wc3/offer/yPLTLd?ch_id=17448" target="_blank" rel="noopener noreferrer"><b>R$ 67,90</b><span>Garantir minha Licença Vitalícia</span></a>
 </div>
-<script src="assets/js/main.js?v=20261116b" defer></script>
+<script src="assets/js/main.js?v=20261116c" defer></script>
 <script src="assets/js/cookies.js" defer></script>
 <div class="bottom-fade" aria-hidden="true"></div>
 <script>
