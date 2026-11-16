@@ -428,3 +428,6 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 
 /* Título "Você trabalha para conquistar clientes": parte azul começa em linha própria no celular */
 @media (max-width:767px){.overview .section-head .h2 strong{display:block}}
+.t-cta .t-cta-trust{margin-top:14px}
+.t-cta .t-cta-trust{margin-top:14px}
+.t-cta-trust span{white-space:nowrap}
