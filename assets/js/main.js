@@ -75,7 +75,7 @@
 
 /* VSL do topo: começa sozinha e muda (autoplay só é permitido sem som). Toque no Play ou no vídeo
    reinicia do começo com som. A barra verde mostra o progresso REAL (currentTime/duration), suavizada
-   por requestAnimationFrame; a faixa clara atrás é o trecho já carregado (buffer).
+   por requestAnimationFrame (exibição acelerada no início, ver paint); a faixa clara atrás é o trecho já carregado (buffer).
    Eventos: o pc-track.js (PostHog) já registra pc_video_* sozinho a partir do <video>. Aqui só vão para o
    Meta Pixel os marcos com som (vsl_unmute, vsl_25..vsl_100), uma vez por carregamento, sem duplicar o PostHog. */
 (function () {
@@ -95,7 +95,9 @@
   }
   function frac() { return video.duration ? Math.min(1, video.currentTime / video.duration) : 0; }
   function paint() {
-    bar.style.transform = 'scaleX(' + frac() + ')';
+    /* Pedido do Daniel (16/11): barra visualmente acelerada no início (curva f^0.3: 1% do vídeo ≈ 25% da barra,
+       10% ≈ 50%, termina junto com o vídeo). Os eventos de % continuam usando o tempo real. */
+    bar.style.transform = 'scaleX(' + Math.pow(frac(), 0.3) + ')';
     if (buf && video.duration && video.buffered.length) {
       var end = 0;
       for (var i = 0; i < video.buffered.length; i++) if (video.buffered.start(i) <= video.currentTime + 1) end = Math.max(end, video.buffered.end(i));
