@@ -170,7 +170,7 @@
     paint();
     setSoundIcon();
     var q = video.play(); if (q && q.catch) q.catch(function () {});
-    px('vsl_unmute', { sound: true });
+    px('vsl_unmute', { sound: true, variant: 'smart_autoplay_blue', resumed: startAt > 0 });
   }
 
   vsl.addEventListener('click', function () {
