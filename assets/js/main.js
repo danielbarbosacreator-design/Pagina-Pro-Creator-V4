@@ -108,7 +108,10 @@
   function startLoop() { if (!raf) raf = requestAnimationFrame(loop); }
 
   video.muted = true;
-  var p = video.play(); if (p && p.catch) p.catch(function () {});
+  /* O vídeo só começa a baixar depois que a página carrega (preload="none", sem autoplay no HTML):
+     a capa aparece na hora e os ~10 MB do vídeo não disputam banda com título, oferta e botões. */
+  function autostart() { if (!video.paused || withSound) return; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+  if (document.readyState === 'complete') autostart(); else window.addEventListener('load', autostart);
   video.addEventListener('playing', startLoop);
   video.addEventListener('seeked', paint);
   video.addEventListener('progress', paint);
