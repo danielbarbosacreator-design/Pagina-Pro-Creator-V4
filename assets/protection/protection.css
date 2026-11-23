@@ -1,0 +1,10 @@
+/* Pro Creator — proteção anti-cópia (módulo isolado).
+   Tudo fica sob html.pc-protect: a classe só é adicionada pelo protection.js
+   quando PROTECTION_ENABLED = true e a rota está na whitelist. Sem a classe, nada aqui se aplica. */
+html.pc-protect body{-webkit-user-select:none;user-select:none}
+html.pc-protect input,html.pc-protect textarea,html.pc-protect select,html.pc-protect [contenteditable],html.pc-protect [contenteditable] *,html.pc-protect .pc-allow-select,html.pc-protect .pc-allow-select *{-webkit-user-select:text;user-select:text}
+html.pc-protect img,html.pc-protect video{-webkit-touch-callout:none;-webkit-user-drag:none}
+html.pc-protect img:not(a img):not(button img):not(label img):not([role=button] img):not([onclick]){pointer-events:none}
+html.pc-protect .pc-wm{position:absolute;left:12px;bottom:10px;z-index:2;pointer-events:none;font:600 11px/1 system-ui,sans-serif;letter-spacing:.02em;color:#fff;opacity:.28;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.pc-hp{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media print{html.pc-protect body>*{display:none!important}html.pc-protect body:after{content:"Conteúdo protegido – procreator.com.br";display:block;padding:40px;font:16px sans-serif}}
