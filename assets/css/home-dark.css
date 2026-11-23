@@ -472,3 +472,13 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
   .fit-title{font-size:19px}
 }
 @media (prefers-reduced-motion:reduce){.fit-result{animation:none}}
+.fit-loading{display:flex;align-items:center;gap:16px;margin-top:26px;padding-top:26px;border-top:1px solid var(--pc-line);animation:fitIn .25s ease both}
+.fit-loading[hidden]{display:none}
+.fit-loading p{margin:0}
+.fit-loading-t{color:var(--pc-fg);font-weight:600;font-size:17px}
+.fit-loading-s{color:var(--pc-fg2);font-size:14px;margin-top:4px!important}
+.fit-spinner{flex:0 0 28px;width:28px;height:28px;border-radius:50%;border:3px solid rgba(22,136,255,.22);border-top-color:var(--pc-blue);animation:fitSpin .8s linear infinite}
+@keyframes fitSpin{to{transform:rotate(360deg)}}
+.fit-btn[disabled]{opacity:.75;cursor:progress}
+.fit-result{animation-duration:.45s}
+@media (prefers-reduced-motion:reduce){.fit-loading{animation:none}.fit-spinner{animation:fitSpin 2.4s linear infinite}}

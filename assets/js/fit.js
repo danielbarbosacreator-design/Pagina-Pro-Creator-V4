@@ -237,18 +237,48 @@
     out.hidden = false;
   }
 
+  /* Estado "Analisando seu segmento...": mínimo 1s, alvo ~1,3s, nunca mais que o necessário.
+     Cada envio ganha um número; só a última consulta pode exibir resposta (sem resposta antiga). */
+  var btn = form.querySelector('button[type="submit"]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var loader = el('div', 'fit-loading');
+  loader.hidden = true;
+  loader.setAttribute('role', 'status');
+  loader.innerHTML = '<span class="fit-spinner" aria-hidden="true"></span><div><p class="fit-loading-t">Analisando seu segmento...</p><p class="fit-loading-s">Identificando como o Pro Creator pode ajudar sua empresa.</p></div>';
+  out.parentNode.insertBefore(loader, out);
+  var seq = 0, busy = false, MIN_MS = 1300;
+
+  function scrollTo(node) {
+    var r = node.getBoundingClientRect();
+    if (r.top >= 70 && r.bottom <= window.innerHeight) return;
+    try { node.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); } catch (e) { node.scrollIntoView(); }
+  }
+
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    if (busy) return;
     var v = (input.value || '').trim();
     if (v.length < 3) { err.hidden = false; input.focus(); return; }
     err.hidden = true;
-    var seg = match(v);
-    current = seg.id;
+    var my = ++seq, t0 = Date.now();
+    busy = true;
+    btn.disabled = true; btn.setAttribute('aria-busy', 'true'); input.readOnly = true;
+    out.hidden = true;
+    loader.hidden = false;
+    scrollTo(loader);
+    var seg = match(v); /* resposta local, pronta na hora: a espera é só a mínima */
     track('fit_query_submitted', { segment: seg.id, matched: seg.id !== 'outro' });
-    render(seg);
-    track('fit_query_completed', { segment: seg.id, matched: seg.id !== 'outro' });
-    try { out.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } catch (e) { out.scrollIntoView(); }
-    var h = out.querySelector('.fit-title'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+    setTimeout(function () {
+      if (my !== seq) return;
+      current = seg.id;
+      loader.hidden = true;
+      render(seg);
+      busy = false;
+      btn.disabled = false; btn.removeAttribute('aria-busy'); input.readOnly = false;
+      track('fit_query_completed', { segment: seg.id, matched: seg.id !== 'outro' });
+      scrollTo(out.querySelector('.fit-title') || out);
+      var h = out.querySelector('.fit-title'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+    }, Math.max(0, MIN_MS - (Date.now() - t0)));
   });
 
   input.addEventListener('input', function () { if (!err.hidden && input.value.trim().length >= 3) err.hidden = true; });
