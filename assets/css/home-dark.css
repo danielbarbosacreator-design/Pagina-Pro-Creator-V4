@@ -439,3 +439,36 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 @media (max-width:767px){.footer-brand p>span+br{display:none}}
 @media (max-width:767px){.mockup-head .h2 strong{display:block}}
 .plan-limits-renew{margin:6px 0 12px;font-size:.9rem;color:var(--pc-fg2)}
+
+/* ===== Seção "O Pro Creator funciona para o seu tipo de empresa?" (#serve-para-mim) ===== */
+.fit{background:var(--pc-bg)}
+.fit .section-head{text-align:center;margin-bottom:32px;margin-left:auto;margin-right:auto;max-width:760px}
+.fit-card{max-width:820px;margin:0 auto;background:var(--pc-card);border:1px solid var(--pc-line);border-radius:10px;padding:28px;box-shadow:var(--shadow)}
+.fit-form{display:flex;gap:12px;flex-wrap:wrap}
+.fit-input{flex:1 1 100%;min-width:0;height:54px;padding:0 18px;border-radius:10px;border:1px solid var(--pc-line);background:var(--pc-bg2);color:var(--pc-fg);font:inherit;font-size:16px;transition:border-color .2s,box-shadow .2s}
+.fit-input::placeholder{color:var(--muted)}
+.fit-input:focus{outline:none;border-color:var(--pc-blue);box-shadow:0 0 0 4px rgba(22,136,255,.22)}
+.fit-btn{flex:0 0 auto;min-height:54px;margin-left:auto}
+.fit-error{flex-basis:100%;margin:0;color:#FCA5A5;font-size:14px}
+.fit-result{margin-top:26px;padding-top:26px;border-top:1px solid var(--pc-line);animation:fitIn .35s ease both}
+@keyframes fitIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.fit-title{color:var(--pc-fg);font-size:22px;line-height:1.25;margin:0 0 10px;outline:none}
+.fit-intro{color:var(--pc-fg2);margin:0 0 18px;line-height:1.6}
+.fit-list{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:12px}
+.fit-list li{display:flex;gap:10px;color:var(--pc-fg2);line-height:1.5}
+.fit-list .icon{flex:0 0 20px;width:20px;height:20px;margin-top:2px;color:var(--pc-green);fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fit-example{background:var(--pc-bg2);border:1px solid var(--pc-line);border-left:3px solid var(--pc-blue);border-radius:10px;padding:16px 18px;margin-bottom:16px}
+.fit-example-lbl{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--pc-blue2);margin-bottom:6px}
+.fit-example p{margin:0;color:var(--pc-fg);line-height:1.6}
+.fit-note{font-size:14px;color:var(--muted);margin:0 0 16px;line-height:1.5}
+.fit-cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:8px}
+.fit-limits{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+.fit-limits a{color:var(--pc-blue2);text-decoration:underline}
+@media (max-width:640px){
+  .fit-card{padding:18px}
+  .fit-form{flex-direction:column}
+  .fit-input{flex:0 0 auto;width:100%}
+  .fit-btn,.fit-cta .btn{width:100%;height:auto;min-height:54px;padding-top:8px;padding-bottom:8px;white-space:normal;text-align:left;justify-content:space-between}
+  .fit-title{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){.fit-result{animation:none}}
