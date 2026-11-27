@@ -110,7 +110,7 @@
   video.muted = true;
   /* O vídeo só começa a baixar depois que a página carrega (preload="none", sem autoplay no HTML):
      a capa aparece na hora e os ~10 MB do vídeo não disputam banda com título, oferta e botões. */
-  function autostart() { if (!video.paused || withSound) return; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+  function autostart() { if (!video.paused || withSound) return; var p = video.play(); if (p && p.catch) p.catch(function () { if (!withSound) playIc.hidden = false; }); }
   if (document.readyState === 'complete') autostart(); else window.addEventListener('load', autostart);
   video.addEventListener('playing', startLoop);
   video.addEventListener('seeked', paint);
@@ -125,7 +125,9 @@
   video.addEventListener('pause', function () { if (withSound && !video.ended) { playIc.hidden = false; } paint(); });
   video.addEventListener('ended', function () {
     paint();
-    if (withSound) { px('vsl_100', { sound: true }); playIc.hidden = false; }
+    /* Sem loop: fica parado na última tela (oferta + seta para o botão), sem nada por cima. */
+    playIc.hidden = true; cta.hidden = true; vsl.classList.add('is-ended');
+    if (withSound) px('vsl_100', { sound: true });
   });
 
   function setSoundIcon() {
@@ -142,7 +144,7 @@
 
   /* Retomar de onde parou: guarda o segundo assistido COM SOM (localStorage, só neste navegador).
      Na volta, se parou entre 15s e 95% do vídeo, mostra "Continuar assistindo? / Assistir do início?". */
-  var KEY = 'pc_vsl_pos_v1', resume = vsl.querySelector('[data-vsl-resume]'), startAt = 0, lastSave = 0;
+  var KEY = 'pc_vsl_pos_v2', resume = vsl.querySelector('[data-vsl-resume]'), startAt = 0, lastSave = 0;
   function store(v) { try { if (v == null) localStorage.removeItem(KEY); else localStorage.setItem(KEY, String(v)); } catch (e) {} }
   var saved = 0; try { saved = parseFloat(localStorage.getItem(KEY)) || 0; } catch (e) {}
   if (resume && saved >= 15) {
@@ -162,6 +164,8 @@
 
   function activate() {
     withSound = true;
+    vsl.classList.remove('is-ended');
+    playIc.hidden = true;
     cta.hidden = true;
     if (resume) resume.hidden = true;
     vsl.classList.remove('is-resume');
@@ -180,7 +184,7 @@
     if (!withSound) {
       activate();
     } else if (video.ended) {
-      video.currentTime = 0; video.play();
+      vsl.classList.remove('is-ended'); video.currentTime = 0; video.play();
       sent.vsl_25 = sent.vsl_50 = sent.vsl_75 = sent.vsl_100 = false;
     } else if (video.paused) {
       video.play();

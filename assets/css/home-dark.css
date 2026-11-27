@@ -482,3 +482,13 @@ body{background:var(--pc-bg);color:var(--pc-fg2)}
 .fit-btn[disabled]{opacity:.75;cursor:progress}
 .fit-result{animation-duration:.45s}
 @media (prefers-reduced-motion:reduce){.fit-loading{animation:none}.fit-spinner{animation:fitSpin 2.4s linear infinite}}
+
+/* ===== 2026-11-27: VSL nova da Hero (1280x1372, quase quadrada). Proporção real, sem corte. ===== */
+.hero-stack .hero-video{aspect-ratio:1280/1372}
+.hero-stack .hero-video video{object-fit:contain;background:#fff}
+@media (min-width:1025px){
+  .hero-stack .hero-visual,.hero-stack .hero-video{max-width:min(560px,calc((100svh - 450px) * 1280 / 1372));min-width:min(440px,100%)}
+}
+@media (min-width:768px) and (max-width:1024px){.hero-stack .hero-visual,.hero-stack .hero-video{max-width:520px}}
+@media (max-width:767px){.hero-stack .hero-video{aspect-ratio:1280/1372;max-width:100%}}
+.hero-video.is-ended .vsl-cta,.hero-video.is-ended .vsl-play{display:none}
